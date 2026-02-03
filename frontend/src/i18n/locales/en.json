@@ -1,0 +1,325 @@
+{
+  "nav": {
+    "services": "Services",
+    "why": "Why Us",
+    "team": "Team",
+    "contact": "Contact",
+    "consultation": "Consultation"
+  },
+  "hero": {
+    "badge": "Medical Tourism #1",
+    "title": "Quality Healthcare in Turkey",
+    "titleAccent": "European standards, affordable prices",
+    "subtitle": "Dentistry, plastic surgery, hair transplantation and aesthetic medicine for clients from Germany and Europe — with full support from A to Z",
+    "btnConsultation": "Free Consultation",
+    "btnCalculate": "Calculate Cost",
+    "stats": {
+      "clients": "Happy Clients",
+      "clinics": "Partner Clinics",
+      "savings": "Savings"
+    }
+  },
+  "why": {
+    "tag": "Advantages",
+    "title": "Why Turkey?",
+    "subtitle": "Turkey has become a global center for medical tourism thanks to the combination of quality, price and service",
+    "items": {
+      "clinics": {
+        "title": "Modern Clinics",
+        "desc": "International JCI accreditation, state-of-the-art equipment and world-class technology"
+      },
+      "doctors": {
+        "title": "Experienced Doctors",
+        "desc": "Specialists with European education, internships in the USA and Germany"
+      },
+      "savings": {
+        "title": "Up to 60% Savings",
+        "desc": "Same materials and methods as in Germany, but at fair prices"
+      },
+      "fast": {
+        "title": "No Waiting",
+        "desc": "Fast treatment times — start within days of your inquiry"
+      },
+      "comfort": {
+        "title": "Comfort + Vacation",
+        "desc": "Combine treatment with a vacation on the Mediterranean coast"
+      },
+      "guarantee": {
+        "title": "Guarantees",
+        "desc": "Official contracts, warranty on all procedures, aftercare support"
+      }
+    }
+  },
+  "services": {
+    "tag": "Services",
+    "title": "Our Services",
+    "subtitle": "We work with the best clinics in Turkey in all areas of aesthetic and reconstructive medicine",
+    "dental": {
+      "title": "Dentistry",
+      "desc": "Implants, veneers, crowns, All-on-4. German and Swiss materials with lifetime warranty.",
+      "price": "Implants from"
+    },
+    "plastic": {
+      "title": "Plastic Surgery",
+      "desc": "Rhinoplasty, breast augmentation, liposuction, face and body lift.",
+      "price": "Rhinoplasty from"
+    },
+    "hair": {
+      "title": "Hair Transplant",
+      "desc": "FUE, DHI, Sapphire technique. Natural results forever.",
+      "price": "Transplant from"
+    },
+    "aesthetic": {
+      "title": "Aesthetic Medicine",
+      "desc": "Botox, fillers, mesotherapy, laser procedures, rejuvenation.",
+      "price": "Botox from"
+    },
+    "more": "Learn More",
+    "soon": "Coming Soon"
+  },
+  "about": {
+    "tag": "About Us",
+    "title": "What We Actually Do",
+    "lead": "We are an independent consulting and support service that protects your interests at every stage of treatment in Turkey.",
+    "text": "We don't just 'refer you to a clinic' — we take over the entire process so you feel confident and safe.",
+    "features": {
+      "consultation": "Free online consultation",
+      "selection": "Selection of verified clinic and doctor",
+      "plan": "Treatment plan and transparent cost calculation",
+      "translation": "Translation and communication with the clinic",
+      "organization": "Travel and accommodation organization",
+      "support": "Personal support in Turkey",
+      "aftercare": "Support before and after the procedure"
+    },
+    "transparency": "Price Transparency"
+  },
+  "audience": {
+    "tag": "For Whom",
+    "title": "This solution is for you if...",
+    "items": {
+      "germany": "You live in Germany or the EU and are looking for quality treatment",
+      "quality": "You want quality without overpaying — same materials, but cheaper",
+      "safety": "You value safety, clarity and professional service",
+      "trust": "You don't want to risk choosing a clinic blindly"
+    }
+  },
+  "process": {
+    "tag": "How It Works",
+    "title": "4 Simple Steps",
+    "subtitle": "From first inquiry to result — we're by your side every step of the way",
+    "steps": {
+      "consultation": {
+        "title": "Consultation",
+        "desc": "We discuss your situation for free, answer questions, evaluate possibilities"
+      },
+      "plan": {
+        "title": "Treatment Plan",
+        "desc": "We select a clinic and doctor, create a detailed plan with exact costs"
+      },
+      "trip": {
+        "title": "Trip",
+        "desc": "We organize flight, transfer, accommodation. We meet you and accompany you personally"
+      },
+      "result": {
+        "title": "Result",
+        "desc": "We monitor treatment quality, provide support after your return"
+      }
+    }
+  },
+  "team": {
+    "tag": "Team",
+    "title": "Your Coordinators",
+    "subtitle": "We speak your language and are always available",
+    "roles": {
+      "chief": "Chief Coordinator",
+      "coordinator": "Coordinator"
+    },
+    "members": {
+      "oleg": {
+        "name": "Oleg",
+        "role": "Chief Coordinator",
+        "desc": "Coordinates all projects, monitors quality at every stage. Your main contact for any questions."
+      },
+      "alexander": {
+        "name": "Alexander",
+        "role": "Coordinator",
+        "desc": "Specializes in dentistry. Helps with treatment planning and accompanies you at the clinic."
+      },
+      "galina": {
+        "name": "Galina",
+        "role": "Coordinator",
+        "desc": "Organizes trips and accommodation. Always available for organizational matters."
+      }
+    },
+    "languages": {
+      "ru": "Russian",
+      "de": "German",
+      "uk": "Ukrainian",
+      "en": "English"
+    },
+    "whatsapp": "WhatsApp"
+  },
+  "cta": {
+    "title": "Book a Free Consultation",
+    "subtitle": "no obligations",
+    "text": "We'll honestly tell you if treatment in Turkey is right for you and what alternatives exist. No pressure — just useful information.",
+    "btn": "Get Consultation"
+  },
+  "contact": {
+    "tag": "Contact",
+    "title": "Contact Us",
+    "subtitle": "Leave a request — we'll call back within 24 hours",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone / WhatsApp",
+      "service": "Service of Interest",
+      "servicePlaceholder": "Select...",
+      "message": "Message",
+      "messagePlaceholder": "Describe your situation or ask a question...",
+      "privacy": "I agree to the processing of personal data",
+      "submit": "Send Request",
+      "sending": "Sending...",
+      "success": "Thank you! We'll contact you soon.",
+      "error": "An error occurred."
+    },
+    "info": {
+      "phone": "Phone",
+      "phoneHours": "Mon-Sat: 9:00 - 20:00",
+      "whatsapp": "WhatsApp",
+      "whatsappText": "Send a message",
+      "whatsappFast": "Quick response",
+      "email": "Email",
+      "emailText": "For documents",
+      "office": "Office",
+      "officeGermany": "Germany",
+      "officeTurkey": "Clinics in Antalya, Turkey"
+    }
+  },
+  "footer": {
+    "description": "Quality healthcare in Turkey with full support for clients from Germany and Europe.",
+    "services": "Services",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "impressum": "Impressum",
+    "privacy": "Privacy Policy",
+    "copyright": "All rights reserved."
+  },
+  "dental": {
+    "back": "Back to Home",
+    "badge": "Partner Clinic Dentanatura",
+    "heroTitle": "Dentistry in Turkey",
+    "heroSubtitle": "Quality You Deserve",
+    "heroDesc": "Implants, veneers, crowns, All-on-4 using German and Swiss materials. Up to 70% savings compared to Germany.",
+    "features": {
+      "guarantee": "Lifetime warranty on implants",
+      "materials": "German and Swiss materials",
+      "experience": "20+ years of doctor experience"
+    },
+    "trust": {
+      "ministry": "Turkish Ministry of Health",
+      "ministryDesc": "Official accreditation",
+      "german": "German Materials",
+      "germanDesc": "Premium quality",
+      "swiss": "Swiss Implants",
+      "swissDesc": "Lifetime warranty",
+      "certified": "Medical Tourism",
+      "certifiedDesc": "Certified"
+    },
+    "servicesTag": "Services",
+    "servicesTitle": "Our Treatments",
+    "servicesSubtitle": "Full range of modern dentistry with premium materials",
+    "treatments": {
+      "implants": {
+        "title": "Dental Implants",
+        "desc": "Permanent solution for restoring lost teeth. Premium brands from Germany and Switzerland with lifetime manufacturer warranty.",
+        "price": "from"
+      },
+      "crowns": {
+        "title": "Ceramic Crowns",
+        "desc": "Restoring strength, shape and aesthetics of teeth. Highest quality with 5-year warranty.",
+        "price": "from"
+      },
+      "veneers": {
+        "title": "Veneers",
+        "desc": "Hollywood smile with ultra-thin overlays. Natural aesthetics for the perfect smile.",
+        "price": "from"
+      },
+      "zirconium": {
+        "title": "Zirconium Crowns",
+        "desc": "Maximum strength combined with natural aesthetics. Ideal for front and back teeth.",
+        "price": "from"
+      },
+      "allOn": {
+        "title": "All-on-4 / All-on-6",
+        "desc": "Complete reconstruction on 4 or 6 implants. Fixed teeth for total tooth loss.",
+        "price": "from"
+      },
+      "bone": {
+        "title": "Bone Grafting",
+        "desc": "Professional bone preparation for implantation. Modern techniques.",
+        "price": "from"
+      }
+    },
+    "pricingTag": "Price Comparison",
+    "pricingTitle": "Up to 70% Savings",
+    "pricingSubtitle": "Same materials and quality — fair prices",
+    "pricingTable": {
+      "procedure": "Procedure",
+      "germany": "Germany",
+      "ourPrice": "Our Price",
+      "savings": "Savings"
+    },
+    "clinicTag": "Clinic",
+    "clinicTitle": "Dentanatura Clinic",
+    "clinicSubtitle": "Modern clinic in sunny Antalya with 20 years of experience",
+    "doctor": {
+      "name": "Dr. Mevlüt",
+      "role": "Clinic Founder and Chief Surgeon",
+      "desc": "Over 20 years of experience in implantology and maxillofacial surgery. Specialization in complex cases and aesthetic dentistry."
+    },
+    "clinicFeatures": {
+      "equipment": {
+        "title": "Modern Equipment",
+        "desc": "3D tomography, digital planning, laser technology"
+      },
+      "lab": {
+        "title": "In-house Laboratory",
+        "desc": "Crown and veneer manufacturing on-site"
+      },
+      "team": {
+        "title": "International Team",
+        "desc": "Translators for Russian, German, English"
+      }
+    },
+    "packageTag": "All-Inclusive",
+    "packageTitle": "Your Package",
+    "packageSubtitle": "Comfortable stay without stress. You only take care of the flight.",
+    "package": {
+      "hotel": {
+        "title": "Hotel",
+        "desc": "Comfortable hotel with breakfast. Companion in the same room included."
+      },
+      "transfer": {
+        "title": "VIP Transfer",
+        "desc": "Airport pickup and all transfers between hotel and clinic."
+      },
+      "support": {
+        "title": "Support",
+        "desc": "Coordination from inquiry to departure in your language."
+      },
+      "plan": {
+        "title": "Treatment Plan",
+        "desc": "Free plan before arrival with exact costs."
+      }
+    },
+    "packageNote": "Free from €3,200: For treatments over €3,200, the full package is included free of charge."
+  },
+  "comingSoon": {
+    "title": "Coming Soon",
+    "text": "This section is under development. Contact us for a free consultation!",
+    "btnConsultation": "Get Consultation",
+    "btnHome": "Back to Home"
+  }
+}
