@@ -1,0 +1,325 @@
+{
+  "nav": {
+    "services": "Leistungen",
+    "why": "Warum wir",
+    "team": "Team",
+    "contact": "Kontakt",
+    "consultation": "Beratung"
+  },
+  "hero": {
+    "badge": "Medizintourismus Nr. 1",
+    "title": "Hochwertige Medizin in der Türkei",
+    "titleAccent": "nach europäischen Standards, zu erschwinglichen Preisen",
+    "subtitle": "Zahnmedizin, plastische Chirurgie, Haartransplantation und ästhetische Medizin für Kunden aus Deutschland und Europa — mit Vollbetreuung von A bis Z",
+    "btnConsultation": "Kostenlose Beratung",
+    "btnCalculate": "Kosten berechnen",
+    "stats": {
+      "clients": "Zufriedene Kunden",
+      "clinics": "Partnerkliniken",
+      "savings": "Ersparnis"
+    }
+  },
+  "why": {
+    "tag": "Vorteile",
+    "title": "Warum die Türkei?",
+    "subtitle": "Die Türkei ist zum weltweiten Zentrum des Medizintourismus geworden dank der Kombination aus Qualität, Preis und Service",
+    "items": {
+      "clinics": {
+        "title": "Moderne Kliniken",
+        "desc": "Internationale JCI-Akkreditierung, neueste Geräte und Technologien auf Weltniveau"
+      },
+      "doctors": {
+        "title": "Erfahrene Ärzte",
+        "desc": "Spezialisten mit europäischer Ausbildung, Praktika in den USA und Deutschland"
+      },
+      "savings": {
+        "title": "Bis zu 60% Ersparnis",
+        "desc": "Dieselben Materialien und Methoden wie in Deutschland, aber zu fairen Preisen"
+      },
+      "fast": {
+        "title": "Keine Wartezeiten",
+        "desc": "Schnelle Behandlungszeiten — Beginn wenige Tage nach der Anfrage"
+      },
+      "comfort": {
+        "title": "Komfort + Erholung",
+        "desc": "Kombinieren Sie Behandlung mit Urlaub an der Mittelmeerküste"
+      },
+      "guarantee": {
+        "title": "Garantien",
+        "desc": "Offizielle Verträge, Garantie auf alle Eingriffe, Nachsorge"
+      }
+    }
+  },
+  "services": {
+    "tag": "Leistungen",
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Wir arbeiten mit den besten Kliniken der Türkei in allen Bereichen der ästhetischen und rekonstruktiven Medizin",
+    "dental": {
+      "title": "Zahnmedizin",
+      "desc": "Implantate, Veneers, Kronen, All-on-4. Deutsche und Schweizer Materialien mit lebenslanger Garantie.",
+      "price": "Implantate ab"
+    },
+    "plastic": {
+      "title": "Plastische Chirurgie",
+      "desc": "Rhinoplastik, Mammaplastik, Fettabsaugung, Gesichts- und Körperstraffung.",
+      "price": "Rhinoplastik ab"
+    },
+    "hair": {
+      "title": "Haartransplantation",
+      "desc": "FUE, DHI, Saphir-Technik. Natürliches Ergebnis für immer.",
+      "price": "Transplantation ab"
+    },
+    "aesthetic": {
+      "title": "Ästhetische Medizin",
+      "desc": "Botox, Filler, Mesotherapie, Laserbehandlungen, Verjüngung.",
+      "price": "Botox ab"
+    },
+    "more": "Mehr erfahren",
+    "soon": "Demnächst"
+  },
+  "about": {
+    "tag": "Über uns",
+    "title": "Was wir wirklich tun",
+    "lead": "Wir sind ein unabhängiger Beratungs- und Betreuungsservice, der Ihre Interessen in jeder Phase der Behandlung in der Türkei schützt.",
+    "text": "Wir vermitteln nicht einfach an eine Klinik — wir übernehmen den gesamten Prozess, damit Sie sich sicher und geborgen fühlen.",
+    "features": {
+      "consultation": "Kostenlose Online-Beratung",
+      "selection": "Auswahl einer geprüften Klinik und eines Arztes",
+      "plan": "Behandlungsplan und transparente Kostenberechnung",
+      "translation": "Übersetzung und Kommunikation mit der Klinik",
+      "organization": "Organisation von Reise und Unterkunft",
+      "support": "Persönliche Betreuung in der Türkei",
+      "aftercare": "Unterstützung vor und nach dem Eingriff"
+    },
+    "transparency": "Preistransparenz"
+  },
+  "audience": {
+    "tag": "Für wen",
+    "title": "Diese Lösung ist für Sie, wenn...",
+    "items": {
+      "germany": "Sie in Deutschland oder der EU leben und eine hochwertige Behandlung suchen",
+      "quality": "Sie Qualität ohne Überzahlung wollen — dieselben Materialien, aber günstiger",
+      "safety": "Sie Sicherheit, Klarheit und professionellen Service schätzen",
+      "trust": "Sie kein Risiko eingehen wollen, eine Klinik blind zu wählen"
+    }
+  },
+  "process": {
+    "tag": "So funktioniert's",
+    "title": "4 einfache Schritte",
+    "subtitle": "Von der ersten Anfrage bis zum Ergebnis — wir sind bei jedem Schritt dabei",
+    "steps": {
+      "consultation": {
+        "title": "Beratung",
+        "desc": "Wir besprechen kostenlos Ihre Situation, beantworten Fragen, bewerten Möglichkeiten"
+      },
+      "plan": {
+        "title": "Behandlungsplan",
+        "desc": "Wir wählen Klinik und Arzt aus, erstellen einen detaillierten Plan mit genauen Kosten"
+      },
+      "trip": {
+        "title": "Reise",
+        "desc": "Wir organisieren Flug, Transfer, Unterkunft. Wir holen Sie ab und begleiten Sie persönlich"
+      },
+      "result": {
+        "title": "Ergebnis",
+        "desc": "Wir kontrollieren die Behandlungsqualität, bieten Unterstützung nach der Rückkehr"
+      }
+    }
+  },
+  "team": {
+    "tag": "Team",
+    "title": "Ihre Koordinatoren",
+    "subtitle": "Wir sprechen Ihre Sprache und sind immer erreichbar",
+    "roles": {
+      "chief": "Hauptkoordinator",
+      "coordinator": "Koordinator"
+    },
+    "members": {
+      "oleg": {
+        "name": "Oleg",
+        "role": "Hauptkoordinator",
+        "desc": "Koordiniert alle Projekte, kontrolliert die Qualität in jeder Phase. Ihr Hauptansprechpartner für alle Fragen."
+      },
+      "alexander": {
+        "name": "Alexander",
+        "role": "Koordinator",
+        "desc": "Spezialisiert auf Zahnmedizin. Hilft bei der Behandlungsplanung und begleitet in der Klinik."
+      },
+      "galina": {
+        "name": "Galina",
+        "role": "Koordinatorin",
+        "desc": "Organisiert Reisen und Unterkünfte. Immer erreichbar für organisatorische Fragen."
+      }
+    },
+    "languages": {
+      "ru": "Russisch",
+      "de": "Deutsch",
+      "uk": "Ukrainisch",
+      "en": "Englisch"
+    },
+    "whatsapp": "WhatsApp"
+  },
+  "cta": {
+    "title": "Vereinbaren Sie eine kostenlose Beratung",
+    "subtitle": "unverbindlich",
+    "text": "Wir sagen Ihnen ehrlich, ob eine Behandlung in der Türkei für Sie geeignet ist und welche Alternativen es gibt. Kein Druck — nur nützliche Informationen.",
+    "btn": "Beratung erhalten"
+  },
+  "contact": {
+    "tag": "Kontakt",
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Hinterlassen Sie eine Anfrage — wir rufen innerhalb von 24 Stunden zurück",
+    "form": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "phone": "Telefon / WhatsApp",
+      "service": "Gewünschte Leistung",
+      "servicePlaceholder": "Wählen Sie...",
+      "message": "Nachricht",
+      "messagePlaceholder": "Beschreiben Sie Ihre Situation oder stellen Sie eine Frage...",
+      "privacy": "Ich stimme der Verarbeitung personenbezogener Daten zu",
+      "submit": "Anfrage senden",
+      "sending": "Wird gesendet...",
+      "success": "Vielen Dank! Wir melden uns in Kürze bei Ihnen.",
+      "error": "Ein Fehler ist aufgetreten."
+    },
+    "info": {
+      "phone": "Telefon",
+      "phoneHours": "Mo-Sa: 9:00 - 20:00",
+      "whatsapp": "WhatsApp",
+      "whatsappText": "Nachricht schreiben",
+      "whatsappFast": "Schnelle Antwort",
+      "email": "E-Mail",
+      "emailText": "Für Dokumente",
+      "office": "Büro",
+      "officeGermany": "Deutschland",
+      "officeTurkey": "Kliniken in Antalya, Türkei"
+    }
+  },
+  "footer": {
+    "description": "Hochwertige Medizin in der Türkei mit Vollbetreuung für Kunden aus Deutschland und Europa.",
+    "services": "Leistungen",
+    "company": "Unternehmen",
+    "aboutUs": "Über uns",
+    "impressum": "Impressum",
+    "privacy": "Datenschutz",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "dental": {
+    "back": "Zurück zur Startseite",
+    "badge": "Partnerklinik Dentanatura",
+    "heroTitle": "Zahnmedizin in der Türkei",
+    "heroSubtitle": "Qualität, die Sie verdienen",
+    "heroDesc": "Implantate, Veneers, Kronen, All-on-4 mit deutschen und Schweizer Materialien. Bis zu 70% Ersparnis gegenüber Deutschland.",
+    "features": {
+      "guarantee": "Lebenslange Garantie auf Implantate",
+      "materials": "Deutsche und Schweizer Materialien",
+      "experience": "20+ Jahre Erfahrung des Arztes"
+    },
+    "trust": {
+      "ministry": "Gesundheitsministerium Türkei",
+      "ministryDesc": "Offizielle Akkreditierung",
+      "german": "Deutsche Materialien",
+      "germanDesc": "Premium-Qualität",
+      "swiss": "Schweizer Implantate",
+      "swissDesc": "Lebenslange Garantie",
+      "certified": "Medizintourismus",
+      "certifiedDesc": "Zertifiziert"
+    },
+    "servicesTag": "Leistungen",
+    "servicesTitle": "Unsere Behandlungen",
+    "servicesSubtitle": "Komplettes Spektrum moderner Zahnmedizin mit Premium-Materialien",
+    "treatments": {
+      "implants": {
+        "title": "Zahnimplantate",
+        "desc": "Dauerhafte Lösung zur Wiederherstellung verlorener Zähne. Premium-Marken aus Deutschland und der Schweiz mit lebenslanger Herstellergarantie.",
+        "price": "ab"
+      },
+      "crowns": {
+        "title": "Keramikkronen",
+        "desc": "Wiederherstellung von Festigkeit, Form und Ästhetik der Zähne. Höchste Qualität mit 5 Jahren Garantie.",
+        "price": "ab"
+      },
+      "veneers": {
+        "title": "Veneers",
+        "desc": "Hollywood-Lächeln mit ultradünnen Verblendschalen. Natürliche Ästhetik für ein perfektes Lächeln.",
+        "price": "ab"
+      },
+      "zirconium": {
+        "title": "Zirkonkronen",
+        "desc": "Maximale Festigkeit kombiniert mit natürlicher Ästhetik. Ideal für Front- und Seitenzähne.",
+        "price": "ab"
+      },
+      "allOn": {
+        "title": "All-on-4 / All-on-6",
+        "desc": "Vollständige Rekonstruktion auf 4 oder 6 Implantaten. Festsitzende Zähne bei totalem Zahnverlust.",
+        "price": "ab"
+      },
+      "bone": {
+        "title": "Knochenaufbau",
+        "desc": "Professionelle Knochenvorbereitung für die Implantation. Moderne Techniken.",
+        "price": "ab"
+      }
+    },
+    "pricingTag": "Preisvergleich",
+    "pricingTitle": "Bis zu 70% Ersparnis",
+    "pricingSubtitle": "Gleiche Materialien und Qualität — faire Preise",
+    "pricingTable": {
+      "procedure": "Behandlung",
+      "germany": "Deutschland",
+      "ourPrice": "Unser Preis",
+      "savings": "Ersparnis"
+    },
+    "clinicTag": "Klinik",
+    "clinicTitle": "Dentanatura Clinic",
+    "clinicSubtitle": "Moderne Klinik im sonnigen Antalya mit 20 Jahren Erfahrung",
+    "doctor": {
+      "name": "Dr. Mevlüt",
+      "role": "Gründer der Klinik und Chefarzt",
+      "desc": "Über 20 Jahre Erfahrung in Implantologie und Kieferchirurgie. Spezialisierung auf komplexe Fälle und ästhetische Zahnmedizin."
+    },
+    "clinicFeatures": {
+      "equipment": {
+        "title": "Moderne Ausstattung",
+        "desc": "3D-Tomographie, digitale Planung, Lasertechnologie"
+      },
+      "lab": {
+        "title": "Eigenes Labor",
+        "desc": "Herstellung von Kronen und Veneers vor Ort"
+      },
+      "team": {
+        "title": "Internationales Team",
+        "desc": "Übersetzer für Russisch, Deutsch, Englisch"
+      }
+    },
+    "packageTag": "All-Inclusive",
+    "packageTitle": "Ihr Paket",
+    "packageSubtitle": "Komfortabler Aufenthalt ohne Stress. Sie kümmern sich nur um den Flug.",
+    "package": {
+      "hotel": {
+        "title": "Hotel",
+        "desc": "Komfortables Hotel mit Frühstück. Begleitperson im selben Zimmer inklusive."
+      },
+      "transfer": {
+        "title": "VIP-Transfer",
+        "desc": "Abholung am Flughafen und alle Transfers zwischen Hotel und Klinik."
+      },
+      "support": {
+        "title": "Betreuung",
+        "desc": "Koordination von der Anfrage bis zur Abreise in Ihrer Sprache."
+      },
+      "plan": {
+        "title": "Behandlungsplan",
+        "desc": "Kostenloser Plan vor der Anreise mit genauen Kosten."
+      }
+    },
+    "packageNote": "Ab €3.200: Bei einer Behandlung über €3.200 ist das komplette Paket kostenlos inklusive."
+  },
+  "comingSoon": {
+    "title": "Demnächst",
+    "text": "Dieser Bereich wird gerade entwickelt. Kontaktieren Sie uns für eine kostenlose Beratung!",
+    "btnConsultation": "Beratung erhalten",
+    "btnHome": "Zur Startseite"
+  }
+}
