@@ -5,6 +5,7 @@ import {
   CheckCircle2, Phone, Mail, MapPin, MessageCircle, Syringe, Scissors, Sparkles
 } from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
+import { ToothIcon, SyringeIcon, ScissorsIcon, SparkleIcon } from '../components/ui/MedicalIcon'
 import OlegImg from "../photo/oleg.jpeg";
 import AlexImg from "../photo/alex.png";
 import GalinaImg from "../photo/galina.jpeg";
@@ -84,19 +85,19 @@ function HeroSection() {
 
           <div className="relative hidden lg:block h-[500px]">
             <div className="absolute top-[10%] left-[5%] bg-white px-6 py-4 rounded-xl shadow-xl flex items-center gap-3 animate-float">
-              <Phone className="w-8 h-8 text-primary-600" />
+              <ToothIcon size="sm" />
               <span className="font-semibold">{t('services.dental.title')}</span>
             </div>
             <div className="absolute top-[25%] right-[10%] bg-white px-6 py-4 rounded-xl shadow-xl flex items-center gap-3 animate-float" style={{ animationDelay: '1.5s' }}>
-              <Syringe className="w-8 h-8 text-primary-600" />
+              <SyringeIcon size="sm" />
               <span className="font-semibold">{t('services.plastic.title')}</span>
             </div>
             <div className="absolute top-[55%] left-[15%] bg-white px-6 py-4 rounded-xl shadow-xl flex items-center gap-3 animate-float" style={{ animationDelay: '3s' }}>
-              <Scissors className="w-8 h-8 text-primary-600" />
+              <ScissorsIcon size="sm" />
               <span className="font-semibold">{t('services.hair.title')}</span>
             </div>
             <div className="absolute bottom-[15%] right-[5%] bg-white px-6 py-4 rounded-xl shadow-xl flex items-center gap-3 animate-float" style={{ animationDelay: '4.5s' }}>
-              <Sparkles className="w-8 h-8 text-primary-600" />
+              <SparkleIcon size="sm" />
               <span className="font-semibold">{t('services.aesthetic.title')}</span>
             </div>
           </div>
@@ -147,10 +148,10 @@ function ServicesSection() {
   const { t } = useTranslation()
 
   const services = [
-    { key: 'dental', icon: Phone, link: '/dental', price: '€450', featured: true },
-    { key: 'plastic', icon: Syringe, link: '/plastic', price: '€2,500', soon: true },
-    { key: 'hair', icon: Scissors, link: '/hair', price: '€1,800', soon: true },
-    { key: 'aesthetic', icon: Sparkles, link: '/aesthetic', price: '€150', soon: true },
+    { key: 'dental', IconComponent: ToothIcon, link: '/dental', price: '€450' },
+    { key: 'plastic', IconComponent: SyringeIcon, link: '/plastic', price: '€2,500', soon: true },
+    { key: 'hair', IconComponent: ScissorsIcon, link: '/hair', price: '€1,800', soon: true },
+    { key: 'aesthetic', IconComponent: SparkleIcon, link: '/aesthetic', price: '€150', soon: true },
   ]
 
   return (
@@ -162,19 +163,21 @@ function ServicesSection() {
           <p className="text-secondary-500 text-lg">{t('services.subtitle')}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {services.map(({ key, icon: Icon, link, price, featured, soon }) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map(({ key, IconComponent, link, price, soon }) => (
             <Link
               key={key}
               to={link}
-              className={`card card-hover overflow-hidden flex flex-col ${featured ? 'md:col-span-2 md:flex-row' : ''}`}
+              className="card card-hover overflow-hidden flex flex-col"
             >
-              <div className={`relative bg-secondary-200 ${featured ? 'md:w-1/2 h-64 md:h-auto' : 'h-48'}`}>
+              <div className="relative bg-secondary-200 h-48">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <Icon className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 text-white/50" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50">
+                  <IconComponent size="xl" className="text-white" />
+                </div>
               </div>
-              <div className={`p-6 flex flex-col flex-1 ${featured ? 'md:w-1/2 md:p-8' : ''}`}>
-                <Icon className="w-10 h-10 text-primary-600 mb-3" />
+              <div className="p-6 flex flex-col flex-1">
+                <IconComponent size="md" className="mb-3" />
                 <h3 className="text-xl font-bold mb-2">{t(`services.${key}.title`)}</h3>
                 <p className="text-secondary-600 mb-4 flex-1">{t(`services.${key}.desc`)}</p>
                 <div className="pt-4 border-t border-secondary-100 flex items-baseline justify-between">
