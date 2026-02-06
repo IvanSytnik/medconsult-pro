@@ -1,7 +1,38 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, CheckCircle2, Crown, Sparkles, Diamond, Wrench, Bone, Hotel, Car, HeadphonesIcon, ClipboardList, Building2, FlaskConical, Globe } from 'lucide-react'
+import { useState, useRef } from 'react'
+import { 
+  ArrowLeft, 
+  CheckCircle2, 
+  Hotel, 
+  Car, 
+  HeadphonesIcon, 
+  ClipboardList, 
+  Building2, 
+  FlaskConical, 
+  Globe,
+  Flag,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  ChevronLeft,
+  ChevronRight,
+  Maximize2
+} from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
+import MedicalIcon, { 
+  ToothIcon, 
+  CrownIcon, 
+  SparkleIcon, 
+  DiamondIcon,
+  WrenchIcon,
+  BoneIcon,
+  HospitalIcon,
+  ShieldIcon,
+  CheckIcon,
+  DentalImplantIcon
+} from '../components/ui/MedicalIcon'
 
 export default function Dental() {
   const { t } = useTranslation()
@@ -14,6 +45,7 @@ export default function Dental() {
       <PricingSection />
       <ClinicSection />
       <PackageSection />
+      <VideoSliderSection />
       <DentalContactSection />
     </>
   )
@@ -36,7 +68,7 @@ function DentalHero() {
             </Link>
 
             <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md mb-6">
-              <Crown className="w-5 h-5 text-primary-600" />
+              <ToothIcon size="sm" />
               <span className="font-medium">{t('dental.badge')}</span>
             </div>
 
@@ -99,20 +131,24 @@ function TrustBar() {
   const { t } = useTranslation()
 
   const items = [
-    { key: 'ministry', icon: '🏥' },
-    { key: 'german', icon: 'DE' },
-    { key: 'swiss', icon: 'CH' },
-    { key: 'certified', icon: '✓' },
+    { key: 'ministry', Icon: HospitalIcon },
+    { key: 'german', Icon: Flag, label: 'DE' },
+    { key: 'swiss', Icon: Flag, label: 'CH' },
+    { key: 'certified', Icon: CheckIcon },
   ]
 
   return (
     <section className="py-8 border-y border-secondary-200 bg-white">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {items.map(({ key, icon }) => (
+          {items.map(({ key, Icon, label }) => (
             <div key={key} className="flex items-center gap-4">
-              <div className="text-2xl w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center font-bold">
-                {icon}
+              <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                {label ? (
+                  <span className="text-sm font-bold text-secondary-700">{label}</span>
+                ) : (
+                  <Icon className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
+                )}
               </div>
               <div>
                 <div className="font-semibold text-secondary-800">{t(`dental.trust.${key}`)}</div>
@@ -131,12 +167,12 @@ function TreatmentsSection() {
   const { t } = useTranslation()
 
   const treatments = [
-    { key: 'implants', icon: Crown, price: '€450' },
-    { key: 'crowns', icon: Crown, price: '€150' },
-    { key: 'veneers', icon: Sparkles, price: '€250' },
-    { key: 'zirconium', icon: Diamond, price: '€200' },
-    { key: 'allOn', icon: Wrench, price: '€3,500' },
-    { key: 'bone', icon: Bone, price: '€200' },
+    { key: 'implants', Icon: DentalImplantIcon, price: '€450' },
+    { key: 'crowns', Icon: CrownIcon, price: '€150' },
+    { key: 'veneers', Icon: SparkleIcon, price: '€250' },
+    { key: 'zirconium', Icon: DiamondIcon, price: '€200' },
+    { key: 'allOn', Icon: WrenchIcon, price: '€3,500' },
+    { key: 'bone', Icon: BoneIcon, price: '€200' },
   ]
 
   return (
@@ -149,9 +185,9 @@ function TreatmentsSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {treatments.map(({ key, icon: Icon, price }) => (
+          {treatments.map(({ key, Icon, price }) => (
             <div key={key} className="card card-hover p-6 flex gap-5">
-              <Icon className="w-10 h-10 text-primary-600 flex-shrink-0" />
+              <Icon size="lg" gradient className="flex-shrink-0" />
               <div className="flex-1">
                 <h3 className="text-xl font-bold mb-2">{t(`dental.treatments.${key}.title`)}</h3>
                 <p className="text-secondary-600 text-sm mb-3">{t(`dental.treatments.${key}.desc`)}</p>
@@ -172,12 +208,12 @@ function PricingSection() {
   const { t } = useTranslation()
 
   const prices = [
-    { name: 'Dental Implant (Premium)', germany: '€1,800 - €3,500', our: '€450', savings: '75%' },
-    { name: 'Ceramic Crown', germany: '€700 - €1,200', our: '€150', savings: '80%' },
-    { name: 'Zirconium Crown', germany: '€900 - €1,500', our: '€200', savings: '78%' },
-    { name: 'Veneer', germany: '€800 - €1,500', our: '€250', savings: '70%' },
-    { name: 'All-on-4 (jaw)', germany: '€12,000 - €20,000', our: '€3,500', savings: '75%' },
-    { name: 'Smile Makeover (20 veneers)', germany: '€16,000 - €30,000', our: '€5,000', savings: '70%' },
+    { name: 'Dental Implant (Premium)', germany: '€1,800 - €3,500', our: '€450', savings: '75%', Icon: DentalImplantIcon },
+    { name: 'Ceramic Crown', germany: '€700 - €1,200', our: '€150', savings: '80%', Icon: CrownIcon },
+    { name: 'Zirconium Crown', germany: '€900 - €1,500', our: '€200', savings: '78%', Icon: DiamondIcon },
+    { name: 'Veneer', germany: '€800 - €1,500', our: '€250', savings: '70%', Icon: SparkleIcon },
+    { name: 'All-on-4 (jaw)', germany: '€12,000 - €20,000', our: '€3,500', savings: '75%', Icon: WrenchIcon },
+    { name: 'Smile Makeover (20 veneers)', germany: '€16,000 - €30,000', our: '€5,000', savings: '70%', Icon: ToothIcon },
   ]
 
   return (
@@ -190,20 +226,23 @@ function PricingSection() {
         </div>
 
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          <div className="grid grid-cols-4 bg-primary-600 text-white p-5 font-semibold">
-            <div>{t('dental.pricingTable.procedure')}</div>
+          <div className="grid grid-cols-5 bg-primary-600 text-white p-5 font-semibold">
+            <div className="col-span-2">{t('dental.pricingTable.procedure')}</div>
             <div className="hidden sm:block">{t('dental.pricingTable.germany')}</div>
             <div>{t('dental.pricingTable.ourPrice')}</div>
             <div>{t('dental.pricingTable.savings')}</div>
           </div>
           {prices.map((item, i) => (
-            <div key={i} className="grid grid-cols-4 p-5 border-b border-secondary-100 items-center hover:bg-secondary-50">
-              <div className="font-medium">{item.name}</div>
+            <div key={i} className="grid grid-cols-5 p-5 border-b border-secondary-100 items-center hover:bg-secondary-50 transition-colors">
+              <div className="col-span-2 flex items-center gap-3">
+                <item.Icon size="sm" />
+                <span className="font-medium">{item.name}</span>
+              </div>
               <div className="hidden sm:block text-secondary-500 line-through">{item.germany}</div>
-              <div className="font-bold text-primary-600">{item.our}</div>
+              <div className="font-bold text-primary-600 text-lg">{item.our}</div>
               <div>
                 <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
-                  {t('dental.pricingTable.savings')} {item.savings}
+                  {item.savings}
                 </span>
               </div>
             </div>
@@ -310,7 +349,7 @@ function PackageSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {items.map(({ key, icon: Icon }) => (
-            <div key={key} className="bg-white/10 border border-white/15 rounded-xl p-8 text-center">
+            <div key={key} className="bg-white/10 border border-white/15 rounded-xl p-8 text-center hover:bg-white/15 transition-colors">
               <Icon className="w-10 h-10 mx-auto mb-4 opacity-90" />
               <h3 className="font-bold text-lg mb-2">{t(`dental.package.${key}.title`)}</h3>
               <p className="text-white/80 text-sm">{t(`dental.package.${key}.desc`)}</p>
@@ -320,6 +359,311 @@ function PackageSection() {
 
         <div className="text-center bg-white/10 p-5 rounded-lg">
           <p className="font-medium">{t('dental.packageNote')}</p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// === VIDEO SLIDER SECTION ===
+function VideoSliderSection() {
+  const { t } = useTranslation()
+  const [currentVideo, setCurrentVideo] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isMuted, setIsMuted] = useState(true)
+  const videoRef = useRef(null)
+
+  // Видео данные - замените URL на ваши реальные видео
+  const videos = [
+    {
+      id: 1,
+      title: 'Patient Testimonial: Maria',
+      titleRu: 'Отзыв пациента: Мария',
+      description: 'All-on-4 dental implants transformation',
+      descriptionRu: 'Трансформация с All-on-4 имплантами',
+      category: 'Testimonials',
+      categoryRu: 'Отзывы',
+      url: '../../public/videos/1.mp4', // Замените на ваш URL
+      thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/11/zespolowo-scaled.png',
+      duration: '2:34'
+    },
+    {
+      id: 2,
+      title: 'Dental Implant Procedure',
+      titleRu: 'Процедура имплантации',
+      description: 'Watch the complete implant process',
+      descriptionRu: 'Полный процесс установки импланта',
+      category: 'Procedures',
+      categoryRu: 'Процедуры',
+      url: '../../public/videos/2.mp4',
+      thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/10/d1.png',
+      duration: '3:15'
+    },
+    {
+      id: 3,
+      title: 'Smile Makeover Results',
+      titleRu: 'Результаты преображения улыбки',
+      description: 'Before and after transformations',
+      descriptionRu: 'До и после трансформации',
+      category: 'Results',
+      categoryRu: 'Результаты',
+      url: '../../public/videos/5.mp4',
+      thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/10/d2.png',
+      duration: '1:45'
+    },
+    {
+      id: 4,
+      title: 'Clinic Virtual Tour',
+      titleRu: 'Виртуальный тур по клинике',
+      description: 'Explore our modern facilities',
+      descriptionRu: 'Осмотрите наши современные помещения',
+      category: 'About Us',
+      categoryRu: 'О нас',
+      url: '../../public/videos/6.mp4',
+      thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/10/pozy.png',
+      duration: '2:20'
+    }
+  ]
+
+  const handlePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
+
+  const handleMuteToggle = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted
+      setIsMuted(!isMuted)
+    }
+  }
+
+  const handleVideoSelect = (index) => {
+    setCurrentVideo(index)
+    setIsPlaying(false)
+    if (videoRef.current) {
+      videoRef.current.load()
+    }
+  }
+
+  const handlePrevious = () => {
+    const newIndex = currentVideo === 0 ? videos.length - 1 : currentVideo - 1
+    handleVideoSelect(newIndex)
+  }
+
+  const handleNext = () => {
+    const newIndex = currentVideo === videos.length - 1 ? 0 : currentVideo + 1
+    handleVideoSelect(newIndex)
+  }
+
+  const handleFullscreen = () => {
+    if (videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen()
+      } else if (videoRef.current.webkitRequestFullscreen) {
+        videoRef.current.webkitRequestFullscreen()
+      }
+    }
+  }
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
+            <Play className="w-4 h-4" />
+            Video Gallery
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            See Our Expertise in Action
+          </h2>
+          <p className="text-secondary-500 text-lg">
+            Real procedures, real results, and happy patients from our clinic in Turkey
+          </p>
+        </div>
+
+        {/* Main Video Player */}
+        <div className="mb-8">
+          <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl aspect-video max-w-5xl mx-auto group">
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              poster={videos[currentVideo].thumbnail}
+              onEnded={() => setIsPlaying(false)}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              playsInline
+            >
+              <source src={videos[currentVideo].url} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Video Overlay Info */}
+            {!isPlaying && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none">
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                  <span className="inline-block px-3 py-1 bg-primary-600 rounded-full text-sm font-semibold mb-3">
+                    {videos[currentVideo].categoryRu}
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                    {videos[currentVideo].titleRu}
+                  </h3>
+                  <p className="text-white/90 text-lg mb-4">
+                    {videos[currentVideo].descriptionRu}
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-white/80">
+                    <span className="flex items-center gap-1">
+                      <Play className="w-4 h-4" />
+                      {videos[currentVideo].duration}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Play/Pause Button */}
+            <button
+              onClick={handlePlayPause}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center transition-all hover:scale-110 group-hover:w-24 group-hover:h-24 z-10"
+            >
+              {isPlaying ? (
+                <Pause className="w-10 h-10 text-white" fill="white" />
+              ) : (
+                <Play className="w-10 h-10 text-white ml-1" fill="white" />
+              )}
+            </button>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={handlePrevious}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
+            >
+              <ChevronLeft className="w-6 h-6 text-white" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
+            >
+              <ChevronRight className="w-6 h-6 text-white" />
+            </button>
+
+            {/* Video Controls */}
+            <div className="absolute bottom-4 right-4 flex gap-2 z-10">
+              <button
+                onClick={handleMuteToggle}
+                className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+              >
+                {isMuted ? (
+                  <VolumeX className="w-5 h-5 text-white" />
+                ) : (
+                  <Volume2 className="w-5 h-5 text-white" />
+                )}
+              </button>
+              <button
+                onClick={handleFullscreen}
+                className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+              >
+                <Maximize2 className="w-5 h-5 text-white" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Video Thumbnails Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-5xl mx-auto">
+          {videos.map((video, index) => (
+            <button
+              key={video.id}
+              onClick={() => handleVideoSelect(index)}
+              className={`relative rounded-xl overflow-hidden aspect-video group cursor-pointer transition-all ${
+                currentVideo === index
+                  ? 'ring-4 ring-primary-600 scale-105 shadow-xl'
+                  : 'hover:scale-105 hover:shadow-lg'
+              }`}
+            >
+              <img
+                src={video.thumbnail}
+                alt={video.titleRu}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              
+              {/* Play Icon */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className={`w-12 h-12 backdrop-blur-sm rounded-full flex items-center justify-center transition-all ${
+                  currentVideo === index 
+                    ? 'bg-primary-600' 
+                    : 'bg-white/30 group-hover:bg-white/50'
+                }`}>
+                  <Play className="w-6 h-6 text-white ml-0.5" fill="white" />
+                </div>
+              </div>
+
+              {/* Video Info */}
+              <div className="absolute bottom-0 left-0 right-0 p-3">
+                <span className="inline-block px-2 py-0.5 bg-black/50 backdrop-blur-sm rounded text-white text-xs font-semibold mb-1">
+                  {video.categoryRu}
+                </span>
+                <p className="text-white text-sm font-semibold line-clamp-2">
+                  {video.titleRu}
+                </p>
+                <p className="text-white/80 text-xs mt-1">{video.duration}</p>
+              </div>
+
+              {/* Active Indicator */}
+              {currentVideo === index && (
+                <div className="absolute top-3 right-3">
+                  <div className="w-3 h-3 bg-primary-600 rounded-full animate-pulse"></div>
+                </div>
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Progress Dots */}
+        <div className="flex justify-center gap-2 mb-12">
+          {videos.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handleVideoSelect(index)}
+              className={`h-2 rounded-full transition-all ${
+                currentVideo === index
+                  ? 'w-8 bg-primary-600'
+                  : 'w-2 bg-secondary-300 hover:bg-secondary-400'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-12">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            Ready to Transform Your Smile?
+          </h3>
+          <p className="text-secondary-600 text-lg mb-6 max-w-2xl mx-auto">
+            See more results in person! Book your free consultation today and start your journey to a perfect smile.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 btn btn-primary btn-lg"
+            >
+              Book Free Consultation
+              <ChevronRight className="w-5 h-5" />
+            </a>
+            <a
+              href="#pricing"
+              className="inline-flex items-center gap-2 btn btn-outline btn-lg"
+            >
+              View Pricing
+            </a>
+          </div>
         </div>
       </div>
     </section>
