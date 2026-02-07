@@ -383,7 +383,7 @@ function VideoSliderSection() {
       descriptionRu: 'Трансформация с All-on-4 имплантами',
       category: 'Testimonials',
       categoryRu: 'Отзывы',
-      url: '../../public/videos/1.mp4', // Замените на ваш URL
+      url: '/videos/1.mp4', // Замените на ваш URL
       thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/11/zespolowo-scaled.png',
       duration: '2:34'
     },
@@ -395,7 +395,7 @@ function VideoSliderSection() {
       descriptionRu: 'Полный процесс установки импланта',
       category: 'Procedures',
       categoryRu: 'Процедуры',
-      url: '../../public/videos/2.mp4',
+      url: '/public/videos/2.mp4',
       thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/10/d1.png',
       duration: '3:15'
     },
@@ -407,7 +407,7 @@ function VideoSliderSection() {
       descriptionRu: 'До и после трансформации',
       category: 'Results',
       categoryRu: 'Результаты',
-      url: '../../public/videos/5.mp4',
+      url: '/public/videos/5.mp4',
       thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/10/d2.png',
       duration: '1:45'
     },
@@ -419,7 +419,7 @@ function VideoSliderSection() {
       descriptionRu: 'Осмотрите наши современные помещения',
       category: 'About Us',
       categoryRu: 'О нас',
-      url: '../../public/videos/6.mp4',
+      url: '/public/videos/6.mp4',
       thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/10/pozy.png',
       duration: '2:20'
     }

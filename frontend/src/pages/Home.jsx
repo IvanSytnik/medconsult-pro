@@ -6,9 +6,9 @@ import {
 } from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
 import { ToothIcon, SyringeIcon, ScissorsIcon, SparkleIcon } from '../components/ui/MedicalIcon'
-import OlegImg from "../photo/oleg.jpeg";
+import OlegImg from "../photo/oleg.png";
 import AlexImg from "../photo/alex.png";
-import GalinaImg from "../photo/galina.jpeg";
+import GalinaImg from "../photo/galina.png";
 
 export default function Home() {
   const { t } = useTranslation()
@@ -149,9 +149,9 @@ function ServicesSection() {
 
   const services = [
     { key: 'dental', IconComponent: ToothIcon, link: '/dental', price: '€450' },
-    { key: 'plastic', IconComponent: SyringeIcon, link: '/plastic', price: '€2,500', soon: true },
-    { key: 'hair', IconComponent: ScissorsIcon, link: '/hair', price: '€1,800', soon: true },
-    { key: 'aesthetic', IconComponent: SparkleIcon, link: '/aesthetic', price: '€150', soon: true },
+    { key: 'plastic', IconComponent: SyringeIcon, link: '/plastic', price: '€2,500'},
+    { key: 'hair', IconComponent: ScissorsIcon, link: '/hair', price: '€1,800'},
+    { key: 'aesthetic', IconComponent: SparkleIcon, link: '/aesthetic', price: '€150'},
   ]
 
   return (
