@@ -321,5 +321,557 @@
     "text": "This section is under development. Contact us for a free consultation!",
     "btnConsultation": "Get Consultation",
     "btnHome": "Back to Home"
+  },
+"plastic": {
+    "hero": {
+      "tag": "Plastic Surgery",
+      "title": "Plastic Surgery",
+      "titleAccent": "in Turkey",
+      "description": "Rhinoplasty, mammoplasty, abdominoplasty and other surgeries in JCI internationally accredited clinics. Experienced surgeons, modern equipment and affordable prices.",
+      "consultation": "Free Consultation",
+      "procedures": "Types of Surgeries",
+      "stats": {
+        "price": "Average Price",
+        "accreditation": "Accreditation",
+        "savings": "Savings",
+        "experience": "Years of Experience"
+      }
+    },
+    "why": {
+      "tag": "Advantages",
+      "title": "Why Choose Us for Plastic Surgery",
+      "subtitle": "We offer a comprehensive approach and the highest quality medical services",
+      "items": {
+        "surgeons": {
+          "title": "Experienced Surgeons",
+          "desc": "Board-certified plastic surgeons with international education and over 15 years of practice"
+        },
+        "safety": {
+          "title": "Safety",
+          "desc": "JCI and ISO accredited clinics meeting international quality standards"
+        },
+        "individual": {
+          "title": "Individual Approach",
+          "desc": "Personalized treatment plan considering your unique features and wishes"
+        },
+        "equipment": {
+          "title": "Modern Equipment",
+          "desc": "Latest technologies and techniques for minimal invasiveness and fast recovery"
+        },
+        "care": {
+          "title": "Comprehensive Care",
+          "desc": "Full support from consultation to rehabilitation with 24/7 assistance"
+        },
+        "recovery": {
+          "title": "Fast Recovery",
+          "desc": "Use of minimally invasive techniques to reduce rehabilitation period"
+        }
+      }
+    },
+    "procedures": {
+      "tag": "Procedures",
+      "title": "Our Plastic Surgery Services",
+      "subtitle": "Wide range of procedures to achieve your aesthetic goals",
+      "durationLabel": "Duration:",
+      "recoveryLabel": "Recovery:",
+      "from": "From",
+      "learnMore": "Learn More →",
+      "list": {
+        "rhinoplasty": {
+          "title": "Rhinoplasty",
+          "desc": "Nose reshaping to improve aesthetics and breathing function",
+          "price": "€3,000",
+          "duration": "2-3 hours",
+          "recovery": "7-10 days"
+        },
+        "mammoplasty": {
+          "title": "Mammoplasty",
+          "desc": "Breast augmentation, reduction or lift for harmonious proportions",
+          "price": "€4,500",
+          "duration": "2-4 hours",
+          "recovery": "10-14 days"
+        },
+        "abdominoplasty": {
+          "title": "Abdominoplasty",
+          "desc": "Tummy tuck with removal of excess skin and fat",
+          "price": "€3,400",
+          "duration": "3-5 hours",
+          "recovery": "14-21 days"
+        },
+        "liposuction": {
+          "title": "Liposuction",
+          "desc": "Removal of localized fat deposits for precise contouring",
+          "price": "€2,500",
+          "duration": "1-3 hours",
+          "recovery": "7-10 days"
+        },
+        "facelift": {
+          "title": "Facelift",
+          "desc": "Face lift for rejuvenation and elimination of age-related changes",
+          "price": "€5,500",
+          "duration": "4-6 hours",
+          "recovery": "14-21 days"
+        },
+        "mommyMakeover": {
+          "title": "Mommy Makeover",
+          "desc": "Comprehensive body correction after pregnancy",
+          "price": "€7,500",
+          "duration": "5-7 hours",
+          "recovery": "21-30 days"
+        }
+      }
+    },
+    "benefits": {
+      "tag": "Service Package",
+      "title": "What's Included in the Price",
+      "description": "We offer comprehensive packages that include everything necessary for your comfort and safety.",
+      "savingsLabel": "💰 Savings Compared to Germany",
+      "savingsValue": "Up to 60-70%",
+      "list": [
+        "Consultation with plastic surgeon",
+        "All pre-operative tests",
+        "Surgery and anesthesia",
+        "Hospital stay",
+        "Post-operative monitoring",
+        "Compression garments",
+        "Airport-hotel-clinic transfer",
+        "Medical translator"
+      ]
+    },
+    "process": {
+      "tag": "Process",
+      "title": "How Treatment Works",
+      "subtitle": "Four simple steps to your transformation",
+      "steps": {
+        "consultation": {
+          "title": "Consultation",
+          "desc": "Initial consultation online or in person, discussion of goals and expectations"
+        },
+        "planning": {
+          "title": "Planning",
+          "desc": "Development of individual surgery plan and preparation for procedure"
+        },
+        "operation": {
+          "title": "Surgery",
+          "desc": "Surgery performed by experienced surgeon using modern technologies"
+        },
+        "recovery": {
+          "title": "Recovery",
+          "desc": "Post-operative monitoring and support until full recovery"
+        }
+      }
+    },
+    "results": {
+      "tag": "Results",
+      "title": "Trust the Experience of Our Specialists",
+      "subtitle": "Thousands of satisfied patients have already chosen our clinics for plastic surgery. Join them!",
+      "bookConsultation": "Book a Consultation",
+      "stats": {
+        "satisfaction": "Patient Satisfaction",
+        "operations": "Surgeries Annually",
+        "experience": "Years of Experience"
+      }
+    },
+    "contact": {
+      "tag": "Contact",
+      "title": "Contact Us",
+      "subtitle": "Get a free consultation and personalized treatment plan",
+      "directContact": "Or contact directly:",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    }
+  },
+ "hair": {
+    "hero": {
+      "tag": "Hair Transplantation",
+      "title": "Hair Transplantation",
+      "titleAccent": "in Turkey",
+      "description": "Modern FUE and DHI hair transplant methods in leading Istanbul clinics. Natural results, minimal invasiveness and lifetime guarantee.",
+      "freeAnalysis": "Free Hair Analysis",
+      "methods": "Transplant Methods",
+      "stats": {
+        "price": "Average Price",
+        "grafts": "Grafts",
+        "survival": "Survival Rate",
+        "operations": "Operations Per Year"
+      }
+    },
+    "why": {
+      "tag": "Advantages",
+      "title": "Why Choose Turkey for Hair Transplantation",
+      "subtitle": "Combination of high quality, affordable prices and world experience",
+      "items": {
+        "leaders": {
+          "title": "World Leaders",
+          "desc": "Turkey performs over 1.5 million hair transplants annually - more than any other country"
+        },
+        "guarantee": {
+          "title": "Lifetime Guarantee",
+          "desc": "Transplanted hair lasts a lifetime thanks to unique properties of the donor area"
+        },
+        "technology": {
+          "title": "Advanced Technology",
+          "desc": "FUE Sapphire and DHI methods ensure maximum density and natural results"
+        },
+        "specialists": {
+          "title": "Experienced Specialists",
+          "desc": "Doctors perform 50-100 operations per month, accumulating unique experience and expertise"
+        },
+        "precision": {
+          "title": "Implantation Precision",
+          "desc": "Control of angle, direction and depth of each graft for perfect results"
+        },
+        "survival": {
+          "title": "High Survival Rate",
+          "desc": "Up to 95-98% of transplanted follicles successfully take root due to minimal time outside the body"
+        }
+      }
+    },
+    "methods": {
+      "tag": "Methods",
+      "title": "Hair Transplantation Methods",
+      "subtitle": "Choose the right technique based on your goals and budget",
+      "graftsLabel": "Grafts:",
+      "recoveryLabel": "Recovery:",
+      "survivalLabel": "Survival Rate:",
+      "from": "From",
+      "learnMore": "Learn More →",
+      "list": {
+        "fue": {
+          "title": "FUE (Follicular Unit Extraction)",
+          "desc": "Classic method of extracting follicles one by one with minimal scarring",
+          "price": "€1,800 - €2,500",
+          "grafts": "2,000-3,000",
+          "recovery": "7 days",
+          "survival": "90-95%"
+        },
+        "sapphire": {
+          "title": "FUE Sapphire",
+          "desc": "Use of sapphire blades for more precise channels and faster healing",
+          "price": "€2,500 - €3,500",
+          "grafts": "3,000-4,000",
+          "recovery": "5 days",
+          "survival": "95-97%"
+        },
+        "dhi": {
+          "title": "DHI (Direct Hair Implantation)",
+          "desc": "Direct implantation using Choi Pen without preliminary channels",
+          "price": "€3,000 - €4,500",
+          "grafts": "3,000-5,000",
+          "recovery": "5 days",
+          "survival": "95-98%"
+        },
+        "dhiPrp": {
+          "title": "DHI + PRP Therapy",
+          "desc": "Combination of DHI with platelet-rich plasma for improved growth and density",
+          "price": "€4,000 - €5,500",
+          "grafts": "4,000-5,000",
+          "recovery": "4 days",
+          "survival": "97-98%"
+        },
+        "beard": {
+          "title": "Beard Transplant",
+          "desc": "Restoration of beard and mustache density with natural results",
+          "price": "€1,500 - €2,500",
+          "grafts": "1,500-2,500",
+          "recovery": "5 days",
+          "survival": "90-95%"
+        },
+        "afro": {
+          "title": "Afro Transplantation",
+          "desc": "Specialized technique for curly and kinky hair",
+          "price": "€2,500 - €4,000",
+          "grafts": "2,500-4,000",
+          "recovery": "7 days",
+          "survival": "90-95%"
+        }
+      }
+    },
+    "benefits": {
+      "tag": "All-Inclusive Package",
+      "title": "What's Included in the Price",
+      "description": "Comprehensive package with accommodation, transfer and everything needed for comfortable treatment.",
+      "savingsLabel": "💰 Savings Compared to Europe",
+      "savingsValue": "Up to 70%",
+      "list": [
+        "Free online hair analysis and consultation",
+        "Pre-operative tests and examinations",
+        "Surgery (up to 5,000 grafts)",
+        "Local anesthesia and sedation",
+        "PRP therapy for growth stimulation",
+        "Post-surgery care kit",
+        "4-5* hotel accommodation (3-5 nights)",
+        "VIP transfer airport-hotel-clinic",
+        "Personal Russian-speaking translator",
+        "Lifetime result guarantee"
+      ]
+    },
+    "process": {
+      "tag": "Process",
+      "title": "How Transplantation Works",
+      "subtitle": "From first contact to thick hair - just 4 steps",
+      "timelineTitle": "Hair Growth Timeline",
+      "steps": {
+        "analysis": {
+          "title": "Online Analysis",
+          "desc": "Send photos, receive free analysis and treatment plan from specialist"
+        },
+        "preparation": {
+          "title": "Preparation",
+          "desc": "Book hotel and transfer, conduct pre-operative tests"
+        },
+        "operation": {
+          "title": "Surgery",
+          "desc": "Extraction and implantation of grafts (6-8 hours) under local anesthesia"
+        },
+        "result": {
+          "title": "Result",
+          "desc": "First hair after 3 months, final result after 12-18 months"
+        }
+      },
+      "timeline": {
+        "weeks": {
+          "title": "2-4 weeks",
+          "desc": "Shedding of transplanted hair (normal)"
+        },
+        "months3": {
+          "title": "3-4 months",
+          "desc": "Beginning of new hair growth"
+        },
+        "months6": {
+          "title": "6-9 months",
+          "desc": "Noticeable increase in density"
+        },
+        "months12": {
+          "title": "12-18 months",
+          "desc": "Final result"
+        }
+      }
+    },
+    "results": {
+      "tag": "Results",
+      "title": "Turkey - World Capital of Hair Transplantation",
+      "subtitle": "Over 500,000 patients annually choose Turkish clinics for hair restoration",
+      "getFreeAnalysis": "Get Free Analysis",
+      "stats": {
+        "survival": "Graft Survival Rate",
+        "operations": "Operations Per Year",
+        "savings": "Cost Savings",
+        "lifetime": "Lifetime Result"
+      }
+    },
+    "contact": {
+      "tag": "Contact",
+      "title": "Get Free Hair Analysis",
+      "subtitle": "Send photos and find out the exact cost and number of grafts",
+      "directContact": "Or contact directly:",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    }
+  },
+  "aesthetic": {
+    "hero": {
+      "tag": "Aesthetic Medicine",
+      "title": "Aesthetic Medicine",
+      "titleAccent": "in Turkey",
+      "description": "Non-surgical rejuvenation and appearance correction. Botox, fillers, mesotherapy and other procedures from leading specialists.",
+      "consultation": "Book a Consultation",
+      "allTreatments": "All Procedures",
+      "stats": {
+        "price": "Average Price",
+        "downtime": "No Downtime",
+        "savings": "Savings",
+        "procedures": "Procedures"
+      }
+    },
+    "why": {
+      "tag": "Advantages",
+      "title": "Why Choose Us for Aesthetic Procedures",
+      "subtitle": "Safety, quality and natural beauty",
+      "items": {
+        "specialists": {
+          "title": "Certified Specialists",
+          "desc": "Dermatologists and cosmetologists with international certification and years of experience"
+        },
+        "original": {
+          "title": "Original Products",
+          "desc": "We use only certified products from leading manufacturers (Allergan, Ipsen)"
+        },
+        "natural": {
+          "title": "Natural Result",
+          "desc": "Delicate approach to preserve naturalness and individuality of facial features"
+        },
+        "individual": {
+          "title": "Individual Plan",
+          "desc": "Personalized treatment program based on skin type and age-related features"
+        },
+        "fast": {
+          "title": "Fast Effect",
+          "desc": "Results visible immediately after procedure, maximum effect in 7-14 days"
+        },
+        "minimal": {
+          "title": "Minimal Time",
+          "desc": "Most procedures take 20-60 minutes without hospitalization"
+        }
+      }
+    },
+    "treatments": {
+      "tag": "Procedures",
+      "title": "Our Aesthetic Medicine Services",
+      "subtitle": "Wide range of non-surgical procedures for beauty and rejuvenation",
+      "duration": "Duration:",
+      "effect": "Effect:",
+      "downtime": "Downtime:",
+      "from": "From",
+      "learnMore": "Learn More →",
+      "list": {
+        "botox": {
+          "title": "Botox",
+          "desc": "Smoothing facial wrinkles on forehead, between eyebrows and around eyes",
+          "price": "€150 - €300",
+          "duration": "20-30 minutes",
+          "result": "3-6 months",
+          "downtime": "None"
+        },
+        "fillers": {
+          "title": "Dermal Fillers",
+          "desc": "Restoring volume of lips, cheeks and correcting nasolabial folds",
+          "price": "€200 - €500",
+          "duration": "30-45 minutes",
+          "result": "6-18 months",
+          "downtime": "1-2 days"
+        },
+        "mesotherapy": {
+          "title": "Mesotherapy",
+          "desc": "Vitamin cocktail injections to improve skin quality and hydration",
+          "price": "€80 - €150",
+          "duration": "30 minutes",
+          "result": "3-6 months",
+          "downtime": "None"
+        },
+        "prp": {
+          "title": "PRP Therapy",
+          "desc": "Platelet-rich plasma for skin rejuvenation and regeneration stimulation",
+          "price": "€150 - €250",
+          "duration": "45 minutes",
+          "result": "6-12 months",
+          "downtime": "1-2 days"
+        },
+        "peeling": {
+          "title": "Chemical Peel",
+          "desc": "Skin renewal, reduction of pigmentation and texture improvement",
+          "price": "€100 - €250",
+          "duration": "30-60 minutes",
+          "result": "3-6 months",
+          "downtime": "3-7 days"
+        },
+        "laser": {
+          "title": "Laser Resurfacing",
+          "desc": "Removal of scars, wrinkles and improvement of overall skin tone",
+          "price": "€200 - €400",
+          "duration": "30-90 minutes",
+          "result": "12-24 months",
+          "downtime": "5-7 days"
+        },
+        "threads": {
+          "title": "Thread Lift",
+          "desc": "Face and neck lifting with biodegradable threads",
+          "price": "€300 - €600",
+          "duration": "60-90 minutes",
+          "result": "12-24 months",
+          "downtime": "3-5 days"
+        },
+        "removal": {
+          "title": "Lesion Removal",
+          "desc": "Safe removal of moles, papillomas and other benign formations",
+          "price": "€50 - €200",
+          "duration": "15-30 minutes",
+          "result": "Permanent",
+          "downtime": "7-10 days"
+        },
+        "contouring": {
+          "title": "Facial Contouring",
+          "desc": "Correction of chin, cheekbones and other facial areas with fillers",
+          "price": "€250 - €600",
+          "duration": "45-60 minutes",
+          "result": "12-18 months",
+          "downtime": "2-3 days"
+        }
+      }
+    },
+    "benefits": {
+      "tag": "What You Get",
+      "title": "Comprehensive Approach to Beauty",
+      "description": "We care not only about the procedure result, but also about your comfort at every stage.",
+      "savingsLabel": "💰 Savings Compared to Europe",
+      "savingsValue": "Up to 70%",
+      "list": [
+        "Initial consultation with dermatologist",
+        "Individual treatment plan",
+        "Original certified products",
+        "Procedure with anesthesia",
+        "Aftercare recommendations",
+        "Home care product set",
+        "Follow-up examination",
+        "Online consultation after procedure"
+      ]
+    },
+    "process": {
+      "tag": "Process",
+      "title": "How Procedures Work",
+      "subtitle": "Simple and comfortable path to your beauty",
+      "featuresTitle": "Procedure Features",
+      "steps": {
+        "consultation": {
+          "title": "Consultation",
+          "desc": "Specialist examination, goal discussion and procedure selection"
+        },
+        "preparation": {
+          "title": "Preparation",
+          "desc": "Skin cleansing, application of numbing cream if necessary"
+        },
+        "procedure": {
+          "title": "Procedure",
+          "desc": "Injections or device manipulations (20-90 minutes)"
+        },
+        "care": {
+          "title": "Care",
+          "desc": "Aftercare recommendations and follow-up examination in 2 weeks"
+        }
+      },
+      "features": {
+        "fast": {
+          "title": "Fast",
+          "desc": "Most procedures take up to 1 hour"
+        },
+        "safe": {
+          "title": "Safe",
+          "desc": "Only FDA/CE certified products"
+        },
+        "effective": {
+          "title": "Effective",
+          "desc": "Results visible immediately and last for months"
+        }
+      }
+    },
+    "results": {
+      "tag": "Results",
+      "title": "Your Natural Beauty is Our Goal",
+      "subtitle": "We help you look better while preserving your individuality and naturalness",
+      "bookProcedure": "Book a Procedure",
+      "stats": {
+        "satisfaction": "Result Satisfaction",
+        "procedures": "Procedures Monthly",
+        "downtime": "Days Downtime"
+      }
+    },
+    "contact": {
+      "tag": "Contact",
+      "title": "Book a Consultation",
+      "subtitle": "Get an individual treatment plan and find out the exact cost",
+      "directContact": "Or contact directly:",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    }
   }
 }
