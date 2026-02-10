@@ -206,7 +206,14 @@
     "privacy": "Datenschutz",
     "copyright": "Alle Rechte vorbehalten."
   },
-  "dental": {
+  "dental": { 
+    "videos": {
+  "tag": "Videogalerie",
+  "title": "Unsere Expertise in Aktion",
+  "subtitle": "Echte Eingriffe, echte Ergebnisse und zufriedene Patienten aus unserer Klinik in der Türkei",
+  "ctaTitle": "Bereit für Ihr neues Lächeln?",
+  "ctaDesc": "Überzeugen Sie sich selbst! Buchen Sie noch heute Ihre kostenlose Beratung und starten Sie den Weg zu einem perfekten Lächeln."
+},
     "back": "Zurück zur Startseite",
     "badge": "Partnerklinik Dentanatura",
     "heroTitle": "Zahnmedizin in der Türkei",
