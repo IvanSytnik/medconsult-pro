@@ -377,27 +377,27 @@ function VideoSliderSection() {
     {
       id: 1,
       url: 'https://res.cloudinary.com/di36itbpm/video/upload/7_mig4ta.mp4',
-      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/7_mig4ta.jpg',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_400/7_mig4ta.jpg',
     },
     {
       id: 2,
       url: 'https://res.cloudinary.com/di36itbpm/video/upload/2_gjhs9z.mp4',
-      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/2_gjhs9z.jpg',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_400/2_gjhs9z.jpg',
     },
     {
       id: 3,
       url: 'https://res.cloudinary.com/di36itbpm/video/upload/6_c25jdc.mp4',
-      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/6_c25jdc.jpg',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_400/6_c25jdc.jpg',
     },
     {
       id: 4,
       url: 'https://res.cloudinary.com/di36itbpm/video/upload/1_uxj8lj.mp4',
-      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/1_uxj8lj.jpg',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_400/1_uxj8lj.jpg',
     },
     {
       id: 5,
       url: 'https://res.cloudinary.com/di36itbpm/video/upload/5_oaqkv5.mp4',
-      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/5_oaqkv5.jpg',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_400/5_oaqkv5.jpg',
     }
   ]
 
@@ -464,125 +464,123 @@ function VideoSliderSection() {
           </p>
         </div>
 
-        {/* Main Video Player */}
-        <div className="mb-8">
-          <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl aspect-video max-w-5xl mx-auto group">
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover"
-              poster={videos[currentVideo].thumbnail}
-              onEnded={() => setIsPlaying(false)}
-              onPlay={() => setIsPlaying(true)}
-              onPause={() => setIsPlaying(false)}
-              playsInline
+        {/* Video Player + Thumbnails */}
+        <div className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto mb-12 items-start justify-center">
+          
+          {/* Main Video Player - Vertical 9:16 */}
+          <div className="flex-shrink-0 mx-auto lg:mx-0">
+            <div
+              className="relative bg-black rounded-2xl overflow-hidden shadow-2xl group w-[300px] sm:w-[340px]"
+              style={{ aspectRatio: '9/16' }}
             >
-              <source src={videos[currentVideo].url} type="video/mp4" />
-            </video>
-
-            {/* Play/Pause Button */}
-            <button
-              onClick={handlePlayPause}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center transition-all hover:scale-110 group-hover:w-24 group-hover:h-24 z-10"
-            >
-              {isPlaying ? (
-                <Pause className="w-10 h-10 text-white" fill="white" />
-              ) : (
-                <Play className="w-10 h-10 text-white ml-1" fill="white" />
-              )}
-            </button>
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={handlePrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
-            >
-              <ChevronLeft className="w-6 h-6 text-white" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
-            >
-              <ChevronRight className="w-6 h-6 text-white" />
-            </button>
-
-            {/* Video Controls */}
-            <div className="absolute bottom-4 right-4 flex gap-2 z-10">
-              <button
-                onClick={handleMuteToggle}
-                className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+              <video
+                ref={videoRef}
+                className="w-full h-full object-contain bg-black"
+                poster={videos[currentVideo].thumbnail}
+                onEnded={() => setIsPlaying(false)}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                playsInline
               >
-                {isMuted ? (
-                  <VolumeX className="w-5 h-5 text-white" />
+                <source src={videos[currentVideo].url} type="video/mp4" />
+              </video>
+
+              {/* Play/Pause */}
+              <button
+                onClick={handlePlayPause}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center transition-all hover:scale-110 z-10"
+              >
+                {isPlaying ? (
+                  <Pause className="w-8 h-8 text-white" fill="white" />
                 ) : (
-                  <Volume2 className="w-5 h-5 text-white" />
+                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
                 )}
               </button>
+
+              {/* Prev / Next */}
               <button
-                onClick={handleFullscreen}
-                className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+                onClick={handlePrevious}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
               >
-                <Maximize2 className="w-5 h-5 text-white" />
+                <ChevronLeft className="w-5 h-5 text-white" />
               </button>
+              <button
+                onClick={handleNext}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
+              >
+                <ChevronRight className="w-5 h-5 text-white" />
+              </button>
+
+              {/* Controls */}
+              <div className="absolute bottom-4 right-4 flex gap-2 z-10">
+                <button
+                  onClick={handleMuteToggle}
+                  className="w-9 h-9 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-4 h-4 text-white" />
+                  ) : (
+                    <Volume2 className="w-4 h-4 text-white" />
+                  )}
+                </button>
+                <button
+                  onClick={handleFullscreen}
+                  className="w-9 h-9 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+                >
+                  <Maximize2 className="w-4 h-4 text-white" />
+                </button>
+              </div>
+
+              {/* Counter */}
+              <div className="absolute top-4 left-4 px-3 py-1 bg-black/50 backdrop-blur-sm rounded-full text-white text-sm font-medium z-10">
+                {currentVideo + 1} / {videos.length}
+              </div>
+            </div>
+          </div>
+
+          {/* Thumbnails - vertical cards beside the player */}
+          <div className="flex-1 w-full lg:w-auto">
+            <div className="grid grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3">
+              {videos.map((video, index) => (
+                <button
+                  key={video.id}
+                  onClick={() => handleVideoSelect(index)}
+                  className={`relative rounded-xl overflow-hidden group cursor-pointer transition-all ${
+                    currentVideo === index
+                      ? 'ring-3 ring-primary-600 scale-[1.03] shadow-xl'
+                      : 'hover:scale-[1.03] hover:shadow-lg opacity-70 hover:opacity-100'
+                  }`}
+                  style={{ aspectRatio: '9/16' }}
+                >
+                  <img
+                    src={video.thumbnail}
+                    alt={`Video ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                  
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className={`w-10 h-10 backdrop-blur-sm rounded-full flex items-center justify-center transition-all ${
+                      currentVideo === index 
+                        ? 'bg-primary-600' 
+                        : 'bg-white/30 group-hover:bg-white/50'
+                    }`}>
+                      <Play className="w-5 h-5 text-white ml-0.5" fill="white" />
+                    </div>
+                  </div>
+
+                  {currentVideo === index && (
+                    <div className="absolute top-2 right-2">
+                      <div className="w-2.5 h-2.5 bg-primary-600 rounded-full animate-pulse" />
+                    </div>
+                  )}
+                </button>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Video Thumbnails Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8 max-w-5xl mx-auto">
-          {videos.map((video, index) => (
-            <button
-              key={video.id}
-              onClick={() => handleVideoSelect(index)}
-              className={`relative rounded-xl overflow-hidden aspect-video group cursor-pointer transition-all ${
-                currentVideo === index
-                  ? 'ring-4 ring-primary-600 scale-105 shadow-xl'
-                  : 'hover:scale-105 hover:shadow-lg'
-              }`}
-            >
-              <img
-                src={video.thumbnail}
-                alt={`Video ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/30" />
-              
-              {/* Play Icon */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className={`w-12 h-12 backdrop-blur-sm rounded-full flex items-center justify-center transition-all ${
-                  currentVideo === index 
-                    ? 'bg-primary-600' 
-                    : 'bg-white/30 group-hover:bg-white/50'
-                }`}>
-                  <Play className="w-6 h-6 text-white ml-0.5" fill="white" />
-                </div>
-              </div>
-
-              {/* Active Indicator */}
-              {currentVideo === index && (
-                <div className="absolute top-3 right-3">
-                  <div className="w-3 h-3 bg-primary-600 rounded-full animate-pulse"></div>
-                </div>
-              )}
-            </button>
-          ))}
-        </div>
-
-        {/* Progress Dots */}
-        <div className="flex justify-center gap-2 mb-12">
-          {videos.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handleVideoSelect(index)}
-              className={`h-2 rounded-full transition-all ${
-                currentVideo === index
-                  ? 'w-8 bg-primary-600'
-                  : 'w-2 bg-secondary-300 hover:bg-secondary-400'
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* Call to Action */}
+        {/* CTA */}
         <div className="text-center bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-12">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             {t('dental.videos.ctaTitle')}
@@ -591,17 +589,11 @@ function VideoSliderSection() {
             {t('dental.videos.ctaDesc')}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 btn btn-primary btn-lg"
-            >
+            <a href="#contact" className="inline-flex items-center gap-2 btn btn-primary btn-lg">
               {t('hero.btnConsultation')}
               <ChevronRight className="w-5 h-5" />
             </a>
-            <a
-              href="#pricing"
-              className="inline-flex items-center gap-2 btn btn-outline btn-lg"
-            >
+            <a href="#pricing" className="inline-flex items-center gap-2 btn btn-outline btn-lg">
               {t('dental.pricingTag')}
             </a>
           </div>
