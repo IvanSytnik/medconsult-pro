@@ -373,55 +373,31 @@ function VideoSliderSection() {
   const [isMuted, setIsMuted] = useState(true)
   const videoRef = useRef(null)
 
-  // Видео данные - замените URL на ваши реальные видео
   const videos = [
     {
       id: 1,
-      title: 'Patient Testimonial: Maria',
-      titleRu: 'Отзыв пациента: Мария',
-      description: 'All-on-4 dental implants transformation',
-      descriptionRu: 'Трансформация с All-on-4 имплантами',
-      category: 'Testimonials',
-      categoryRu: 'Отзывы',
-      url: '/videos/1.mp4', // Замените на ваш URL
-      thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/11/zespolowo-scaled.png',
-      duration: '2:34'
+      url: 'https://res.cloudinary.com/di36itbpm/video/upload/7_mig4ta.mp4',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/7_mig4ta.jpg',
     },
     {
       id: 2,
-      title: 'Dental Implant Procedure',
-      titleRu: 'Процедура имплантации',
-      description: 'Watch the complete implant process',
-      descriptionRu: 'Полный процесс установки импланта',
-      category: 'Procedures',
-      categoryRu: 'Процедуры',
-      url: '/videos/2.mp4',
-      thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/10/d1.png',
-      duration: '3:15'
+      url: 'https://res.cloudinary.com/di36itbpm/video/upload/2_gjhs9z.mp4',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/2_gjhs9z.jpg',
     },
     {
       id: 3,
-      title: 'Smile Makeover Results',
-      titleRu: 'Результаты преображения улыбки',
-      description: 'Before and after transformations',
-      descriptionRu: 'До и после трансформации',
-      category: 'Results',
-      categoryRu: 'Результаты',
-      url: '/videos/5.mp4',
-      thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/10/d2.png',
-      duration: '1:45'
+      url: 'https://res.cloudinary.com/di36itbpm/video/upload/6_c25jdc.mp4',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/6_c25jdc.jpg',
     },
     {
       id: 4,
-      title: 'Clinic Virtual Tour',
-      titleRu: 'Виртуальный тур по клинике',
-      description: 'Explore our modern facilities',
-      descriptionRu: 'Осмотрите наши современные помещения',
-      category: 'About Us',
-      categoryRu: 'О нас',
-      url: '/videos/6.mp4',
-      thumbnail: 'https://dentanatura.com/wp-content/uploads/2025/10/pozy.png',
-      duration: '2:20'
+      url: 'https://res.cloudinary.com/di36itbpm/video/upload/1_uxj8lj.mp4',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/1_uxj8lj.jpg',
+    },
+    {
+      id: 5,
+      url: 'https://res.cloudinary.com/di36itbpm/video/upload/5_oaqkv5.mp4',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_800/5_oaqkv5.jpg',
     }
   ]
 
@@ -478,13 +454,13 @@ function VideoSliderSection() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
             <Play className="w-4 h-4" />
-            Video Gallery
+            {t('dental.videos.tag')}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            See Our Expertise in Action
+            {t('dental.videos.title')}
           </h2>
           <p className="text-secondary-500 text-lg">
-            Real procedures, real results, and happy patients from our clinic in Turkey
+            {t('dental.videos.subtitle')}
           </p>
         </div>
 
@@ -501,31 +477,7 @@ function VideoSliderSection() {
               playsInline
             >
               <source src={videos[currentVideo].url} type="video/mp4" />
-              Your browser does not support the video tag.
             </video>
-
-            {/* Video Overlay Info */}
-            {!isPlaying && (
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none">
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <span className="inline-block px-3 py-1 bg-primary-600 rounded-full text-sm font-semibold mb-3">
-                    {videos[currentVideo].categoryRu}
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                    {videos[currentVideo].titleRu}
-                  </h3>
-                  <p className="text-white/90 text-lg mb-4">
-                    {videos[currentVideo].descriptionRu}
-                  </p>
-                  <div className="flex items-center gap-4 text-sm text-white/80">
-                    <span className="flex items-center gap-1">
-                      <Play className="w-4 h-4" />
-                      {videos[currentVideo].duration}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
 
             {/* Play/Pause Button */}
             <button
@@ -576,7 +528,7 @@ function VideoSliderSection() {
         </div>
 
         {/* Video Thumbnails Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8 max-w-5xl mx-auto">
           {videos.map((video, index) => (
             <button
               key={video.id}
@@ -589,10 +541,10 @@ function VideoSliderSection() {
             >
               <img
                 src={video.thumbnail}
-                alt={video.titleRu}
+                alt={`Video ${index + 1}`}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-black/30" />
               
               {/* Play Icon */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -603,17 +555,6 @@ function VideoSliderSection() {
                 }`}>
                   <Play className="w-6 h-6 text-white ml-0.5" fill="white" />
                 </div>
-              </div>
-
-              {/* Video Info */}
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <span className="inline-block px-2 py-0.5 bg-black/50 backdrop-blur-sm rounded text-white text-xs font-semibold mb-1">
-                  {video.categoryRu}
-                </span>
-                <p className="text-white text-sm font-semibold line-clamp-2">
-                  {video.titleRu}
-                </p>
-                <p className="text-white/80 text-xs mt-1">{video.duration}</p>
               </div>
 
               {/* Active Indicator */}
@@ -644,24 +585,24 @@ function VideoSliderSection() {
         {/* Call to Action */}
         <div className="text-center bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-12">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Ready to Transform Your Smile?
+            {t('dental.videos.ctaTitle')}
           </h3>
           <p className="text-secondary-600 text-lg mb-6 max-w-2xl mx-auto">
-            See more results in person! Book your free consultation today and start your journey to a perfect smile.
+            {t('dental.videos.ctaDesc')}
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a
               href="#contact"
               className="inline-flex items-center gap-2 btn btn-primary btn-lg"
             >
-              Book Free Consultation
+              {t('hero.btnConsultation')}
               <ChevronRight className="w-5 h-5" />
             </a>
             <a
               href="#pricing"
               className="inline-flex items-center gap-2 btn btn-outline btn-lg"
             >
-              View Pricing
+              {t('dental.pricingTag')}
             </a>
           </div>
         </div>
@@ -669,6 +610,7 @@ function VideoSliderSection() {
     </section>
   )
 }
+
 
 // === CONTACT SECTION ===
 function DentalContactSection() {
