@@ -1,8 +1,11 @@
+import { useState, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { 
   Shield, Award, Users, HeartPulse, CheckCircle2, 
-  MessageCircle, Calendar, Plane, Stethoscope, Clock
+  MessageCircle, Calendar, Plane, Stethoscope, Clock,
+  Play, Pause, ChevronLeft, ChevronRight, ChevronRight as ChevronRightIcon,
+  VolumeX, Volume2, Maximize2
 } from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
 import { SyringeIcon } from '../components/ui/MedicalIcon'
@@ -15,6 +18,7 @@ export default function Plastic() {
       <HeroSection />
       <WhyPlasticSection />
       <ProceduresSection />
+      <VideoSliderSection />
       <BenefitsSection />
       <ProcessSection />
       <ResultsSection />
@@ -238,6 +242,241 @@ function ProceduresSection() {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// === VIDEO SLIDER SECTION ===
+function VideoSliderSection() {
+  const { t } = useTranslation()
+  const [currentVideo, setCurrentVideo] = useState(0)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [isMuted, setIsMuted] = useState(true)
+  const videoRef = useRef(null)
+
+  // 3 placeholder videos — replace URLs with real plastic surgery videos
+ const videos = [
+    {
+      id: 1,
+      url: 'https://res.cloudinary.com/di36itbpm/video/upload/plastic1_ihmouw.mp4',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_400/plastic1_ihmouw.jpg',
+    },
+    {
+      id: 2,
+      url: 'https://res.cloudinary.com/di36itbpm/video/upload/plastic2_h5nt7p.mp4',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_400/plastic2_h5nt7p.jpg',
+    },
+    {
+      id: 3,
+      url: 'https://res.cloudinary.com/di36itbpm/video/upload/plastic3_dqkzkq.mp4',
+      thumbnail: 'https://res.cloudinary.com/di36itbpm/video/upload/so_2,w_400/plastic3_dqkzkq.jpg',
+    },
+  ]
+
+  const handlePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
+
+  const handleMuteToggle = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted
+      setIsMuted(!isMuted)
+    }
+  }
+
+  const handleVideoSelect = (index) => {
+    setCurrentVideo(index)
+    setIsPlaying(false)
+    if (videoRef.current) {
+      videoRef.current.load()
+    }
+  }
+
+  const handlePrevious = () => {
+    const newIndex = currentVideo === 0 ? videos.length - 1 : currentVideo - 1
+    handleVideoSelect(newIndex)
+  }
+
+  const handleNext = () => {
+    const newIndex = currentVideo === videos.length - 1 ? 0 : currentVideo + 1
+    handleVideoSelect(newIndex)
+  }
+
+  const handleFullscreen = () => {
+    if (videoRef.current) {
+      if (videoRef.current.requestFullscreen) {
+        videoRef.current.requestFullscreen()
+      } else if (videoRef.current.webkitRequestFullscreen) {
+        videoRef.current.webkitRequestFullscreen()
+      }
+    }
+  }
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
+            <Play className="w-4 h-4" />
+            {t('plastic.videos.tag')}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            {t('plastic.videos.title')}
+          </h2>
+          <p className="text-secondary-500 text-lg">
+            {t('plastic.videos.subtitle')}
+          </p>
+        </div>
+
+        {/* Video Player + Thumbnails */}
+        <div className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto mb-12 items-start justify-center">
+          
+          {/* Main Video Player - Vertical 9:16 */}
+          <div className="flex-shrink-0 mx-auto lg:mx-0">
+            <div
+              className="relative bg-black rounded-2xl overflow-hidden shadow-2xl group w-[300px] sm:w-[340px]"
+              style={{ aspectRatio: '9/16' }}
+            >
+              <video
+                ref={videoRef}
+                className="w-full h-full object-contain bg-black"
+                poster={videos[currentVideo].thumbnail}
+                onEnded={() => setIsPlaying(false)}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                playsInline
+              >
+                <source src={videos[currentVideo].url} type="video/mp4" />
+              </video>
+
+              {/* Play/Pause */}
+              <button
+                onClick={handlePlayPause}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white/20 hover:bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center transition-all hover:scale-110 z-10"
+              >
+                {isPlaying ? (
+                  <Pause className="w-8 h-8 text-white" fill="white" />
+                ) : (
+                  <Play className="w-8 h-8 text-white ml-1" fill="white" />
+                )}
+              </button>
+
+              {/* Prev / Next */}
+              <button
+                onClick={handlePrevious}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
+              >
+                <ChevronLeft className="w-5 h-5 text-white" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"
+              >
+                <ChevronRight className="w-5 h-5 text-white" />
+              </button>
+
+              {/* Controls */}
+              <div className="absolute bottom-4 right-4 flex gap-2 z-10">
+                <button
+                  onClick={handleMuteToggle}
+                  className="w-9 h-9 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-4 h-4 text-white" />
+                  ) : (
+                    <Volume2 className="w-4 h-4 text-white" />
+                  )}
+                </button>
+                <button
+                  onClick={handleFullscreen}
+                  className="w-9 h-9 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all"
+                >
+                  <Maximize2 className="w-4 h-4 text-white" />
+                </button>
+              </div>
+
+              {/* Counter */}
+              <div className="absolute top-4 left-4 px-3 py-1 bg-black/50 backdrop-blur-sm rounded-full text-white text-sm font-medium z-10">
+                {currentVideo + 1} / {videos.length}
+              </div>
+            </div>
+          </div>
+
+          {/* Thumbnails - vertical cards beside the player */}
+          <div className="flex-1 w-full lg:w-auto">
+            <div className="grid grid-cols-3 lg:grid-cols-3 gap-3">
+              {videos.map((video, index) => (
+                <button
+                  key={video.id}
+                  onClick={() => handleVideoSelect(index)}
+                  className={`relative rounded-xl overflow-hidden group cursor-pointer transition-all ${
+                    currentVideo === index
+                      ? 'ring-3 ring-primary-600 scale-[1.03] shadow-xl'
+                      : 'hover:scale-[1.03] hover:shadow-lg opacity-70 hover:opacity-100'
+                  }`}
+                  style={{ aspectRatio: '9/16' }}
+                >
+                  {video.thumbnail ? (
+                    <img
+                      src={video.thumbnail}
+                      alt={`Video ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-secondary-200 to-secondary-300 flex items-center justify-center">
+                      <span className="text-secondary-500 text-xs font-medium">Video {index + 1}</span>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                  
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className={`w-10 h-10 backdrop-blur-sm rounded-full flex items-center justify-center transition-all ${
+                      currentVideo === index 
+                        ? 'bg-primary-600' 
+                        : 'bg-white/30 group-hover:bg-white/50'
+                    }`}>
+                      <Play className="w-5 h-5 text-white ml-0.5" fill="white" />
+                    </div>
+                  </div>
+
+                  {currentVideo === index && (
+                    <div className="absolute top-2 right-2">
+                      <div className="w-2.5 h-2.5 bg-primary-600 rounded-full animate-pulse" />
+                    </div>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-8 md:p-12">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            {t('plastic.videos.ctaTitle')}
+          </h3>
+          <p className="text-secondary-600 text-lg mb-6 max-w-2xl mx-auto">
+            {t('plastic.videos.ctaDesc')}
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a href="#contact" className="inline-flex items-center gap-2 btn btn-primary btn-lg">
+              {t('plastic.hero.consultation')}
+              <ChevronRightIcon className="w-5 h-5" />
+            </a>
+            <a href="#procedures" className="inline-flex items-center gap-2 btn btn-outline btn-lg">
+              {t('plastic.hero.procedures')}
+            </a>
+          </div>
         </div>
       </div>
     </section>

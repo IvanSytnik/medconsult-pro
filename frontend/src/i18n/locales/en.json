@@ -330,6 +330,13 @@
     "btnHome": "Back to Home"
   },
 "plastic": {
+  "videos": {
+    "tag": "Video Gallery",
+    "title": "Our Results on Video",
+    "subtitle": "Real procedures, real results — see the work of our plastic surgeons in Turkey",
+    "ctaTitle": "Ready for Your Transformation?",
+    "ctaDesc": "See the quality for yourself! Book a free consultation and discover what options are available for you."
+  },
     "hero": {
       "tag": "Plastic Surgery",
       "title": "Plastic Surgery",

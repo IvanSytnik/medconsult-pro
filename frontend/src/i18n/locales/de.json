@@ -330,6 +330,13 @@
     "btnHome": "Zur Startseite"
   },
  "plastic": {
+   "videos": {
+    "tag": "Videogalerie",
+    "title": "Unsere Ergebnisse auf Video",
+    "subtitle": "Echte Eingriffe, echte Ergebnisse — sehen Sie die Arbeit unserer plastischen Chirurgen in der Türkei",
+    "ctaTitle": "Bereit für Ihre Verwandlung?",
+    "ctaDesc": "Überzeugen Sie sich selbst von der Qualität! Buchen Sie eine kostenlose Beratung und erfahren Sie, welche Möglichkeiten es für Sie gibt."
+  },
     "hero": {
       "tag": "Plastische Chirurgie",
       "title": "Plastische Chirurgie",
