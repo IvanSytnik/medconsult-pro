@@ -887,5 +887,94 @@
       "whatsapp": "WhatsApp",
       "email": "Email"
     }
+  },
+  "impressum": {
+  "back": "Back to homepage",
+  "title": "Legal Notice",
+  "companyInfo": {
+    "title": "Information according to § 5 TMG",
+    "name": "MedConsult Turkey",
+    "address1": "Medical Tourism Consulting & Coordination Service",
+    "address2": "Germany"
+  },
+  "represented": {
+    "title": "Represented by",
+    "name": "Oleg (Chief Coordinator)"
+  },
+  "contact": {
+    "title": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "website": "Website"
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "text": "The content of this website is created with the utmost care. However, the provider does not guarantee the accuracy, completeness, or timeliness of the information provided. Use of the content is at the user's own risk."
+  },
+  "liability": {
+    "title": "Liability for Content",
+    "text": "As a service provider, we are responsible for our own content on these pages in accordance with general legislation pursuant to § 7 para. 1 TMG. According to §§ 8 to 10 TMG, however, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity."
+  },
+  "links": {
+    "title": "Liability for Links",
+    "text": "Our website contains links to external websites of third parties, over whose content we have no influence. Therefore, we cannot assume any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content."
+  },
+  "copyright": {
+    "title": "Copyright",
+    "text": "The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution, and any form of exploitation beyond the scope of copyright law require the written consent of the respective author or creator."
+  },
+  "medical": {
+    "title": "Medical Disclaimer",
+    "text": "MedConsult Turkey is a consulting and coordination service for medical tourism and is not a medical provider. We facilitate contact with verified clinics and doctors in Turkey. All medical services are provided exclusively by licensed clinics and physicians on-site. The information on this website does not replace professional medical advice."
   }
+},
+"privacy": {
+  "back": "Back to homepage",
+  "title": "Privacy Policy",
+  "lastUpdated": "Last updated: February 2026",
+  "contactTitle": "Questions about data privacy?",
+  "contactText": "For questions about the processing of your personal data, contact us:",
+  "sections": {
+    "overview": {
+      "title": "1. Privacy at a Glance",
+      "text": "The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you."
+    },
+    "responsible": {
+      "title": "2. Responsible Party",
+      "text": "The responsible party for data processing on this website is:\n\nMedConsult Turkey\nGermany\nEmail: info@medconsult-turkey.com\nPhone: +49 173 6631438"
+    },
+    "collection": {
+      "title": "3. Data Collection on This Website",
+      "text": "Data processing on this website is carried out by the website operator. Your data is collected, firstly, when you provide it to us (e.g., via the contact form). Other data is automatically collected by our IT systems when you visit the website. This is primarily technical data (e.g., internet browser, operating system, or time of page access)."
+    },
+    "contactForm": {
+      "title": "4. Contact Form",
+      "text": "When you send us inquiries via the contact form, your details (name, email, phone, desired service, message) are stored for the purpose of processing your request and in case of follow-up questions. We do not share this data without your consent. Processing is based on Art. 6(1)(b) GDPR (pre-contractual measures) or Art. 6(1)(a) GDPR (consent)."
+    },
+    "cookies": {
+      "title": "5. Cookies",
+      "text": "This website uses cookies — small text files stored on your device. Some cookies are technically necessary (e.g., language settings), while others are used to analyze user behavior. You can configure your browser to notify you about cookies and allow them only on a case-by-case basis."
+    },
+    "analytics": {
+      "title": "6. Analytics Tools",
+      "text": "This website may use analytics tools for statistical evaluation of visitor traffic. The data obtained is not used to personally identify visitors and is not combined with personal data."
+    },
+    "thirdParty": {
+      "title": "7. Third-Party Services",
+      "text": "This website integrates external services, including Cloudinary (for videos and images), WhatsApp Business (for communication), and potentially other services. The integration of these services may result in data being transferred to the respective providers. For detailed information, please refer to the privacy policies of the respective providers."
+    },
+    "rights": {
+      "title": "8. Your Rights",
+      "text": "You have the right at any time to obtain information about your personal data stored with us, its origin, recipients, and the purpose of data processing. You also have the right to correction, blocking, or deletion of this data. For these and other questions about data protection, you can contact us at any time. You also have the right to file a complaint with the competent supervisory authority."
+    },
+    "storage": {
+      "title": "9. Storage Duration",
+      "text": "Personal data submitted to us via the contact form or email is stored only as long as necessary for processing your request or as required by legal retention obligations."
+    },
+    "changes": {
+      "title": "10. Changes to This Policy",
+      "text": "We reserve the right to update this privacy policy to ensure it complies with current legal requirements or to reflect changes in our services. The updated privacy policy will apply to your subsequent visits."
+    }
+  }
+}
 }

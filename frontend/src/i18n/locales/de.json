@@ -887,5 +887,94 @@
       "whatsapp": "WhatsApp",
       "email": "E-Mail"
     }
+  },
+  "impressum": {
+  "back": "Zurück zur Startseite",
+  "title": "Impressum",
+  "companyInfo": {
+    "title": "Angaben gemäß § 5 TMG",
+    "name": "MedConsult Turkey",
+    "address1": "Vermittlungs- und Beratungsservice für Medizintourismus",
+    "address2": "Deutschland"
+  },
+  "represented": {
+    "title": "Vertreten durch",
+    "name": "Oleg (Hauptkoordinator)"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "website": "Webseite"
+  },
+  "disclaimer": {
+    "title": "Haftungsausschluss",
+    "text": "Die Inhalte dieser Website werden mit größtmöglicher Sorgfalt erstellt. Der Anbieter übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte. Die Nutzung der Inhalte erfolgt auf eigene Gefahr des Nutzers."
+  },
+  "liability": {
+    "title": "Haftung für Inhalte",
+    "text": "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen."
+  },
+  "links": {
+    "title": "Haftung für Links",
+    "text": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich."
+  },
+  "copyright": {
+    "title": "Urheberrecht",
+    "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+  },
+  "medical": {
+    "title": "Medizinischer Hinweis",
+    "text": "MedConsult Turkey ist ein Vermittlungs- und Beratungsservice und kein medizinischer Anbieter. Wir vermitteln Kontakte zu geprüften Kliniken und Ärzten in der Türkei. Alle medizinischen Leistungen werden ausschließlich von lizenzierten Kliniken und Ärzten vor Ort erbracht. Die Informationen auf dieser Website ersetzen keine ärztliche Beratung."
   }
+},
+"privacy": {
+  "back": "Zurück zur Startseite",
+  "title": "Datenschutzerklärung",
+  "lastUpdated": "Stand: Februar 2026",
+  "contactTitle": "Fragen zum Datenschutz?",
+  "contactText": "Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten kontaktieren Sie uns:",
+  "sections": {
+    "overview": {
+      "title": "1. Datenschutz auf einen Blick",
+      "text": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können."
+    },
+    "responsible": {
+      "title": "2. Verantwortliche Stelle",
+      "text": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:\n\nMedConsult Turkey\nDeutschland\nE-Mail: info@medconsult-turkey.com\nTelefon: +49 173 6631438"
+    },
+    "collection": {
+      "title": "3. Datenerfassung auf dieser Website",
+      "text": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z. B. über das Kontaktformular). Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs)."
+    },
+    "contactForm": {
+      "title": "4. Kontaktformular",
+      "text": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular (Name, E-Mail, Telefon, gewünschte Leistung, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)."
+    },
+    "cookies": {
+      "title": "5. Cookies",
+      "text": "Diese Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Einige Cookies sind technisch notwendig (z. B. Spracheinstellungen), andere dienen der Analyse des Nutzerverhaltens. Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben."
+    },
+    "analytics": {
+      "title": "6. Analyse-Tools",
+      "text": "Diese Website kann Analyse-Tools zur statistischen Auswertung der Besucherzugriffe verwenden. Die damit gewonnenen Daten werden nicht dazu benutzt, den Besucher persönlich zu identifizieren, und werden nicht mit personenbezogenen Daten zusammengeführt."
+    },
+    "thirdParty": {
+      "title": "7. Drittanbieter und externe Dienste",
+      "text": "Auf dieser Website werden externe Dienste eingebunden, darunter Cloudinary (für Videos und Bilder), WhatsApp Business (für Kommunikation) und ggf. weitere Dienste. Durch die Einbindung dieser Dienste kann es zur Übertragung von Daten an die jeweiligen Anbieter kommen. Nähere Informationen entnehmen Sie den Datenschutzerklärungen der jeweiligen Anbieter."
+    },
+    "rights": {
+      "title": "8. Ihre Rechte",
+      "text": "Sie haben jederzeit das Recht auf Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Sie haben außerdem ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden. Ferner steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu."
+    },
+    "storage": {
+      "title": "9. Speicherdauer",
+      "text": "Personenbezogene Daten, die uns über das Kontaktformular oder per E-Mail übermittelt werden, werden nur so lange gespeichert, wie es für die Bearbeitung Ihrer Anfrage erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen."
+    },
+    "changes": {
+      "title": "10. Änderungen dieser Datenschutzerklärung",
+      "text": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung."
+    }
+  }
+}
 }

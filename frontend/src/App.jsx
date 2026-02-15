@@ -13,7 +13,8 @@ import Dental from './pages/Dental'
 import Plastic from './pages/Plastic'
 import Hair from './pages/Hair'
 import Aesthetic from './pages/Aesthetic'
-
+import Impressum from './pages/Impressum'
+import Privacy from './pages/Privacy'
 function App() {
   const { i18n } = useTranslation()
 
@@ -31,6 +32,8 @@ function App() {
           <Route path="/plastic" element={<Plastic />} />
           <Route path="/hair" element={<Hair />} />
           <Route path="/aesthetic" element={<Aesthetic />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </main>
       <Footer />
