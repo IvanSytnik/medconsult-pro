@@ -173,8 +173,8 @@ export default async function PlasticPage({ params }: PageProps<'/[locale]/plast
         subtitle={t('plastic.contact.subtitle')}
         directContact={t('plastic.contact.directContact')}
         whatsappLabel={t('plastic.contact.whatsapp')}
-        whatsappHref={CONTACT.phoneHref}
-        whatsappExternal={false}
+        whatsappHref={CONTACT.whatsappHref}
+        whatsappExternal
         emailLabel={t('plastic.contact.email')}
         emailHref={CONTACT.emailHref}
       />
