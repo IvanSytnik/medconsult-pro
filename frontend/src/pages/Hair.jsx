@@ -381,7 +381,7 @@ function ResultsSection() {
               <p className="opacity-90">{t('hair.results.stats.survival')}</p>
             </div>
             <div className="bg-white/10 border border-white/15 rounded-xl p-8">
-              <div className="text-4xl font-bold mb-2">1.5M</div>
+              <div className="text-4xl font-bold mb-2">1.5M+</div>
               <p className="opacity-90">{t('hair.results.stats.operations')}</p>
             </div>
             <div className="bg-white/10 border border-white/15 rounded-xl p-8">
