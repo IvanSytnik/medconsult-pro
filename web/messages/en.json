@@ -101,6 +101,12 @@
       "quality": "You want quality without overpaying — same materials, but cheaper",
       "safety": "You want to know exactly what will be done and what it costs before you go",
       "trust": "You don't want to pick a clinic off the internet at random"
+    },
+    "labels": {
+      "germany": "DE",
+      "quality": "Price",
+      "safety": "Clarity",
+      "trust": "Trust"
     }
   },
   "process": {
@@ -176,6 +182,7 @@
       "phone": "Phone / WhatsApp",
       "service": "Service of Interest",
       "servicePlaceholder": "Select...",
+      "serviceOther": "Other",
       "message": "Message",
       "messagePlaceholder": "Describe your situation or ask a question...",
       "privacy": "I agree to the processing of personal data",
