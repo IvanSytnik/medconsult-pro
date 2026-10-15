@@ -110,7 +110,7 @@ function DentalHero() {
             />
             <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-6">
               <div className="bg-white p-4 rounded-xl shadow-lg text-center">
-                <div className="text-2xl font-bold text-primary-600">5000+</div>
+                <div className="text-2xl font-bold text-primary-600">500+</div>
                 <div className="text-sm text-secondary-500">{t('hero.stats.clients')}</div>
               </div>
               <div className="bg-white p-4 rounded-xl shadow-lg text-center">
@@ -204,12 +204,12 @@ function PricingSection() {
   const { t } = useTranslation()
 
   const prices = [
-    { name: 'Dental Implant (Premium)', germany: '€1,800 - €3,500', our: '€450', savings: '75%', Icon: DentalImplantIcon },
-    { name: 'Ceramic Crown', germany: '€700 - €1,200', our: '€150', savings: '80%', Icon: CrownIcon },
-    { name: 'Zirconium Crown', germany: '€900 - €1,500', our: '€200', savings: '78%', Icon: DiamondIcon },
-    { name: 'Veneer', germany: '€800 - €1,500', our: '€250', savings: '70%', Icon: SparkleIcon },
-    { name: 'All-on-4 (jaw)', germany: '€12,000 - €20,000', our: '€3,500', savings: '75%', Icon: WrenchIcon },
-    { name: 'Smile Makeover (20 veneers)', germany: '€16,000 - €30,000', our: '€5,000', savings: '70%', Icon: ToothIcon },
+    { key: 'implant', germany: '€1,800 - €3,500', our: '€450', savings: '75%', Icon: DentalImplantIcon },
+    { key: 'ceramicCrown', germany: '€700 - €1,200', our: '€150', savings: '80%', Icon: CrownIcon },
+    { key: 'zirconiumCrown', germany: '€900 - €1,500', our: '€200', savings: '78%', Icon: DiamondIcon },
+    { key: 'veneer', germany: '€800 - €1,500', our: '€250', savings: '70%', Icon: SparkleIcon },
+    { key: 'allOn4', germany: '€12,000 - €20,000', our: '€3,500', savings: '75%', Icon: WrenchIcon },
+    { key: 'smileMakeover', germany: '€16,000 - €30,000', our: '€5,000', savings: '70%', Icon: ToothIcon },
   ]
 
   return (
@@ -228,11 +228,11 @@ function PricingSection() {
             <div>{t('dental.pricingTable.ourPrice')}</div>
             <div>{t('dental.pricingTable.savings')}</div>
           </div>
-          {prices.map((item, i) => (
-            <div key={i} className="grid grid-cols-5 p-5 border-b border-secondary-100 items-center hover:bg-secondary-50 transition-colors">
+          {prices.map((item) => (
+            <div key={item.key} className="grid grid-cols-5 p-5 border-b border-secondary-100 items-center hover:bg-secondary-50 transition-colors">
               <div className="col-span-2 flex items-center gap-3">
                 <item.Icon size="sm" />
-                <span className="font-medium">{item.name}</span>
+                <span className="font-medium">{t(`dental.pricingRows.${item.key}`)}</span>
               </div>
               <div className="hidden sm:block text-secondary-500 line-through">{item.germany}</div>
               <div className="font-bold text-primary-600 text-lg">{item.our}</div>

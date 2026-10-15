@@ -76,7 +76,7 @@ function HeroSection() {
                 <div className="text-sm text-secondary-500">{t('hero.stats.clinics')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-primary-600">60%</div>
+                <div className="text-3xl font-bold text-primary-600">70%</div>
                 <div className="text-sm text-secondary-500">{t('hero.stats.savings')}</div>
               </div>
             </div>
@@ -146,7 +146,7 @@ function ServicesSection() {
 
   const services = [
     { key: 'dental', IconComponent: ToothIcon, link: '/dental', price: '€450' },
-    { key: 'plastic', IconComponent: SyringeIcon, link: '/plastic', price: '€2,500'},
+    { key: 'plastic', IconComponent: SyringeIcon, link: '/plastic', price: '€3,000'},
     { key: 'hair', IconComponent: ScissorsIcon, link: '/hair', price: '€1,800'},
     { key: 'aesthetic', IconComponent: SparkleIcon, link: '/aesthetic', price: '€150'},
   ]
