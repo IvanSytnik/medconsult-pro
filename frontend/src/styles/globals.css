@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === Base Styles === */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -14,7 +13,6 @@
   }
 }
 
-/* === Custom Components === */
 @layer components {
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-base cursor-pointer border-2 border-transparent transition-all duration-300 whitespace-nowrap;
@@ -61,14 +59,12 @@
   }
 }
 
-/* === Animations === */
 @layer utilities {
   .animate-in {
     @apply opacity-100 translate-y-0;
   }
 }
 
-/* === Custom Scrollbar === */
 ::-webkit-scrollbar {
   width: 8px;
 }
