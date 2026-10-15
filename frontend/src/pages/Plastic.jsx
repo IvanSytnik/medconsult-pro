@@ -5,7 +5,7 @@ import {
   Shield, Award, Users, HeartPulse, CheckCircle2, 
   MessageCircle, Calendar, Plane, Stethoscope, Clock,
   Play, Pause, ChevronLeft, ChevronRight, ChevronRight as ChevronRightIcon,
-  VolumeX, Volume2, Maximize2
+  VolumeX, Volume2, Maximize2, Wallet, ArrowRight
 } from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
 import { SyringeIcon } from '../components/ui/MedicalIcon'
@@ -27,7 +27,6 @@ export default function Plastic() {
   )
 }
 
-// === HERO SECTION ===
 function HeroSection() {
   const { t } = useTranslation()
 
@@ -97,7 +96,6 @@ function HeroSection() {
   )
 }
 
-// === WHY PLASTIC SECTION ===
 function WhyPlasticSection() {
   const { t } = useTranslation()
 
@@ -161,7 +159,6 @@ function WhyPlasticSection() {
   )
 }
 
-// === PROCEDURES SECTION ===
 function ProceduresSection() {
   const { t } = useTranslation()
 
@@ -235,8 +232,9 @@ function ProceduresSection() {
                       {t(`plastic.procedures.list.${key}.price`)}
                     </span>
                   </div>
-                  <a href="#contact" className="text-primary-600 font-semibold hover:underline">
+                  <a href="#contact" className="inline-flex items-center gap-1 text-primary-600 font-semibold hover:underline">
                     {t('plastic.procedures.learnMore')}
+                    <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>
@@ -248,7 +246,6 @@ function ProceduresSection() {
   )
 }
 
-// === VIDEO SLIDER SECTION ===
 function VideoSliderSection() {
   const { t } = useTranslation()
   const [currentVideo, setCurrentVideo] = useState(0)
@@ -256,8 +253,7 @@ function VideoSliderSection() {
   const [isMuted, setIsMuted] = useState(true)
   const videoRef = useRef(null)
 
-  // 3 placeholder videos — replace URLs with real plastic surgery videos
- const videos = [
+  const videos = [
     {
       id: 1,
       url: 'https://res.cloudinary.com/di36itbpm/video/upload/plastic1_ihmouw.mp4',
@@ -483,7 +479,6 @@ function VideoSliderSection() {
   )
 }
 
-// === BENEFITS SECTION ===
 function BenefitsSection() {
   const { t } = useTranslation()
 
@@ -512,7 +507,10 @@ function BenefitsSection() {
             </div>
 
             <div className="mt-8 p-6 bg-primary-50 rounded-xl">
-              <p className="text-sm text-secondary-600 mb-2">{t('plastic.benefits.savingsLabel')}</p>
+              <p className="text-sm text-secondary-600 mb-2 flex items-center gap-2">
+                <Wallet className="w-4 h-4 text-primary-600" strokeWidth={1.75} />
+                {t('plastic.benefits.savingsLabel')}
+              </p>
               <p className="text-3xl font-bold text-primary-600">{t('plastic.benefits.savingsValue')}</p>
             </div>
           </div>
@@ -530,7 +528,6 @@ function BenefitsSection() {
   )
 }
 
-// === PROCESS SECTION ===
 function ProcessSection() {
   const { t } = useTranslation()
 
@@ -571,7 +568,6 @@ function ProcessSection() {
   )
 }
 
-// === RESULTS SECTION ===
 function ResultsSection() {
   const { t } = useTranslation()
 
@@ -612,7 +608,6 @@ function ResultsSection() {
   )
 }
 
-// === CONTACT FORM SECTION ===
 function ContactFormSection() {
   const { t } = useTranslation()
 

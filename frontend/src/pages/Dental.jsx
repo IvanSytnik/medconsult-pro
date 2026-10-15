@@ -51,7 +51,6 @@ export default function Dental() {
   )
 }
 
-// === DENTAL HERO ===
 function DentalHero() {
   const { t } = useTranslation()
 
@@ -126,7 +125,6 @@ function DentalHero() {
   )
 }
 
-// === TRUST BAR ===
 function TrustBar() {
   const { t } = useTranslation()
 
@@ -162,7 +160,6 @@ function TrustBar() {
   )
 }
 
-// === TREATMENTS SECTION ===
 function TreatmentsSection() {
   const { t } = useTranslation()
 
@@ -203,7 +200,6 @@ function TreatmentsSection() {
   )
 }
 
-// === PRICING SECTION ===
 function PricingSection() {
   const { t } = useTranslation()
 
@@ -253,7 +249,6 @@ function PricingSection() {
   )
 }
 
-// === CLINIC SECTION ===
 function ClinicSection() {
   const { t } = useTranslation()
 
@@ -327,7 +322,6 @@ function ClinicSection() {
   )
 }
 
-// === PACKAGE SECTION ===
 function PackageSection() {
   const { t } = useTranslation()
 
@@ -365,7 +359,6 @@ function PackageSection() {
   )
 }
 
-// === VIDEO SLIDER SECTION ===
 function VideoSliderSection() {
   const { t } = useTranslation()
   const [currentVideo, setCurrentVideo] = useState(0)
@@ -604,7 +597,6 @@ function VideoSliderSection() {
 }
 
 
-// === CONTACT SECTION ===
 function DentalContactSection() {
   const { t } = useTranslation()
 

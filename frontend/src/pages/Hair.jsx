@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { 
-  Shield, Award, Users, Microscope, CheckCircle2, 
-  MessageCircle, Calendar, Target, TrendingUp, Clock
+import {
+  Shield, Award, Users, Microscope, CheckCircle2,
+  MessageCircle, Calendar, Target, TrendingUp, Clock,
+  Sprout, Sparkles, BadgeCheck, Wallet, ArrowRight, Infinity as InfinityIcon
 } from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
 import { ScissorsIcon } from '../components/ui/MedicalIcon'
@@ -23,7 +24,6 @@ export default function Hair() {
   )
 }
 
-// === HERO SECTION ===
 function HeroSection() {
   const { t } = useTranslation()
 
@@ -93,7 +93,6 @@ function HeroSection() {
   )
 }
 
-// === WHY HAIR SECTION ===
 function WhyHairSection() {
   const { t } = useTranslation()
 
@@ -157,7 +156,6 @@ function WhyHairSection() {
   )
 }
 
-// === METHODS SECTION ===
 function MethodsSection() {
   const { t } = useTranslation()
 
@@ -232,8 +230,9 @@ function MethodsSection() {
                         {price.split(' - ')[0]}
                       </span>
                     </div>
-                    <a href="#contact" className="text-primary-600 font-semibold hover:underline">
+                    <a href="#contact" className="inline-flex items-center gap-1 text-primary-600 font-semibold hover:underline">
                       {t('hair.methods.learnMore')}
+                      <ArrowRight className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
@@ -246,7 +245,6 @@ function MethodsSection() {
   )
 }
 
-// === BENEFITS SECTION ===
 function BenefitsSection() {
   const { t } = useTranslation()
 
@@ -275,7 +273,10 @@ function BenefitsSection() {
             </div>
 
             <div className="mt-8 p-6 bg-primary-50 rounded-xl">
-              <p className="text-sm text-secondary-600 mb-2">{t('hair.benefits.savingsLabel')}</p>
+              <p className="text-sm text-secondary-600 mb-2 flex items-center gap-2">
+                <Wallet className="w-4 h-4 text-primary-600" strokeWidth={1.75} />
+                {t('hair.benefits.savingsLabel')}
+              </p>
               <p className="text-3xl font-bold text-primary-600">{t('hair.benefits.savingsValue')}</p>
             </div>
           </div>
@@ -293,13 +294,12 @@ function BenefitsSection() {
   )
 }
 
-// === PROCESS SECTION ===
 function ProcessSection() {
   const { t } = useTranslation()
 
   const stepKeys = ['analysis', 'preparation', 'operation', 'result']
   const timelineKeys = ['weeks', 'months3', 'months6', 'months12']
-  const timelineEmojis = ['📅', '🌱', '✨', '🎉']
+  const timelineIcons = [Calendar, Sprout, Sparkles, BadgeCheck]
 
   return (
     <section className="py-24 bg-secondary-50">
@@ -337,17 +337,22 @@ function ProcessSection() {
             {t('hair.process.timelineTitle')}
           </h3>
           <div className="grid md:grid-cols-4 gap-6">
-            {timelineKeys.map((key, index) => (
-              <div key={key} className="text-center">
-                <div className="text-4xl mb-2">{timelineEmojis[index]}</div>
-                <div className="font-bold mb-1">
-                  {t(`hair.process.timeline.${key}.title`)}
+            {timelineKeys.map((key, index) => {
+              const TimelineIcon = timelineIcons[index]
+              return (
+                <div key={key} className="text-center">
+                  <div className="w-14 h-14 mx-auto mb-3 rounded-xl bg-primary-50 flex items-center justify-center">
+                    <TimelineIcon className="w-7 h-7 text-primary-600" strokeWidth={1.5} />
+                  </div>
+                  <div className="font-bold mb-1">
+                    {t(`hair.process.timeline.${key}.title`)}
+                  </div>
+                  <p className="text-sm text-secondary-600">
+                    {t(`hair.process.timeline.${key}.desc`)}
+                  </p>
                 </div>
-                <p className="text-sm text-secondary-600">
-                  {t(`hair.process.timeline.${key}.desc`)}
-                </p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
@@ -355,7 +360,6 @@ function ProcessSection() {
   )
 }
 
-// === RESULTS SECTION ===
 function ResultsSection() {
   const { t } = useTranslation()
 
@@ -385,7 +389,9 @@ function ResultsSection() {
               <p className="opacity-90">{t('hair.results.stats.savings')}</p>
             </div>
             <div className="bg-white/10 border border-white/15 rounded-xl p-8">
-              <div className="text-4xl font-bold mb-2">∞</div>
+              <div className="mb-2 flex justify-center">
+                <InfinityIcon className="w-10 h-10" strokeWidth={2} aria-hidden="true" />
+              </div>
               <p className="opacity-90">{t('hair.results.stats.lifetime')}</p>
             </div>
           </div>
@@ -400,7 +406,6 @@ function ResultsSection() {
   )
 }
 
-// === CONTACT FORM SECTION ===
 function ContactFormSection() {
   const { t } = useTranslation()
 
