@@ -248,12 +248,7 @@ function AboutSection({ t }: { t: T }) {
 }
 
 function AudienceSection({ t }: { t: T }) {
-  const items = [
-    { key: 'germany', label: 'DE' },
-    { key: 'quality', label: 'Premium' },
-    { key: 'safety', label: 'Safe' },
-    { key: 'trust', label: 'Trust' },
-  ] as const
+  const items = ['germany', 'quality', 'safety', 'trust'] as const
 
   return (
     <section className="py-24 bg-gradient-to-br from-secondary-800 to-primary-900 text-white">
@@ -264,12 +259,12 @@ function AudienceSection({ t }: { t: T }) {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {items.map(({ key, label }) => (
+          {items.map((key) => (
             <div
               key={key}
               className="bg-white/10 border border-white/15 rounded-xl p-8 text-center hover:bg-white/15 transition-all hover:-translate-y-1"
             >
-              <div className="text-3xl mb-4">{label}</div>
+              <div className="text-3xl mb-4">{t(`audience.labels.${key}`)}</div>
               <p className="opacity-90">{t(`audience.items.${key}`)}</p>
             </div>
           ))}

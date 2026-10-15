@@ -19,7 +19,7 @@ export default function ContactForm({ source = 'main' }: { source?: string }) {
     { value: 'plastic', label: t('services.plastic.title') },
     { value: 'hair', label: t('services.hair.title') },
     { value: 'aesthetic', label: t('services.aesthetic.title') },
-    { value: 'other', label: 'Other' },
+    { value: 'other', label: t('contact.form.serviceOther') },
   ]
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {

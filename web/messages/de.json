@@ -101,6 +101,12 @@
       "quality": "Sie nicht zu viel bezahlen möchten: dieselben Materialien, aber günstiger",
       "safety": "Sie vorher genau wissen möchten, was gemacht wird und was es kostet",
       "trust": "Sie keine Klinik auf gut Glück im Internet aussuchen wollen"
+    },
+    "labels": {
+      "germany": "DE",
+      "quality": "Preis",
+      "safety": "Klarheit",
+      "trust": "Vertrauen"
     }
   },
   "process": {
@@ -176,6 +182,7 @@
       "phone": "Telefon / WhatsApp",
       "service": "Gewünschte Leistung",
       "servicePlaceholder": "Wählen Sie...",
+      "serviceOther": "Sonstiges",
       "message": "Nachricht",
       "messagePlaceholder": "Beschreiben Sie Ihre Situation oder stellen Sie eine Frage...",
       "privacy": "Ich stimme der Verarbeitung personenbezogener Daten zu",
