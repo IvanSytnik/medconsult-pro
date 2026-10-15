@@ -28,6 +28,7 @@ import {
 } from '@/components/ui/MedicalIcon'
 import { resolveLocale } from '@/i18n/locale'
 import { Link } from '@/i18n/navigation'
+import { PLACEHOLDER } from '@/lib/media'
 import { pageMetadata } from '@/lib/site'
 
 type T = Awaited<ReturnType<typeof getTranslations>>
@@ -121,7 +122,7 @@ function DentalHero({ t }: { t: T }) {
           <div className="hidden lg:block relative">
             {/* eslint-disable-next-line @next/next/no-img-element -- remote media moves to the CMS in phase 2 */}
             <img
-              src="https://dentanatura.com/wp-content/uploads/2025/11/dokt-scaled.png"
+              src={PLACEHOLDER.portrait}
               alt="Dr. Mevlüt"
               className="w-full max-w-md mx-auto"
             />
@@ -276,9 +277,9 @@ function ClinicSection({ t }: { t: T }) {
             <div className="flex gap-6 bg-secondary-50 p-6 rounded-xl mb-8">
               {/* eslint-disable-next-line @next/next/no-img-element -- remote media moves to the CMS in phase 2 */}
               <img
-                src="https://dentanatura.com/wp-content/uploads/2025/11/mav-scaled.png"
+                src={PLACEHOLDER.portrait}
                 alt="Dr. Mevlüt"
-                className="w-28 h-28 object-cover rounded-xl"
+                className="w-28 h-28 flex-shrink-0 object-cover rounded-xl"
               />
               <div>
                 <h3 className="text-xl font-bold">{t('dental.doctor.name')}</h3>
@@ -306,17 +307,17 @@ function ClinicSection({ t }: { t: T }) {
             <div className="rounded-xl overflow-hidden mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element -- remote media moves to the CMS in phase 2 */}
               <img
-                src="https://dentanatura.com/wp-content/uploads/2025/11/zespolowo-scaled.png"
+                src={PLACEHOLDER.landscape}
                 alt="Clinic team"
                 className="w-full h-72 object-cover"
               />
             </div>
             <div className="grid grid-cols-3 gap-4">
-              {['pozy', 'd1', 'd2'].map((img) => (
+              {['clinic-1', 'clinic-2', 'clinic-3'].map((img) => (
                 // eslint-disable-next-line @next/next/no-img-element -- remote media moves to the CMS in phase 2
                 <img
                   key={img}
-                  src={`https://dentanatura.com/wp-content/uploads/2025/10/${img}.png`}
+                  src={PLACEHOLDER.landscape}
                   alt="Clinic"
                   className="w-full h-24 object-cover rounded-lg"
                 />

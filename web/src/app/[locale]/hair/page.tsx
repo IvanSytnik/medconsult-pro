@@ -26,10 +26,11 @@ import {
 } from '@/components/sections/common'
 import { ScissorsIcon } from '@/components/ui/MedicalIcon'
 import { resolveLocale } from '@/i18n/locale'
+import { PLACEHOLDER } from '@/lib/media'
 import { CONTACT, pageMetadata } from '@/lib/site'
 
 const METHODS = {
-  fue: 'https://images.unsplash.com/photo-1622296640557-8c1b5a6e69d0?w=400&h=300&fit=crop',
+  fue: PLACEHOLDER.landscape,
   sapphire: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop',
   dhi: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop',
   dhiPrp: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop',
@@ -79,7 +80,7 @@ export default async function HairPage({ params }: PageProps<'/[locale]/hair'>) 
           { value: '5000+', label: t('hair.hero.stats.grafts') },
           { value: '95%+', label: t('hair.hero.stats.survival') },
         ]}
-        image="https://images.unsplash.com/photo-1622296640557-8c1b5a6e69d0?w=600&h=500&fit=crop"
+        image={PLACEHOLDER.landscape}
         floatValue="1.5M+"
         floatLabel={t('hair.hero.stats.operations')}
       />

@@ -51,4 +51,11 @@ Update the status line of a phase when it changes.
 - Hair transplant clinics: Istanbul (hair page) or Antalya (contacts)?
 - What exactly the hair package price covers, given method prices depend on graft count.
 - Backend deploy needs `FRONTEND_URL` set for CORS; check `VITE_API_URL` on Vercel.
-- Dental page hotlinks clinic photos from dentanatura.com; replace with own media. As of 2026-10-16 all six of those URLs return 404, as does the Unsplash photo used for the hair hero and the FUE card.
+- Real photos needed. These spots show neutral placeholders from `web/public/placeholder/` because the original dentanatura.com and Unsplash URLs returned 404 (2026-10-16); `frontend/` still points at the dead URLs:
+  - Dental hero: portrait of Dr. Mevlüt (large, right column).
+  - Dental clinic section: Dr. Mevlüt avatar next to his bio.
+  - Dental clinic section: clinic team photo (wide).
+  - Dental clinic section: three small clinic photos under the team photo.
+  - Hair hero: main photo.
+  - Hair methods: FUE card photo.
+- Other photos still hotlink Unsplash (plastic, hair, aesthetic, home "about"); replace with own media when Payload lands.
