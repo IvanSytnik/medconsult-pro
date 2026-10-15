@@ -28,7 +28,7 @@ One Next.js app in `web/` (App Router, TypeScript, Tailwind) with Payload CMS 3 
 
 ## Phases
 
-1. **Next.js port** — rebuild the current site in `web/` 1:1 (same look, same copy from the JSON files, same routes plus locale prefix). Contact form becomes a Next.js route handler. Branch `feat/next-app`. Status: not started.
+1. **Next.js port** — rebuild the current site in `web/` 1:1 (same look, same copy from the JSON files, same routes plus locale prefix). Contact form becomes a Next.js route handler. Branch `feat/next-app`. Status: in review. All seven pages in four locales, locale routing, `/api/submit` and `/api/health`, metadata with hreflang, sitemap and robots are done; build and lint pass and full-page screenshots match `frontend/` at 375 and 1440 px in DE and RU. Remaining: a Vercel project with Root Directory `web` for previews, Telegram/e-mail env vars there, an end-to-end form test with real credentials, then merge.
 2. **Payload + content migration** — add Payload, Postgres, media storage; seed all collections/globals from the JSON locales; pages read from Payload. Status: not started.
 3. **Blocks and theme** — page builder blocks and theme global. Status: not started.
 4. **Lead CRM** — leads collection, pipeline views, roles, Telegram hook. Status: not started.
@@ -51,4 +51,4 @@ Update the status line of a phase when it changes.
 - Hair transplant clinics: Istanbul (hair page) or Antalya (contacts)?
 - What exactly the hair package price covers, given method prices depend on graft count.
 - Backend deploy needs `FRONTEND_URL` set for CORS; check `VITE_API_URL` on Vercel.
-- Dental page hotlinks clinic photos from dentanatura.com; replace with own media.
+- Dental page hotlinks clinic photos from dentanatura.com; replace with own media. As of 2026-10-16 all six of those URLs return 404, as does the Unsplash photo used for the hair hero and the FUE card.
