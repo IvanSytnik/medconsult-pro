@@ -28,7 +28,6 @@ export default function Home() {
   )
 }
 
-// === HERO SECTION ===
 function HeroSection() {
   const { t } = useTranslation()
 
@@ -107,7 +106,6 @@ function HeroSection() {
   )
 }
 
-// === WHY SECTION ===
 function WhySection() {
   const { t } = useTranslation()
 
@@ -143,7 +141,6 @@ function WhySection() {
   )
 }
 
-// === SERVICES SECTION ===
 function ServicesSection() {
   const { t } = useTranslation()
 
@@ -201,7 +198,6 @@ function ServicesSection() {
   )
 }
 
-// === ABOUT SECTION ===
 function AboutSection() {
   const { t } = useTranslation()
 
@@ -248,7 +244,6 @@ function AboutSection() {
   )
 }
 
-// === AUDIENCE SECTION ===
 function AudienceSection() {
   const { t } = useTranslation()
   const items = ['germany', 'quality', 'safety', 'trust']
@@ -275,7 +270,6 @@ function AudienceSection() {
   )
 }
 
-// === PROCESS SECTION ===
 function ProcessSection() {
   const { t } = useTranslation()
   const steps = ['consultation', 'plan', 'trip', 'result']
@@ -307,7 +301,6 @@ function ProcessSection() {
   )
 }
 
-// === TEAM SECTION ===
 function TeamSection() {
   const { t } = useTranslation()
 
@@ -386,7 +379,6 @@ function TeamSection() {
   )
 }
 
-// === CTA SECTION ===
 function CTASection() {
   const { t } = useTranslation()
 
@@ -405,7 +397,6 @@ function CTASection() {
   )
 }
 
-// === CONTACT SECTION ===
 function ContactSection() {
   const { t } = useTranslation()
 

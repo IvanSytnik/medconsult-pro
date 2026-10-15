@@ -8,7 +8,7 @@ const WHATSAPP = '+4915751129620'
 export default function ContactForm({ source = 'main' }) {
   const { t, i18n } = useTranslation()
   const [isLoading, setIsLoading] = useState(false)
-  const [message, setMessage] = useState({ type: '', text: '' })
+  const [message, setMessage] = useState({ type: '', text: '', whatsappUrl: '' })
   const [agreed, setAgreed] = useState(false)
 
   const services = [
@@ -24,7 +24,7 @@ export default function ContactForm({ source = 'main' }) {
     if (!agreed) return
 
     setIsLoading(true)
-    setMessage({ type: '', text: '' })
+    setMessage({ type: '', text: '', whatsappUrl: '' })
 
     const formData = new FormData(e.target)
     const data = {
@@ -55,7 +55,6 @@ export default function ContactForm({ source = 'main' }) {
       }
     } catch (error) {
       console.error('Form error:', error)
-      // Fallback to WhatsApp
       const whatsappMsg = encodeURIComponent(
         `${t('hero.btnConsultation')}\n\n` +
         `Name: ${data.firstName} ${data.lastName}\n` +
@@ -66,7 +65,8 @@ export default function ContactForm({ source = 'main' }) {
       )
       setMessage({
         type: 'error',
-        text: `${t('contact.form.error')} <a href="https://wa.me/${WHATSAPP.replace(/[^0-9]/g, '')}?text=${whatsappMsg}" target="_blank" class="underline font-medium">WhatsApp</a>`,
+        text: t('contact.form.error'),
+        whatsappUrl: `https://wa.me/${WHATSAPP.replace(/[^0-9]/g, '')}?text=${whatsappMsg}`,
       })
     } finally {
       setIsLoading(false)
@@ -126,8 +126,8 @@ export default function ContactForm({ source = 'main' }) {
             onChange={(e) => setAgreed(e.target.checked)}
             className="sr-only peer"
           />
-          <div className="w-5 h-5 border-2 border-secondary-300 rounded flex-shrink-0 mt-0.5 peer-checked:bg-primary-600 peer-checked:border-primary-600 flex items-center justify-center transition-all">
-            <svg className="w-3 h-3 text-white hidden peer-checked:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+          <div className="w-5 h-5 border-2 border-secondary-300 rounded flex-shrink-0 mt-0.5 peer-checked:bg-primary-600 peer-checked:border-primary-600 peer-checked:[&>svg]:block peer-focus-visible:ring-2 peer-focus-visible:ring-primary-300 flex items-center justify-center transition-all">
+            <svg className="w-3 h-3 text-white hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden="true">
               <path d="M5 13l4 4L19 7" />
             </svg>
           </div>
@@ -148,12 +148,27 @@ export default function ContactForm({ source = 'main' }) {
 
       {message.text && (
         <div
+          role={message.type === 'error' ? 'alert' : 'status'}
           className={clsx(
             'mt-4 p-4 rounded-lg text-sm',
             message.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
           )}
-          dangerouslySetInnerHTML={{ __html: message.text }}
-        />
+        >
+          {message.text}
+          {message.whatsappUrl && (
+            <>
+              {' '}
+              <a
+                href={message.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline font-medium"
+              >
+                WhatsApp
+              </a>
+            </>
+          )}
+        </div>
       )}
     </form>
   )

@@ -389,7 +389,7 @@
       "durationLabel": "Dauer:",
       "recoveryLabel": "Erholung:",
       "from": "Ab",
-      "learnMore": "Mehr erfahren →",
+      "learnMore": "Mehr erfahren",
       "list": {
         "rhinoplasty": {
           "title": "Rhinoplastik",
@@ -439,7 +439,7 @@
       "tag": "Leistungspaket",
       "title": "Was im Preis enthalten ist",
       "description": "Wir bieten umfassende Pakete, die alles Notwendige für Ihren Komfort und Ihre Sicherheit beinhalten.",
-      "savingsLabel": "💰 Ersparnis im Vergleich zu Deutschland",
+      "savingsLabel": "Ersparnis im Vergleich zu Deutschland",
       "savingsValue": "Bis zu 60-70%",
       "list": [
         "Beratung mit plastischem Chirurgen",
@@ -549,7 +549,7 @@
       "recoveryLabel": "Erholung:",
       "survivalLabel": "Anwachsrate:",
       "from": "Ab",
-      "learnMore": "Mehr erfahren →",
+      "learnMore": "Mehr erfahren",
       "list": {
         "fue": {
           "title": "FUE (Follicular Unit Extraction)",
@@ -605,7 +605,7 @@
       "tag": "All-Inclusive-Paket",
       "title": "Was im Preis enthalten ist",
       "description": "Umfassendes Paket mit Unterkunft, Transfer und allem Notwendigen für eine komfortable Behandlung.",
-      "savingsLabel": "💰 Ersparnis im Vergleich zu Europa",
+      "savingsLabel": "Ersparnis im Vergleich zu Europa",
       "savingsValue": "Bis zu 70%",
       "list": [
         "Kostenlose Online-Haaranalyse und Beratung",
@@ -737,7 +737,7 @@
       "effect": "Wirkung:",
       "downtime": "Ausfallzeit:",
       "from": "Ab",
-      "learnMore": "Mehr erfahren →",
+      "learnMore": "Mehr erfahren",
       "list": {
         "botox": {
           "title": "Botox",
@@ -817,7 +817,7 @@
       "tag": "Was Sie erhalten",
       "title": "Ganzheitlicher Ansatz für Schönheit",
       "description": "Wir kümmern uns nicht nur um das Behandlungsergebnis, sondern auch um Ihren Komfort in jeder Phase.",
-      "savingsLabel": "💰 Ersparnis im Vergleich zu Europa",
+      "savingsLabel": "Ersparnis im Vergleich zu Europa",
       "savingsValue": "Bis zu 70%",
       "list": [
         "Erstberatung mit Dermatologen",

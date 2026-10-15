@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import { 
-  Shield, Award, Users, Sparkles, CheckCircle2, 
-  MessageCircle, Calendar, Star, Clock, Zap
+import {
+  Shield, Award, Users, Sparkles, CheckCircle2,
+  MessageCircle, Calendar, Star, Clock, Zap, Wallet, ArrowRight
 } from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
 import { SparkleIcon } from '../components/ui/MedicalIcon'
@@ -23,7 +23,6 @@ export default function Aesthetic() {
   )
 }
 
-// === HERO SECTION ===
 function HeroSection() {
   const { t } = useTranslation()
 
@@ -93,7 +92,6 @@ function HeroSection() {
   )
 }
 
-// === WHY AESTHETIC SECTION ===
 function WhyAestheticSection() {
   const { t } = useTranslation()
 
@@ -157,7 +155,6 @@ function WhyAestheticSection() {
   )
 }
 
-// === TREATMENTS SECTION ===
 function TreatmentsSection() {
   const { t } = useTranslation()
 
@@ -238,8 +235,9 @@ function TreatmentsSection() {
                         {price.split(' - ')[0]}
                       </span>
                     </div>
-                    <a href="#contact" className="text-primary-600 font-semibold hover:underline">
+                    <a href="#contact" className="inline-flex items-center gap-1 text-primary-600 font-semibold hover:underline">
                       {t('aesthetic.treatments.learnMore')}
+                      <ArrowRight className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
@@ -252,7 +250,6 @@ function TreatmentsSection() {
   )
 }
 
-// === BENEFITS SECTION ===
 function BenefitsSection() {
   const { t } = useTranslation()
 
@@ -281,7 +278,10 @@ function BenefitsSection() {
             </div>
 
             <div className="mt-8 p-6 bg-primary-50 rounded-xl">
-              <p className="text-sm text-secondary-600 mb-2">{t('aesthetic.benefits.savingsLabel')}</p>
+              <p className="text-sm text-secondary-600 mb-2 flex items-center gap-2">
+                <Wallet className="w-4 h-4 text-primary-600" strokeWidth={1.75} />
+                {t('aesthetic.benefits.savingsLabel')}
+              </p>
               <p className="text-3xl font-bold text-primary-600">{t('aesthetic.benefits.savingsValue')}</p>
             </div>
           </div>
@@ -299,7 +299,6 @@ function BenefitsSection() {
   )
 }
 
-// === PROCESS SECTION ===
 function ProcessSection() {
   const { t } = useTranslation()
 
@@ -363,7 +362,6 @@ function ProcessSection() {
   )
 }
 
-// === RESULTS SECTION ===
 function ResultsSection() {
   const { t } = useTranslation()
 
@@ -404,7 +402,6 @@ function ResultsSection() {
   )
 }
 
-// === CONTACT FORM SECTION ===
 function ContactFormSection() {
   const { t } = useTranslation()
 

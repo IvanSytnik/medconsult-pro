@@ -389,7 +389,7 @@
       "durationLabel": "Duration:",
       "recoveryLabel": "Recovery:",
       "from": "From",
-      "learnMore": "Learn More →",
+      "learnMore": "Learn More",
       "list": {
         "rhinoplasty": {
           "title": "Rhinoplasty",
@@ -439,7 +439,7 @@
       "tag": "Service Package",
       "title": "What's Included in the Price",
       "description": "We offer comprehensive packages that include everything necessary for your comfort and safety.",
-      "savingsLabel": "💰 Savings Compared to Germany",
+      "savingsLabel": "Savings Compared to Germany",
       "savingsValue": "Up to 60-70%",
       "list": [
         "Consultation with plastic surgeon",
@@ -549,7 +549,7 @@
       "recoveryLabel": "Recovery:",
       "survivalLabel": "Survival Rate:",
       "from": "From",
-      "learnMore": "Learn More →",
+      "learnMore": "Learn More",
       "list": {
         "fue": {
           "title": "FUE (Follicular Unit Extraction)",
@@ -605,7 +605,7 @@
       "tag": "All-Inclusive Package",
       "title": "What's Included in the Price",
       "description": "Comprehensive package with accommodation, transfer and everything needed for comfortable treatment.",
-      "savingsLabel": "💰 Savings Compared to Europe",
+      "savingsLabel": "Savings Compared to Europe",
       "savingsValue": "Up to 70%",
       "list": [
         "Free online hair analysis and consultation",
@@ -737,7 +737,7 @@
       "effect": "Effect:",
       "downtime": "Downtime:",
       "from": "From",
-      "learnMore": "Learn More →",
+      "learnMore": "Learn More",
       "list": {
         "botox": {
           "title": "Botox",
@@ -817,7 +817,7 @@
       "tag": "What You Get",
       "title": "Comprehensive Approach to Beauty",
       "description": "We care not only about the procedure result, but also about your comfort at every stage.",
-      "savingsLabel": "💰 Savings Compared to Europe",
+      "savingsLabel": "Savings Compared to Europe",
       "savingsValue": "Up to 70%",
       "list": [
         "Initial consultation with dermatologist",
