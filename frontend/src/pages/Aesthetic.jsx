@@ -63,7 +63,7 @@ function HeroSection() {
                 <div className="text-sm text-secondary-500">{t('aesthetic.hero.stats.price')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-primary-600">0-2</div>
+                <div className="text-3xl font-bold text-primary-600">0–2</div>
                 <div className="text-sm text-secondary-500">{t('aesthetic.hero.stats.downtime')}</div>
               </div>
               <div>
@@ -387,7 +387,7 @@ function ResultsSection() {
               <p className="opacity-90">{t('aesthetic.results.stats.procedures')}</p>
             </div>
             <div className="bg-white/10 border border-white/15 rounded-xl p-8">
-              <div className="text-4xl font-bold mb-2">0-2</div>
+              <div className="text-4xl font-bold mb-2">0–2</div>
               <p className="opacity-90">{t('aesthetic.results.stats.downtime')}</p>
             </div>
           </div>
