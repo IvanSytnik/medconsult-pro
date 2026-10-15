@@ -1,7 +1,7 @@
 'use client'
 
 import { ChevronLeft, ChevronRight, Maximize2, Pause, Play, Volume2, VolumeX } from 'lucide-react'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export type Video = { id: number; url: string; thumbnail: string }
 
@@ -38,6 +38,12 @@ export default function VideoSlider({
   const [isMuted, setIsMuted] = useState(true)
   const videoRef = useRef<FullscreenVideo>(null)
 
+  // React does not keep the `muted` attribute in sync, so the element property is the source of truth.
+  // Re-apply it after every source change because load() resets playback state.
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.muted = isMuted
+  }, [isMuted, currentVideo])
+
   const handlePlayPause = () => {
     const video = videoRef.current
     if (!video) return
@@ -49,8 +55,7 @@ export default function VideoSlider({
   const handleMuteToggle = () => {
     const video = videoRef.current
     if (!video) return
-    video.muted = !isMuted
-    setIsMuted(!isMuted)
+    setIsMuted(!video.muted)
   }
 
   const handleVideoSelect = (index: number) => {
@@ -94,6 +99,8 @@ export default function VideoSlider({
                 onEnded={() => setIsPlaying(false)}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
+                onVolumeChange={(e) => setIsMuted(e.currentTarget.muted)}
+                muted={isMuted}
                 playsInline
               >
                 <source src={videos[currentVideo].url} type="video/mp4" />
