@@ -7,10 +7,10 @@
     "consultation": "Beratung"
   },
   "hero": {
-    "badge": "Medizintourismus Nr. 1",
+    "badge": "Medizinreisen in die Türkei",
     "title": "Hochwertige Medizin in der Türkei",
     "titleAccent": "nach europäischen Standards, zu erschwinglichen Preisen",
-    "subtitle": "Zahnmedizin, plastische Chirurgie, Haartransplantation und ästhetische Medizin für Kunden aus Deutschland und Europa — mit Vollbetreuung von A bis Z",
+    "subtitle": "Zahnmedizin, Schönheitschirurgie, Haartransplantation und ästhetische Medizin für Patienten aus Deutschland und Europa. Wir wählen die Klinik aus, organisieren die Reise und bleiben auch nach Ihrer Rückkehr erreichbar.",
     "btnConsultation": "Kostenlose Beratung",
     "btnCalculate": "Kosten berechnen",
     "stats": {
@@ -22,11 +22,11 @@
   "why": {
     "tag": "Vorteile",
     "title": "Warum die Türkei?",
-    "subtitle": "Die Türkei ist zum weltweiten Zentrum des Medizintourismus geworden dank der Kombination aus Qualität, Preis und Service",
+    "subtitle": "Türkische Kliniken behandeln Patienten aus ganz Europa: dieselben Materialien wie in Deutschland, kurze Wartezeiten und deutlich niedrigere Preise",
     "items": {
       "clinics": {
         "title": "Moderne Kliniken",
-        "desc": "Internationale JCI-Akkreditierung, neueste Geräte und Technologien auf Weltniveau"
+        "desc": "JCI-akkreditierte Kliniken mit 3D-Diagnostik und aktueller Ausstattung"
       },
       "doctors": {
         "title": "Erfahrene Ärzte",
@@ -53,7 +53,7 @@
   "services": {
     "tag": "Leistungen",
     "title": "Unsere Dienstleistungen",
-    "subtitle": "Wir arbeiten mit den besten Kliniken der Türkei in allen Bereichen der ästhetischen und rekonstruktiven Medizin",
+    "subtitle": "Wir arbeiten nur mit Kliniken, die wir selbst geprüft haben",
     "dental": {
       "title": "Zahnmedizin",
       "desc": "Implantate, Veneers, Kronen, All-on-4. Deutsche und Schweizer Materialien mit lebenslanger Garantie.",
@@ -66,7 +66,7 @@
     },
     "hair": {
       "title": "Haartransplantation",
-      "desc": "FUE, DHI, Saphir-Technik. Natürliches Ergebnis für immer.",
+      "desc": "FUE-, DHI- und Saphir-Technik. Verpflanzte Haare wachsen ein Leben lang.",
       "price": "Transplantation ab"
     },
     "aesthetic": {
@@ -105,8 +105,8 @@
   },
   "process": {
     "tag": "So funktioniert's",
-    "title": "4 einfache Schritte",
-    "subtitle": "Von der ersten Anfrage bis zum Ergebnis — wir sind bei jedem Schritt dabei",
+    "title": "In vier Schritten",
+    "subtitle": "Von der ersten Nachricht bis zur Nachsorge nach Ihrer Rückkehr",
     "steps": {
       "consultation": {
         "title": "Beratung",
@@ -129,7 +129,7 @@
   "team": {
     "tag": "Team",
     "title": "Ihre Koordinatoren",
-    "subtitle": "Wir sprechen Ihre Sprache und sind immer erreichbar",
+    "subtitle": "Wir sprechen Deutsch, Russisch und Ukrainisch",
     "roles": {
       "chief": "Hauptkoordinator",
       "coordinator": "Koordinator"
@@ -206,18 +206,18 @@
     "privacy": "Datenschutz",
     "copyright": "Alle Rechte vorbehalten."
   },
-  "dental": { 
+  "dental": {
     "videos": {
-  "tag": "Videogalerie",
-  "title": "Unsere Expertise in Aktion",
-  "subtitle": "Echte Eingriffe, echte Ergebnisse und zufriedene Patienten aus unserer Klinik in der Türkei",
-  "ctaTitle": "Bereit für Ihr neues Lächeln?",
-  "ctaDesc": "Überzeugen Sie sich selbst! Buchen Sie noch heute Ihre kostenlose Beratung und starten Sie den Weg zu einem perfekten Lächeln."
-},
+      "tag": "Videogalerie",
+      "title": "Behandlungsvideos",
+      "subtitle": "Aufgenommen in unserer Partnerklinik in Antalya: Behandlungen und Patienten danach",
+      "ctaTitle": "Was würde Ihre Behandlung kosten?",
+      "ctaDesc": "Vereinbaren Sie eine kostenlose Beratung. Noch vor der Reise erhalten Sie einen Behandlungsplan mit genauem Preis."
+    },
     "back": "Zurück zur Startseite",
     "badge": "Partnerklinik Dentanatura",
     "heroTitle": "Zahnmedizin in der Türkei",
-    "heroSubtitle": "Qualität, die Sie verdienen",
+    "heroSubtitle": "Zu einem Bruchteil der deutschen Preise",
     "heroDesc": "Implantate, Veneers, Kronen, All-on-4 mit deutschen und Schweizer Materialien. Bis zu 70% Ersparnis gegenüber Deutschland.",
     "features": {
       "guarantee": "Lebenslange Garantie auf Implantate",
@@ -236,26 +236,26 @@
     },
     "servicesTag": "Leistungen",
     "servicesTitle": "Unsere Behandlungen",
-    "servicesSubtitle": "Komplettes Spektrum moderner Zahnmedizin mit Premium-Materialien",
+    "servicesSubtitle": "Von der einzelnen Krone bis zur kompletten Kieferversorgung",
     "treatments": {
       "implants": {
         "title": "Zahnimplantate",
-        "desc": "Dauerhafte Lösung zur Wiederherstellung verlorener Zähne. Premium-Marken aus Deutschland und der Schweiz mit lebenslanger Herstellergarantie.",
+        "desc": "Fehlende Zähne dauerhaft ersetzen. Implantate deutscher und Schweizer Hersteller mit lebenslanger Herstellergarantie.",
         "price": "ab"
       },
       "crowns": {
         "title": "Keramikkronen",
-        "desc": "Wiederherstellung von Festigkeit, Form und Ästhetik der Zähne. Höchste Qualität mit 5 Jahren Garantie.",
+        "desc": "Stellen Form und Belastbarkeit beschädigter Zähne wieder her. 5 Jahre Garantie.",
         "price": "ab"
       },
       "veneers": {
         "title": "Veneers",
-        "desc": "Hollywood-Lächeln mit ultradünnen Verblendschalen. Natürliche Ästhetik für ein perfektes Lächeln.",
+        "desc": "Dünne Keramikschalen auf den Frontzähnen korrigieren Farbe, Form und kleine Lücken.",
         "price": "ab"
       },
       "zirconium": {
         "title": "Zirkonkronen",
-        "desc": "Maximale Festigkeit kombiniert mit natürlicher Ästhetik. Ideal für Front- und Seitenzähne.",
+        "desc": "Sehr stabil und natürlich aussehend. Für Front- und Seitenzähne geeignet.",
         "price": "ab"
       },
       "allOn": {
@@ -265,13 +265,13 @@
       },
       "bone": {
         "title": "Knochenaufbau",
-        "desc": "Professionelle Knochenvorbereitung für die Implantation. Moderne Techniken.",
+        "desc": "Baut den Kieferknochen auf, wenn er für ein Implantat nicht ausreicht.",
         "price": "ab"
       }
     },
     "pricingTag": "Preisvergleich",
     "pricingTitle": "Bis zu 70% Ersparnis",
-    "pricingSubtitle": "Gleiche Materialien und Qualität — faire Preise",
+    "pricingSubtitle": "Dieselben Materialien wie in deutschen Praxen, zu türkischen Preisen",
     "pricingTable": {
       "procedure": "Behandlung",
       "germany": "Deutschland",
@@ -280,7 +280,7 @@
     },
     "clinicTag": "Klinik",
     "clinicTitle": "Dentanatura Clinic",
-    "clinicSubtitle": "Moderne Klinik im sonnigen Antalya mit 20 Jahren Erfahrung",
+    "clinicSubtitle": "In Antalya, seit 20 Jahren in Betrieb",
     "doctor": {
       "name": "Dr. Mevlüt",
       "role": "Gründer der Klinik und Chefarzt",
@@ -302,7 +302,7 @@
     },
     "packageTag": "All-Inclusive",
     "packageTitle": "Ihr Paket",
-    "packageSubtitle": "Komfortabler Aufenthalt ohne Stress. Sie kümmern sich nur um den Flug.",
+    "packageSubtitle": "Sie buchen den Flug. Um alles andere kümmern wir uns.",
     "package": {
       "hotel": {
         "title": "Hotel",
@@ -323,25 +323,19 @@
     },
     "packageNote": "Ab €3.200: Bei einer Behandlung über €3.200 ist das komplette Paket kostenlos inklusive."
   },
-  "comingSoon": {
-    "title": "Demnächst",
-    "text": "Dieser Bereich wird gerade entwickelt. Kontaktieren Sie uns für eine kostenlose Beratung!",
-    "btnConsultation": "Beratung erhalten",
-    "btnHome": "Zur Startseite"
-  },
- "plastic": {
-   "videos": {
-    "tag": "Videogalerie",
-    "title": "Unsere Ergebnisse auf Video",
-    "subtitle": "Echte Eingriffe, echte Ergebnisse — sehen Sie die Arbeit unserer plastischen Chirurgen in der Türkei",
-    "ctaTitle": "Bereit für Ihre Verwandlung?",
-    "ctaDesc": "Überzeugen Sie sich selbst von der Qualität! Buchen Sie eine kostenlose Beratung und erfahren Sie, welche Möglichkeiten es für Sie gibt."
-  },
+  "plastic": {
+    "videos": {
+      "tag": "Videogalerie",
+      "title": "Unsere Ergebnisse auf Video",
+      "subtitle": "Eingriffe und Ergebnisse der Chirurgen, mit denen wir in der Türkei zusammenarbeiten",
+      "ctaTitle": "Unsicher, welcher Eingriff der richtige ist?",
+      "ctaDesc": "Vereinbaren Sie eine kostenlose Beratung. Wir gehen die Möglichkeiten mit Ihnen durch und nennen Ihnen für jede den Preis."
+    },
     "hero": {
       "tag": "Plastische Chirurgie",
       "title": "Plastische Chirurgie",
       "titleAccent": "in der Türkei",
-      "description": "Rhinoplastik, Mammoplastik, Abdominoplastik und andere Operationen in JCI-akkreditierten Kliniken. Erfahrene Chirurgen, moderne Ausstattung und erschwingliche Preise.",
+      "description": "Nasenkorrektur, Brustoperationen, Bauchdeckenstraffung und weitere Eingriffe in JCI-akkreditierten Kliniken, zu einem Bruchteil der deutschen Preise.",
       "consultation": "Kostenlose Beratung",
       "procedures": "Operationsarten",
       "stats": {
@@ -353,8 +347,8 @@
     },
     "why": {
       "tag": "Vorteile",
-      "title": "Warum uns für plastische Chirurgie wählen",
-      "subtitle": "Wir bieten einen umfassenden Ansatz und höchste Qualität medizinischer Dienstleistungen",
+      "title": "Schönheitschirurgie mit uns",
+      "subtitle": "Was Sie bekommen, wenn wir Ihre Operation organisieren",
       "items": {
         "surgeons": {
           "title": "Erfahrene Chirurgen",
@@ -366,15 +360,15 @@
         },
         "individual": {
           "title": "Individueller Ansatz",
-          "desc": "Persönlicher Behandlungsplan, der Ihre Besonderheiten und Wünsche berücksichtigt"
+          "desc": "Der Chirurg plant den Eingriff nach Ihrer Anatomie und Ihren Wünschen"
         },
         "equipment": {
           "title": "Moderne Ausstattung",
-          "desc": "Neueste Technologien und Methoden für minimale Invasivität und schnelle Erholung"
+          "desc": "Aktuelle OP-Techniken mit kleineren Schnitten und kürzerer Erholung"
         },
         "care": {
           "title": "Umfassende Betreuung",
-          "desc": "Vollständige Begleitung von Beratung bis Rehabilitation mit 24/7-Unterstützung"
+          "desc": "Wir begleiten Sie von der ersten Beratung bis zur Genesung und sind während Ihres Aufenthalts jederzeit erreichbar"
         },
         "recovery": {
           "title": "Schnelle Erholung",
@@ -384,8 +378,8 @@
     },
     "procedures": {
       "tag": "Eingriffe",
-      "title": "Unsere Plastische Chirurgie Leistungen",
-      "subtitle": "Breites Spektrum an Eingriffen zur Erreichung Ihrer ästhetischen Ziele",
+      "title": "Eingriffe und Preise",
+      "subtitle": "Die Preise sind Richtwerte. Die genauen Kosten hängen von Ihrem Fall ab.",
       "durationLabel": "Dauer:",
       "recoveryLabel": "Erholung:",
       "from": "Ab",
@@ -438,7 +432,7 @@
     "benefits": {
       "tag": "Leistungspaket",
       "title": "Was im Preis enthalten ist",
-      "description": "Wir bieten umfassende Pakete, die alles Notwendige für Ihren Komfort und Ihre Sicherheit beinhalten.",
+      "description": "Ein Preis für die Operation, den Klinikaufenthalt und alles drumherum.",
       "savingsLabel": "Ersparnis im Vergleich zu Deutschland",
       "savingsValue": "Bis zu 60-70%",
       "list": [
@@ -455,7 +449,7 @@
     "process": {
       "tag": "Ablauf",
       "title": "Wie die Behandlung abläuft",
-      "subtitle": "Vier einfache Schritte zu Ihrer Transformation",
+      "subtitle": "Von der ersten Beratung bis zur vollständigen Genesung",
       "steps": {
         "consultation": {
           "title": "Beratung",
@@ -463,11 +457,11 @@
         },
         "planning": {
           "title": "Planung",
-          "desc": "Entwicklung eines individuellen Operationsplans und Vorbereitung auf den Eingriff"
+          "desc": "Der Chirurg erstellt den OP-Plan, wir buchen Untersuchungen, Hotel und Transfers"
         },
         "operation": {
           "title": "Operation",
-          "desc": "Durchführung der Operation durch erfahrenen Chirurgen mit modernen Technologien"
+          "desc": "Die Operation in einer akkreditierten Klinik, danach Überwachung auf der Station"
         },
         "recovery": {
           "title": "Erholung",
@@ -477,8 +471,8 @@
     },
     "results": {
       "tag": "Ergebnisse",
-      "title": "Vertrauen Sie der Erfahrung unserer Spezialisten",
-      "subtitle": "Tausende zufriedene Patienten haben bereits unsere Kliniken für plastische Chirurgie gewählt. Werden Sie Teil davon!",
+      "title": "Erfahrene Chirurgen, akkreditierte Kliniken",
+      "subtitle": "Unsere Partnerkliniken operieren täglich Patienten aus ganz Europa.",
       "bookConsultation": "Beratung vereinbaren",
       "stats": {
         "satisfaction": "Patientenzufriedenheit",
@@ -495,12 +489,12 @@
       "email": "E-Mail"
     }
   },
-   "hair": {
+  "hair": {
     "hero": {
       "tag": "Haartransplantation",
       "title": "Haartransplantation",
       "titleAccent": "in der Türkei",
-      "description": "Moderne FUE- und DHI-Haartransplantationsmethoden in führenden Istanbuler Kliniken. Natürliche Ergebnisse, minimale Invasivität und lebenslange Garantie.",
+      "description": "Haartransplantation mit FUE und DHI in erfahrenen Istanbuler Kliniken. Natürlicher Haaransatz, keine lineare Narbe und verpflanzte Haare, die ein Leben lang wachsen.",
       "freeAnalysis": "Kostenlose Haaranalyse",
       "methods": "Transplantationsmethoden",
       "stats": {
@@ -513,27 +507,27 @@
     "why": {
       "tag": "Vorteile",
       "title": "Warum die Türkei für Haartransplantation wählen",
-      "subtitle": "Kombination aus hoher Qualität, erschwinglichen Preisen und Welterfahrung",
+      "subtitle": "Mehr Erfahrung und niedrigere Preise als irgendwo sonst in Europa",
       "items": {
         "leaders": {
-          "title": "Weltmarktführer",
+          "title": "Die meiste Erfahrung weltweit",
           "desc": "Die Türkei führt jährlich über 1,5 Millionen Haartransplantationen durch - mehr als jedes andere Land"
         },
         "guarantee": {
           "title": "Lebenslange Garantie",
-          "desc": "Transplantierte Haare halten ein Leben lang dank einzigartiger Eigenschaften der Spenderzone"
+          "desc": "Haare aus der Spenderzone am Hinterkopf sind gegen Haarausfall resistent und wachsen nach der Verpflanzung weiter"
         },
         "technology": {
-          "title": "Fortschrittliche Technologie",
-          "desc": "FUE Sapphire und DHI Methoden gewährleisten maximale Dichte und natürliche Ergebnisse"
+          "title": "Moderne Methoden",
+          "desc": "Saphir-FUE und DHI ermöglichen eine dichte Verpflanzung und ein natürliches Ergebnis"
         },
         "specialists": {
           "title": "Erfahrene Spezialisten",
-          "desc": "Ärzte führen 50-100 Operationen pro Monat durch und sammeln einzigartige Erfahrung und Expertise"
+          "desc": "Die Teams führen 50–100 Transplantationen im Monat durch"
         },
         "precision": {
           "title": "Implantationspräzision",
-          "desc": "Kontrolle von Winkel, Richtung und Tiefe jedes Grafts für perfekte Ergebnisse"
+          "desc": "Jedes Graft wird im richtigen Winkel, in der richtigen Richtung und Tiefe gesetzt, damit der Haaransatz natürlich aussieht"
         },
         "survival": {
           "title": "Hohe Anwachsrate",
@@ -544,7 +538,7 @@
     "methods": {
       "tag": "Methoden",
       "title": "Haartransplantationsmethoden",
-      "subtitle": "Wählen Sie die richtige Technik basierend auf Ihren Zielen und Budget",
+      "subtitle": "Der Arzt empfiehlt die Methode, nachdem er Ihre Fotos gesehen hat",
       "graftsLabel": "Grafts:",
       "recoveryLabel": "Erholung:",
       "survivalLabel": "Anwachsrate:",
@@ -604,7 +598,7 @@
     "benefits": {
       "tag": "All-Inclusive-Paket",
       "title": "Was im Preis enthalten ist",
-      "description": "Umfassendes Paket mit Unterkunft, Transfer und allem Notwendigen für eine komfortable Behandlung.",
+      "description": "Ein Preis für die Operation, das Hotel, die Transfers und die Nachsorge.",
       "savingsLabel": "Ersparnis im Vergleich zu Europa",
       "savingsValue": "Bis zu 70%",
       "list": [
@@ -623,7 +617,7 @@
     "process": {
       "tag": "Ablauf",
       "title": "Wie die Transplantation abläuft",
-      "subtitle": "Vom Erstkontakt zu dichtem Haar - nur 4 Schritte",
+      "subtitle": "Von den ersten Fotos bis zum Endergebnis",
       "timelineTitle": "Haarwachstums-Zeitplan",
       "steps": {
         "analysis": {
@@ -664,8 +658,8 @@
     },
     "results": {
       "tag": "Ergebnisse",
-      "title": "Türkei - Welthauptstadt der Haartransplantation",
-      "subtitle": "Über 500.000 Patienten wählen jährlich türkische Kliniken für Haarwiederherstellung",
+      "title": "Die Türkei ist weltweit führend bei Haartransplantationen",
+      "subtitle": "Patienten aus ganz Europa kommen für eine Haartransplantation in türkische Kliniken",
       "getFreeAnalysis": "Kostenlose Analyse erhalten",
       "stats": {
         "survival": "Graft-Anwachsrate",
@@ -683,12 +677,12 @@
       "email": "E-Mail"
     }
   },
-   "aesthetic": {
+  "aesthetic": {
     "hero": {
       "tag": "Ästhetische Medizin",
       "title": "Ästhetische Medizin",
       "titleAccent": "in der Türkei",
-      "description": "Nicht-chirurgische Verjüngung und Schönheitskorrektur. Botox, Filler, Mesotherapie und weitere Behandlungen von führenden Spezialisten.",
+      "description": "Verjüngung und Korrektur ohne OP: Botox, Filler, Mesotherapie und mehr, durchgeführt von zertifizierten Dermatologen und Kosmetologen.",
       "consultation": "Beratungstermin vereinbaren",
       "allTreatments": "Alle Behandlungen",
       "stats": {
@@ -700,8 +694,8 @@
     },
     "why": {
       "tag": "Vorteile",
-      "title": "Warum uns für ästhetische Behandlungen wählen",
-      "subtitle": "Sicherheit, Qualität und natürliche Schönheit",
+      "title": "Ästhetische Behandlungen mit uns",
+      "subtitle": "Zertifizierte Präparate, erfahrene Ärzte und Ergebnisse, die zu Ihnen passen",
       "items": {
         "specialists": {
           "title": "Zertifizierte Spezialisten",
@@ -709,18 +703,18 @@
         },
         "original": {
           "title": "Originalprodukte",
-          "desc": "Wir verwenden nur zertifizierte Produkte führender Hersteller (Allergan, Ipsen)"
+          "desc": "Nur zertifizierte Originalpräparate, zum Beispiel von Allergan und Ipsen"
         },
         "natural": {
           "title": "Natürliches Ergebnis",
-          "desc": "Sanfter Ansatz zur Bewahrung der Natürlichkeit und Individualität der Gesichtszüge"
+          "desc": "Ziel ist ein frischeres Aussehen, kein anderes Gesicht"
         },
         "individual": {
           "title": "Individueller Plan",
-          "desc": "Personalisiertes Behandlungsprogramm basierend auf Hauttyp und altersbedingten Merkmalen"
+          "desc": "Behandlung abgestimmt auf Ihren Hauttyp und Ihr Alter"
         },
         "fast": {
-          "title": "Schnelle Wirkung",
+          "title": "Schnell sichtbar",
           "desc": "Ergebnis sofort nach der Behandlung sichtbar, maximale Wirkung nach 7-14 Tagen"
         },
         "minimal": {
@@ -731,8 +725,8 @@
     },
     "treatments": {
       "tag": "Behandlungen",
-      "title": "Unsere ästhetischen Medizinleistungen",
-      "subtitle": "Breites Spektrum an nicht-chirurgischen Behandlungen für Schönheit und Verjüngung",
+      "title": "Behandlungen und Preise",
+      "subtitle": "Behandlungen ohne OP. Die Preise sind Richtwerte.",
       "duration": "Dauer:",
       "effect": "Wirkung:",
       "downtime": "Ausfallzeit:",
@@ -815,8 +809,8 @@
     },
     "benefits": {
       "tag": "Was Sie erhalten",
-      "title": "Ganzheitlicher Ansatz für Schönheit",
-      "description": "Wir kümmern uns nicht nur um das Behandlungsergebnis, sondern auch um Ihren Komfort in jeder Phase.",
+      "title": "Was enthalten ist",
+      "description": "Zu jeder Behandlung gehören eine Beratung vorab und eine Kontrolle danach.",
       "savingsLabel": "Ersparnis im Vergleich zu Europa",
       "savingsValue": "Bis zu 70%",
       "list": [
@@ -833,7 +827,7 @@
     "process": {
       "tag": "Ablauf",
       "title": "Wie Behandlungen ablaufen",
-      "subtitle": "Einfacher und komfortabler Weg zu Ihrer Schönheit",
+      "subtitle": "Die meisten Behandlungen sind in einem Termin erledigt",
       "featuresTitle": "Behandlungsmerkmale",
       "steps": {
         "consultation": {
@@ -870,8 +864,8 @@
     },
     "results": {
       "tag": "Ergebnisse",
-      "title": "Ihre natürliche Schönheit ist unser Ziel",
-      "subtitle": "Wir helfen Ihnen, besser auszusehen, während wir Ihre Individualität und Natürlichkeit bewahren",
+      "title": "Natürlich, nicht übertrieben",
+      "subtitle": "Andere sollen sehen, dass Sie erholt aussehen, nicht dass Sie behandelt wurden",
       "bookProcedure": "Behandlung buchen",
       "stats": {
         "satisfaction": "Ergebniszufriedenheit",
@@ -889,92 +883,92 @@
     }
   },
   "impressum": {
-  "back": "Zurück zur Startseite",
-  "title": "Impressum",
-  "companyInfo": {
-    "title": "Angaben gemäß § 5 TMG",
-    "name": "MedConsult Turkey",
-    "address1": "Vermittlungs- und Beratungsservice für Medizintourismus",
-    "address2": "Deutschland"
+    "back": "Zurück zur Startseite",
+    "title": "Impressum",
+    "companyInfo": {
+      "title": "Angaben gemäß § 5 TMG",
+      "name": "MedConsult Turkey",
+      "address1": "Vermittlungs- und Beratungsservice für Medizintourismus",
+      "address2": "Deutschland"
+    },
+    "represented": {
+      "title": "Vertreten durch",
+      "name": "Oleg (Hauptkoordinator)"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "website": "Webseite"
+    },
+    "disclaimer": {
+      "title": "Haftungsausschluss",
+      "text": "Die Inhalte dieser Website werden mit größtmöglicher Sorgfalt erstellt. Der Anbieter übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte. Die Nutzung der Inhalte erfolgt auf eigene Gefahr des Nutzers."
+    },
+    "liability": {
+      "title": "Haftung für Inhalte",
+      "text": "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen."
+    },
+    "links": {
+      "title": "Haftung für Links",
+      "text": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich."
+    },
+    "copyright": {
+      "title": "Urheberrecht",
+      "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+    },
+    "medical": {
+      "title": "Medizinischer Hinweis",
+      "text": "MedConsult Turkey ist ein Vermittlungs- und Beratungsservice und kein medizinischer Anbieter. Wir vermitteln Kontakte zu geprüften Kliniken und Ärzten in der Türkei. Alle medizinischen Leistungen werden ausschließlich von lizenzierten Kliniken und Ärzten vor Ort erbracht. Die Informationen auf dieser Website ersetzen keine ärztliche Beratung."
+    }
   },
-  "represented": {
-    "title": "Vertreten durch",
-    "name": "Oleg (Hauptkoordinator)"
-  },
-  "contact": {
-    "title": "Kontakt",
-    "phone": "Telefon",
-    "email": "E-Mail",
-    "website": "Webseite"
-  },
-  "disclaimer": {
-    "title": "Haftungsausschluss",
-    "text": "Die Inhalte dieser Website werden mit größtmöglicher Sorgfalt erstellt. Der Anbieter übernimmt jedoch keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte. Die Nutzung der Inhalte erfolgt auf eigene Gefahr des Nutzers."
-  },
-  "liability": {
-    "title": "Haftung für Inhalte",
-    "text": "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen."
-  },
-  "links": {
-    "title": "Haftung für Links",
-    "text": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich."
-  },
-  "copyright": {
-    "title": "Urheberrecht",
-    "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
-  },
-  "medical": {
-    "title": "Medizinischer Hinweis",
-    "text": "MedConsult Turkey ist ein Vermittlungs- und Beratungsservice und kein medizinischer Anbieter. Wir vermitteln Kontakte zu geprüften Kliniken und Ärzten in der Türkei. Alle medizinischen Leistungen werden ausschließlich von lizenzierten Kliniken und Ärzten vor Ort erbracht. Die Informationen auf dieser Website ersetzen keine ärztliche Beratung."
-  }
-},
-"privacy": {
-  "back": "Zurück zur Startseite",
-  "title": "Datenschutzerklärung",
-  "lastUpdated": "Stand: Februar 2026",
-  "contactTitle": "Fragen zum Datenschutz?",
-  "contactText": "Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten kontaktieren Sie uns:",
-  "sections": {
-    "overview": {
-      "title": "1. Datenschutz auf einen Blick",
-      "text": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können."
-    },
-    "responsible": {
-      "title": "2. Verantwortliche Stelle",
-      "text": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:\n\nMedConsult Turkey\nDeutschland\nE-Mail: info@medconsult-turkey.com\nTelefon: +49 173 6631438"
-    },
-    "collection": {
-      "title": "3. Datenerfassung auf dieser Website",
-      "text": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z. B. über das Kontaktformular). Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs)."
-    },
-    "contactForm": {
-      "title": "4. Kontaktformular",
-      "text": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular (Name, E-Mail, Telefon, gewünschte Leistung, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)."
-    },
-    "cookies": {
-      "title": "5. Cookies",
-      "text": "Diese Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Einige Cookies sind technisch notwendig (z. B. Spracheinstellungen), andere dienen der Analyse des Nutzerverhaltens. Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben."
-    },
-    "analytics": {
-      "title": "6. Analyse-Tools",
-      "text": "Diese Website kann Analyse-Tools zur statistischen Auswertung der Besucherzugriffe verwenden. Die damit gewonnenen Daten werden nicht dazu benutzt, den Besucher persönlich zu identifizieren, und werden nicht mit personenbezogenen Daten zusammengeführt."
-    },
-    "thirdParty": {
-      "title": "7. Drittanbieter und externe Dienste",
-      "text": "Auf dieser Website werden externe Dienste eingebunden, darunter Cloudinary (für Videos und Bilder), WhatsApp Business (für Kommunikation) und ggf. weitere Dienste. Durch die Einbindung dieser Dienste kann es zur Übertragung von Daten an die jeweiligen Anbieter kommen. Nähere Informationen entnehmen Sie den Datenschutzerklärungen der jeweiligen Anbieter."
-    },
-    "rights": {
-      "title": "8. Ihre Rechte",
-      "text": "Sie haben jederzeit das Recht auf Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Sie haben außerdem ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden. Ferner steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu."
-    },
-    "storage": {
-      "title": "9. Speicherdauer",
-      "text": "Personenbezogene Daten, die uns über das Kontaktformular oder per E-Mail übermittelt werden, werden nur so lange gespeichert, wie es für die Bearbeitung Ihrer Anfrage erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen."
-    },
-    "changes": {
-      "title": "10. Änderungen dieser Datenschutzerklärung",
-      "text": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung."
+  "privacy": {
+    "back": "Zurück zur Startseite",
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Stand: Februar 2026",
+    "contactTitle": "Fragen zum Datenschutz?",
+    "contactText": "Bei Fragen zur Verarbeitung Ihrer personenbezogenen Daten kontaktieren Sie uns:",
+    "sections": {
+      "overview": {
+        "title": "1. Datenschutz auf einen Blick",
+        "text": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können."
+      },
+      "responsible": {
+        "title": "2. Verantwortliche Stelle",
+        "text": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:\n\nMedConsult Turkey\nDeutschland\nE-Mail: info@medconsult-turkey.com\nTelefon: +49 173 6631438"
+      },
+      "collection": {
+        "title": "3. Datenerfassung auf dieser Website",
+        "text": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z. B. über das Kontaktformular). Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs)."
+      },
+      "contactForm": {
+        "title": "4. Kontaktformular",
+        "text": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Formular (Name, E-Mail, Telefon, gewünschte Leistung, Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)."
+      },
+      "cookies": {
+        "title": "5. Cookies",
+        "text": "Diese Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Einige Cookies sind technisch notwendig (z. B. Spracheinstellungen), andere dienen der Analyse des Nutzerverhaltens. Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben."
+      },
+      "analytics": {
+        "title": "6. Analyse-Tools",
+        "text": "Diese Website kann Analyse-Tools zur statistischen Auswertung der Besucherzugriffe verwenden. Die damit gewonnenen Daten werden nicht dazu benutzt, den Besucher persönlich zu identifizieren, und werden nicht mit personenbezogenen Daten zusammengeführt."
+      },
+      "thirdParty": {
+        "title": "7. Drittanbieter und externe Dienste",
+        "text": "Auf dieser Website werden externe Dienste eingebunden, darunter Cloudinary (für Videos und Bilder), WhatsApp Business (für Kommunikation) und ggf. weitere Dienste. Durch die Einbindung dieser Dienste kann es zur Übertragung von Daten an die jeweiligen Anbieter kommen. Nähere Informationen entnehmen Sie den Datenschutzerklärungen der jeweiligen Anbieter."
+      },
+      "rights": {
+        "title": "8. Ihre Rechte",
+        "text": "Sie haben jederzeit das Recht auf Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Sie haben außerdem ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden. Ferner steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu."
+      },
+      "storage": {
+        "title": "9. Speicherdauer",
+        "text": "Personenbezogene Daten, die uns über das Kontaktformular oder per E-Mail übermittelt werden, werden nur so lange gespeichert, wie es für die Bearbeitung Ihrer Anfrage erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen."
+      },
+      "changes": {
+        "title": "10. Änderungen dieser Datenschutzerklärung",
+        "text": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung."
+      }
     }
   }
-}
 }

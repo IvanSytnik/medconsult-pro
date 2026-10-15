@@ -7,10 +7,10 @@
     "consultation": "Consultation"
   },
   "hero": {
-    "badge": "Medical Tourism #1",
+    "badge": "Medical tourism in Turkey",
     "title": "Quality Healthcare in Turkey",
     "titleAccent": "European standards, affordable prices",
-    "subtitle": "Dentistry, plastic surgery, hair transplantation and aesthetic medicine for clients from Germany and Europe — with full support from A to Z",
+    "subtitle": "Dentistry, plastic surgery, hair transplantation and aesthetic medicine for patients from Germany and Europe. We choose the clinic, organise the trip and stay in touch after you return.",
     "btnConsultation": "Free Consultation",
     "btnCalculate": "Calculate Cost",
     "stats": {
@@ -22,11 +22,11 @@
   "why": {
     "tag": "Advantages",
     "title": "Why Turkey?",
-    "subtitle": "Turkey has become a global center for medical tourism thanks to the combination of quality, price and service",
+    "subtitle": "Turkish clinics treat patients from all over Europe: the same materials as in Germany, short waiting times and much lower prices",
     "items": {
       "clinics": {
         "title": "Modern Clinics",
-        "desc": "International JCI accreditation, state-of-the-art equipment and world-class technology"
+        "desc": "JCI-accredited clinics with 3D diagnostics and current equipment"
       },
       "doctors": {
         "title": "Experienced Doctors",
@@ -53,7 +53,7 @@
   "services": {
     "tag": "Services",
     "title": "Our Services",
-    "subtitle": "We work with the best clinics in Turkey in all areas of aesthetic and reconstructive medicine",
+    "subtitle": "We only work with clinics we have checked ourselves",
     "dental": {
       "title": "Dentistry",
       "desc": "Implants, veneers, crowns, All-on-4. German and Swiss materials with lifetime warranty.",
@@ -66,7 +66,7 @@
     },
     "hair": {
       "title": "Hair Transplant",
-      "desc": "FUE, DHI, Sapphire technique. Natural results forever.",
+      "desc": "FUE, DHI and Sapphire techniques. Transplanted hair keeps growing for life.",
       "price": "Transplant from"
     },
     "aesthetic": {
@@ -105,8 +105,8 @@
   },
   "process": {
     "tag": "How It Works",
-    "title": "4 Simple Steps",
-    "subtitle": "From first inquiry to result — we're by your side every step of the way",
+    "title": "Four steps",
+    "subtitle": "From your first message to the follow-up after you return home",
     "steps": {
       "consultation": {
         "title": "Consultation",
@@ -129,7 +129,7 @@
   "team": {
     "tag": "Team",
     "title": "Your Coordinators",
-    "subtitle": "We speak your language and are always available",
+    "subtitle": "We speak Russian, German and Ukrainian",
     "roles": {
       "chief": "Chief Coordinator",
       "coordinator": "Coordinator"
@@ -208,16 +208,16 @@
   },
   "dental": {
     "videos": {
-  "tag": "Video Gallery",
-  "title": "See Our Expertise in Action",
-  "subtitle": "Real procedures, real results, and happy patients from our clinic in Turkey",
-  "ctaTitle": "Ready to Transform Your Smile?",
-  "ctaDesc": "See the results for yourself! Book your free consultation today and start your journey to a perfect smile."
-},
+      "tag": "Video Gallery",
+      "title": "Treatment videos",
+      "subtitle": "Filmed at our partner clinic in Antalya: procedures and patients after treatment",
+      "ctaTitle": "Want to know what your treatment would cost?",
+      "ctaDesc": "Book a free consultation. Before you travel, you get a treatment plan with the exact price."
+    },
     "back": "Back to Home",
     "badge": "Partner Clinic Dentanatura",
     "heroTitle": "Dentistry in Turkey",
-    "heroSubtitle": "Quality You Deserve",
+    "heroSubtitle": "At a fraction of the German price",
     "heroDesc": "Implants, veneers, crowns, All-on-4 using German and Swiss materials. Up to 70% savings compared to Germany.",
     "features": {
       "guarantee": "Lifetime warranty on implants",
@@ -236,26 +236,26 @@
     },
     "servicesTag": "Services",
     "servicesTitle": "Our Treatments",
-    "servicesSubtitle": "Full range of modern dentistry with premium materials",
+    "servicesSubtitle": "From a single crown to a full jaw restoration",
     "treatments": {
       "implants": {
         "title": "Dental Implants",
-        "desc": "Permanent solution for restoring lost teeth. Premium brands from Germany and Switzerland with lifetime manufacturer warranty.",
+        "desc": "Replace missing teeth permanently. Implant brands from Germany and Switzerland with a lifetime manufacturer warranty.",
         "price": "from"
       },
       "crowns": {
         "title": "Ceramic Crowns",
-        "desc": "Restoring strength, shape and aesthetics of teeth. Highest quality with 5-year warranty.",
+        "desc": "Restore the strength and shape of damaged teeth. 5-year warranty.",
         "price": "from"
       },
       "veneers": {
         "title": "Veneers",
-        "desc": "Hollywood smile with ultra-thin overlays. Natural aesthetics for the perfect smile.",
+        "desc": "Thin ceramic shells bonded to the front teeth to correct colour, shape and small gaps.",
         "price": "from"
       },
       "zirconium": {
         "title": "Zirconium Crowns",
-        "desc": "Maximum strength combined with natural aesthetics. Ideal for front and back teeth.",
+        "desc": "Very strong and natural-looking. Suitable for front and back teeth.",
         "price": "from"
       },
       "allOn": {
@@ -265,13 +265,13 @@
       },
       "bone": {
         "title": "Bone Grafting",
-        "desc": "Professional bone preparation for implantation. Modern techniques.",
+        "desc": "Rebuilds the jawbone when there isn't enough of it to hold an implant.",
         "price": "from"
       }
     },
     "pricingTag": "Price Comparison",
     "pricingTitle": "Up to 70% Savings",
-    "pricingSubtitle": "Same materials and quality — fair prices",
+    "pricingSubtitle": "The same materials as in German practices, at Turkish prices",
     "pricingTable": {
       "procedure": "Procedure",
       "germany": "Germany",
@@ -280,7 +280,7 @@
     },
     "clinicTag": "Clinic",
     "clinicTitle": "Dentanatura Clinic",
-    "clinicSubtitle": "Modern clinic in sunny Antalya with 20 years of experience",
+    "clinicSubtitle": "In Antalya, with 20 years of practice",
     "doctor": {
       "name": "Dr. Mevlüt",
       "role": "Clinic Founder and Chief Surgeon",
@@ -302,7 +302,7 @@
     },
     "packageTag": "All-Inclusive",
     "packageTitle": "Your Package",
-    "packageSubtitle": "Comfortable stay without stress. You only take care of the flight.",
+    "packageSubtitle": "You book the flight. We take care of everything else.",
     "package": {
       "hotel": {
         "title": "Hotel",
@@ -323,25 +323,19 @@
     },
     "packageNote": "Free from €3,200: For treatments over €3,200, the full package is included free of charge."
   },
-  "comingSoon": {
-    "title": "Coming Soon",
-    "text": "This section is under development. Contact us for a free consultation!",
-    "btnConsultation": "Get Consultation",
-    "btnHome": "Back to Home"
-  },
-"plastic": {
-  "videos": {
-    "tag": "Video Gallery",
-    "title": "Our Results on Video",
-    "subtitle": "Real procedures, real results — see the work of our plastic surgeons in Turkey",
-    "ctaTitle": "Ready for Your Transformation?",
-    "ctaDesc": "See the quality for yourself! Book a free consultation and discover what options are available for you."
-  },
+  "plastic": {
+    "videos": {
+      "tag": "Video Gallery",
+      "title": "Our Results on Video",
+      "subtitle": "Procedures and results from the surgeons we work with in Turkey",
+      "ctaTitle": "Not sure which procedure is right for you?",
+      "ctaDesc": "Book a free consultation. We'll go through the options with you and give you a price for each."
+    },
     "hero": {
       "tag": "Plastic Surgery",
       "title": "Plastic Surgery",
       "titleAccent": "in Turkey",
-      "description": "Rhinoplasty, mammoplasty, abdominoplasty and other surgeries in JCI internationally accredited clinics. Experienced surgeons, modern equipment and affordable prices.",
+      "description": "Rhinoplasty, breast surgery, tummy tuck and other operations in JCI-accredited clinics, at a fraction of the German price.",
       "consultation": "Free Consultation",
       "procedures": "Types of Surgeries",
       "stats": {
@@ -353,8 +347,8 @@
     },
     "why": {
       "tag": "Advantages",
-      "title": "Why Choose Us for Plastic Surgery",
-      "subtitle": "We offer a comprehensive approach and the highest quality medical services",
+      "title": "Plastic surgery with us",
+      "subtitle": "What you get when we organise your operation",
       "items": {
         "surgeons": {
           "title": "Experienced Surgeons",
@@ -366,15 +360,15 @@
         },
         "individual": {
           "title": "Individual Approach",
-          "desc": "Personalized treatment plan considering your unique features and wishes"
+          "desc": "The surgeon plans the operation around your anatomy and what you want to change"
         },
         "equipment": {
           "title": "Modern Equipment",
-          "desc": "Latest technologies and techniques for minimal invasiveness and fast recovery"
+          "desc": "Current surgical techniques with smaller incisions and shorter recovery"
         },
         "care": {
           "title": "Comprehensive Care",
-          "desc": "Full support from consultation to rehabilitation with 24/7 assistance"
+          "desc": "We stay in touch from the first consultation until you have recovered, and you can reach us at any time during your stay"
         },
         "recovery": {
           "title": "Fast Recovery",
@@ -384,8 +378,8 @@
     },
     "procedures": {
       "tag": "Procedures",
-      "title": "Our Plastic Surgery Services",
-      "subtitle": "Wide range of procedures to achieve your aesthetic goals",
+      "title": "Procedures and prices",
+      "subtitle": "Prices are guide values. The exact cost depends on your case.",
       "durationLabel": "Duration:",
       "recoveryLabel": "Recovery:",
       "from": "From",
@@ -438,7 +432,7 @@
     "benefits": {
       "tag": "Service Package",
       "title": "What's Included in the Price",
-      "description": "We offer comprehensive packages that include everything necessary for your comfort and safety.",
+      "description": "One price covers the operation, the hospital stay and everything around it.",
       "savingsLabel": "Savings Compared to Germany",
       "savingsValue": "Up to 60-70%",
       "list": [
@@ -455,7 +449,7 @@
     "process": {
       "tag": "Process",
       "title": "How Treatment Works",
-      "subtitle": "Four simple steps to your transformation",
+      "subtitle": "From the first consultation to full recovery",
       "steps": {
         "consultation": {
           "title": "Consultation",
@@ -463,11 +457,11 @@
         },
         "planning": {
           "title": "Planning",
-          "desc": "Development of individual surgery plan and preparation for procedure"
+          "desc": "The surgeon draws up your surgery plan; we book the tests, hotel and transfers"
         },
         "operation": {
           "title": "Surgery",
-          "desc": "Surgery performed by experienced surgeon using modern technologies"
+          "desc": "The operation in an accredited clinic, followed by monitoring on the ward"
         },
         "recovery": {
           "title": "Recovery",
@@ -477,8 +471,8 @@
     },
     "results": {
       "tag": "Results",
-      "title": "Trust the Experience of Our Specialists",
-      "subtitle": "Thousands of satisfied patients have already chosen our clinics for plastic surgery. Join them!",
+      "title": "Experienced surgeons, accredited clinics",
+      "subtitle": "Our partner clinics operate on patients from all over Europe every day.",
       "bookConsultation": "Book a Consultation",
       "stats": {
         "satisfaction": "Patient Satisfaction",
@@ -495,12 +489,12 @@
       "email": "Email"
     }
   },
- "hair": {
+  "hair": {
     "hero": {
       "tag": "Hair Transplantation",
       "title": "Hair Transplantation",
       "titleAccent": "in Turkey",
-      "description": "Modern FUE and DHI hair transplant methods in leading Istanbul clinics. Natural results, minimal invasiveness and lifetime guarantee.",
+      "description": "FUE and DHI hair transplants in experienced Istanbul clinics. A natural hairline, no linear scar, and transplanted hair that keeps growing for life.",
       "freeAnalysis": "Free Hair Analysis",
       "methods": "Transplant Methods",
       "stats": {
@@ -513,27 +507,27 @@
     "why": {
       "tag": "Advantages",
       "title": "Why Choose Turkey for Hair Transplantation",
-      "subtitle": "Combination of high quality, affordable prices and world experience",
+      "subtitle": "More experience and lower prices than anywhere else in Europe",
       "items": {
         "leaders": {
-          "title": "World Leaders",
+          "title": "Most experience worldwide",
           "desc": "Turkey performs over 1.5 million hair transplants annually - more than any other country"
         },
         "guarantee": {
           "title": "Lifetime Guarantee",
-          "desc": "Transplanted hair lasts a lifetime thanks to unique properties of the donor area"
+          "desc": "Hair from the donor area at the back of the head is resistant to hair loss, so it keeps growing after the transplant"
         },
         "technology": {
-          "title": "Advanced Technology",
-          "desc": "FUE Sapphire and DHI methods ensure maximum density and natural results"
+          "title": "Modern techniques",
+          "desc": "Sapphire FUE and DHI allow dense placement and a natural-looking result"
         },
         "specialists": {
           "title": "Experienced Specialists",
-          "desc": "Doctors perform 50-100 operations per month, accumulating unique experience and expertise"
+          "desc": "The teams perform 50–100 transplants a month"
         },
         "precision": {
           "title": "Implantation Precision",
-          "desc": "Control of angle, direction and depth of each graft for perfect results"
+          "desc": "Each graft is placed at the right angle, direction and depth so the hairline looks natural"
         },
         "survival": {
           "title": "High Survival Rate",
@@ -544,7 +538,7 @@
     "methods": {
       "tag": "Methods",
       "title": "Hair Transplantation Methods",
-      "subtitle": "Choose the right technique based on your goals and budget",
+      "subtitle": "The doctor recommends a method after looking at your photos",
       "graftsLabel": "Grafts:",
       "recoveryLabel": "Recovery:",
       "survivalLabel": "Survival Rate:",
@@ -604,7 +598,7 @@
     "benefits": {
       "tag": "All-Inclusive Package",
       "title": "What's Included in the Price",
-      "description": "Comprehensive package with accommodation, transfer and everything needed for comfortable treatment.",
+      "description": "One price covers the operation, the hotel, transfers and aftercare.",
       "savingsLabel": "Savings Compared to Europe",
       "savingsValue": "Up to 70%",
       "list": [
@@ -623,7 +617,7 @@
     "process": {
       "tag": "Process",
       "title": "How Transplantation Works",
-      "subtitle": "From first contact to thick hair - just 4 steps",
+      "subtitle": "From your first photos to the final result",
       "timelineTitle": "Hair Growth Timeline",
       "steps": {
         "analysis": {
@@ -664,8 +658,8 @@
     },
     "results": {
       "tag": "Results",
-      "title": "Turkey - World Capital of Hair Transplantation",
-      "subtitle": "Over 500,000 patients annually choose Turkish clinics for hair restoration",
+      "title": "Turkey leads the world in hair transplants",
+      "subtitle": "Patients from all over Europe come to Turkish clinics for hair restoration",
       "getFreeAnalysis": "Get Free Analysis",
       "stats": {
         "survival": "Graft Survival Rate",
@@ -688,7 +682,7 @@
       "tag": "Aesthetic Medicine",
       "title": "Aesthetic Medicine",
       "titleAccent": "in Turkey",
-      "description": "Non-surgical rejuvenation and appearance correction. Botox, fillers, mesotherapy and other procedures from leading specialists.",
+      "description": "Non-surgical rejuvenation and correction: Botox, fillers, mesotherapy and more, performed by certified dermatologists and cosmetologists.",
       "consultation": "Book a Consultation",
       "allTreatments": "All Procedures",
       "stats": {
@@ -700,8 +694,8 @@
     },
     "why": {
       "tag": "Advantages",
-      "title": "Why Choose Us for Aesthetic Procedures",
-      "subtitle": "Safety, quality and natural beauty",
+      "title": "Aesthetic treatments with us",
+      "subtitle": "Certified products, experienced doctors and results that still look like you",
       "items": {
         "specialists": {
           "title": "Certified Specialists",
@@ -709,18 +703,18 @@
         },
         "original": {
           "title": "Original Products",
-          "desc": "We use only certified products from leading manufacturers (Allergan, Ipsen)"
+          "desc": "Only certified original products, for example from Allergan and Ipsen"
         },
         "natural": {
           "title": "Natural Result",
-          "desc": "Delicate approach to preserve naturalness and individuality of facial features"
+          "desc": "We aim for a fresher look, not a different face"
         },
         "individual": {
           "title": "Individual Plan",
-          "desc": "Personalized treatment program based on skin type and age-related features"
+          "desc": "Treatment chosen for your skin type and age"
         },
         "fast": {
-          "title": "Fast Effect",
+          "title": "Quick results",
           "desc": "Results visible immediately after procedure, maximum effect in 7-14 days"
         },
         "minimal": {
@@ -731,8 +725,8 @@
     },
     "treatments": {
       "tag": "Procedures",
-      "title": "Our Aesthetic Medicine Services",
-      "subtitle": "Wide range of non-surgical procedures for beauty and rejuvenation",
+      "title": "Treatments and prices",
+      "subtitle": "Non-surgical treatments. Prices are guide values.",
       "duration": "Duration:",
       "effect": "Effect:",
       "downtime": "Downtime:",
@@ -815,8 +809,8 @@
     },
     "benefits": {
       "tag": "What You Get",
-      "title": "Comprehensive Approach to Beauty",
-      "description": "We care not only about the procedure result, but also about your comfort at every stage.",
+      "title": "What's included",
+      "description": "Every treatment includes a consultation beforehand and a follow-up check afterwards.",
       "savingsLabel": "Savings Compared to Europe",
       "savingsValue": "Up to 70%",
       "list": [
@@ -833,7 +827,7 @@
     "process": {
       "tag": "Process",
       "title": "How Procedures Work",
-      "subtitle": "Simple and comfortable path to your beauty",
+      "subtitle": "Most treatments are done in a single visit",
       "featuresTitle": "Procedure Features",
       "steps": {
         "consultation": {
@@ -870,8 +864,8 @@
     },
     "results": {
       "tag": "Results",
-      "title": "Your Natural Beauty is Our Goal",
-      "subtitle": "We help you look better while preserving your individuality and naturalness",
+      "title": "A natural result, not an overdone one",
+      "subtitle": "People should notice that you look rested, not that you had a treatment",
       "bookProcedure": "Book a Procedure",
       "stats": {
         "satisfaction": "Result Satisfaction",
@@ -889,92 +883,92 @@
     }
   },
   "impressum": {
-  "back": "Back to homepage",
-  "title": "Legal Notice",
-  "companyInfo": {
-    "title": "Information according to § 5 TMG",
-    "name": "MedConsult Turkey",
-    "address1": "Medical Tourism Consulting & Coordination Service",
-    "address2": "Germany"
+    "back": "Back to homepage",
+    "title": "Legal Notice",
+    "companyInfo": {
+      "title": "Information according to § 5 TMG",
+      "name": "MedConsult Turkey",
+      "address1": "Medical Tourism Consulting & Coordination Service",
+      "address2": "Germany"
+    },
+    "represented": {
+      "title": "Represented by",
+      "name": "Oleg (Chief Coordinator)"
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "Phone",
+      "email": "Email",
+      "website": "Website"
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "text": "The content of this website is created with the utmost care. However, the provider does not guarantee the accuracy, completeness, or timeliness of the information provided. Use of the content is at the user's own risk."
+    },
+    "liability": {
+      "title": "Liability for Content",
+      "text": "As a service provider, we are responsible for our own content on these pages in accordance with general legislation pursuant to § 7 para. 1 TMG. According to §§ 8 to 10 TMG, however, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity."
+    },
+    "links": {
+      "title": "Liability for Links",
+      "text": "Our website contains links to external websites of third parties, over whose content we have no influence. Therefore, we cannot assume any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content."
+    },
+    "copyright": {
+      "title": "Copyright",
+      "text": "The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution, and any form of exploitation beyond the scope of copyright law require the written consent of the respective author or creator."
+    },
+    "medical": {
+      "title": "Medical Disclaimer",
+      "text": "MedConsult Turkey is a consulting and coordination service for medical tourism and is not a medical provider. We facilitate contact with verified clinics and doctors in Turkey. All medical services are provided exclusively by licensed clinics and physicians on-site. The information on this website does not replace professional medical advice."
+    }
   },
-  "represented": {
-    "title": "Represented by",
-    "name": "Oleg (Chief Coordinator)"
-  },
-  "contact": {
-    "title": "Contact",
-    "phone": "Phone",
-    "email": "Email",
-    "website": "Website"
-  },
-  "disclaimer": {
-    "title": "Disclaimer",
-    "text": "The content of this website is created with the utmost care. However, the provider does not guarantee the accuracy, completeness, or timeliness of the information provided. Use of the content is at the user's own risk."
-  },
-  "liability": {
-    "title": "Liability for Content",
-    "text": "As a service provider, we are responsible for our own content on these pages in accordance with general legislation pursuant to § 7 para. 1 TMG. According to §§ 8 to 10 TMG, however, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity."
-  },
-  "links": {
-    "title": "Liability for Links",
-    "text": "Our website contains links to external websites of third parties, over whose content we have no influence. Therefore, we cannot assume any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content."
-  },
-  "copyright": {
-    "title": "Copyright",
-    "text": "The content and works created by the site operators on these pages are subject to German copyright law. Duplication, processing, distribution, and any form of exploitation beyond the scope of copyright law require the written consent of the respective author or creator."
-  },
-  "medical": {
-    "title": "Medical Disclaimer",
-    "text": "MedConsult Turkey is a consulting and coordination service for medical tourism and is not a medical provider. We facilitate contact with verified clinics and doctors in Turkey. All medical services are provided exclusively by licensed clinics and physicians on-site. The information on this website does not replace professional medical advice."
-  }
-},
-"privacy": {
-  "back": "Back to homepage",
-  "title": "Privacy Policy",
-  "lastUpdated": "Last updated: February 2026",
-  "contactTitle": "Questions about data privacy?",
-  "contactText": "For questions about the processing of your personal data, contact us:",
-  "sections": {
-    "overview": {
-      "title": "1. Privacy at a Glance",
-      "text": "The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you."
-    },
-    "responsible": {
-      "title": "2. Responsible Party",
-      "text": "The responsible party for data processing on this website is:\n\nMedConsult Turkey\nGermany\nEmail: info@medconsult-turkey.com\nPhone: +49 173 6631438"
-    },
-    "collection": {
-      "title": "3. Data Collection on This Website",
-      "text": "Data processing on this website is carried out by the website operator. Your data is collected, firstly, when you provide it to us (e.g., via the contact form). Other data is automatically collected by our IT systems when you visit the website. This is primarily technical data (e.g., internet browser, operating system, or time of page access)."
-    },
-    "contactForm": {
-      "title": "4. Contact Form",
-      "text": "When you send us inquiries via the contact form, your details (name, email, phone, desired service, message) are stored for the purpose of processing your request and in case of follow-up questions. We do not share this data without your consent. Processing is based on Art. 6(1)(b) GDPR (pre-contractual measures) or Art. 6(1)(a) GDPR (consent)."
-    },
-    "cookies": {
-      "title": "5. Cookies",
-      "text": "This website uses cookies — small text files stored on your device. Some cookies are technically necessary (e.g., language settings), while others are used to analyze user behavior. You can configure your browser to notify you about cookies and allow them only on a case-by-case basis."
-    },
-    "analytics": {
-      "title": "6. Analytics Tools",
-      "text": "This website may use analytics tools for statistical evaluation of visitor traffic. The data obtained is not used to personally identify visitors and is not combined with personal data."
-    },
-    "thirdParty": {
-      "title": "7. Third-Party Services",
-      "text": "This website integrates external services, including Cloudinary (for videos and images), WhatsApp Business (for communication), and potentially other services. The integration of these services may result in data being transferred to the respective providers. For detailed information, please refer to the privacy policies of the respective providers."
-    },
-    "rights": {
-      "title": "8. Your Rights",
-      "text": "You have the right at any time to obtain information about your personal data stored with us, its origin, recipients, and the purpose of data processing. You also have the right to correction, blocking, or deletion of this data. For these and other questions about data protection, you can contact us at any time. You also have the right to file a complaint with the competent supervisory authority."
-    },
-    "storage": {
-      "title": "9. Storage Duration",
-      "text": "Personal data submitted to us via the contact form or email is stored only as long as necessary for processing your request or as required by legal retention obligations."
-    },
-    "changes": {
-      "title": "10. Changes to This Policy",
-      "text": "We reserve the right to update this privacy policy to ensure it complies with current legal requirements or to reflect changes in our services. The updated privacy policy will apply to your subsequent visits."
+  "privacy": {
+    "back": "Back to homepage",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: February 2026",
+    "contactTitle": "Questions about data privacy?",
+    "contactText": "For questions about the processing of your personal data, contact us:",
+    "sections": {
+      "overview": {
+        "title": "1. Privacy at a Glance",
+        "text": "The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you."
+      },
+      "responsible": {
+        "title": "2. Responsible Party",
+        "text": "The responsible party for data processing on this website is:\n\nMedConsult Turkey\nGermany\nEmail: info@medconsult-turkey.com\nPhone: +49 173 6631438"
+      },
+      "collection": {
+        "title": "3. Data Collection on This Website",
+        "text": "Data processing on this website is carried out by the website operator. Your data is collected, firstly, when you provide it to us (e.g., via the contact form). Other data is automatically collected by our IT systems when you visit the website. This is primarily technical data (e.g., internet browser, operating system, or time of page access)."
+      },
+      "contactForm": {
+        "title": "4. Contact Form",
+        "text": "When you send us inquiries via the contact form, your details (name, email, phone, desired service, message) are stored for the purpose of processing your request and in case of follow-up questions. We do not share this data without your consent. Processing is based on Art. 6(1)(b) GDPR (pre-contractual measures) or Art. 6(1)(a) GDPR (consent)."
+      },
+      "cookies": {
+        "title": "5. Cookies",
+        "text": "This website uses cookies — small text files stored on your device. Some cookies are technically necessary (e.g., language settings), while others are used to analyze user behavior. You can configure your browser to notify you about cookies and allow them only on a case-by-case basis."
+      },
+      "analytics": {
+        "title": "6. Analytics Tools",
+        "text": "This website may use analytics tools for statistical evaluation of visitor traffic. The data obtained is not used to personally identify visitors and is not combined with personal data."
+      },
+      "thirdParty": {
+        "title": "7. Third-Party Services",
+        "text": "This website integrates external services, including Cloudinary (for videos and images), WhatsApp Business (for communication), and potentially other services. The integration of these services may result in data being transferred to the respective providers. For detailed information, please refer to the privacy policies of the respective providers."
+      },
+      "rights": {
+        "title": "8. Your Rights",
+        "text": "You have the right at any time to obtain information about your personal data stored with us, its origin, recipients, and the purpose of data processing. You also have the right to correction, blocking, or deletion of this data. For these and other questions about data protection, you can contact us at any time. You also have the right to file a complaint with the competent supervisory authority."
+      },
+      "storage": {
+        "title": "9. Storage Duration",
+        "text": "Personal data submitted to us via the contact form or email is stored only as long as necessary for processing your request or as required by legal retention obligations."
+      },
+      "changes": {
+        "title": "10. Changes to This Policy",
+        "text": "We reserve the right to update this privacy policy to ensure it complies with current legal requirements or to reflect changes in our services. The updated privacy policy will apply to your subsequent visits."
+      }
     }
   }
-}
 }
