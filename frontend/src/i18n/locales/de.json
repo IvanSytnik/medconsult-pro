@@ -8,8 +8,8 @@
   },
   "hero": {
     "badge": "Medizinreisen in die Türkei",
-    "title": "Hochwertige Medizin in der Türkei",
-    "titleAccent": "nach europäischen Standards, zu erschwinglichen Preisen",
+    "title": "Medizinische Behandlung in der Türkei",
+    "titleAccent": "nach europäischem Standard, deutlich günstiger als in Deutschland",
     "subtitle": "Zahnmedizin, Schönheitschirurgie, Haartransplantation und ästhetische Medizin für Patienten aus Deutschland und Europa. Wir wählen die Klinik aus, organisieren die Reise und bleiben auch nach Ihrer Rückkehr erreichbar.",
     "btnConsultation": "Kostenlose Beratung",
     "btnCalculate": "Kosten berechnen",
@@ -26,19 +26,19 @@
     "items": {
       "clinics": {
         "title": "Moderne Kliniken",
-        "desc": "JCI-akkreditierte Kliniken mit 3D-Diagnostik und aktueller Ausstattung"
+        "desc": "Akkreditierte Kliniken mit 3D-Diagnostik und aktueller Ausstattung"
       },
       "doctors": {
         "title": "Erfahrene Ärzte",
-        "desc": "Spezialisten mit europäischer Ausbildung, Praktika in den USA und Deutschland"
+        "desc": "Ärzte mit Ausbildung in Europa und Fortbildungen in den USA und in Deutschland"
       },
       "savings": {
-        "title": "Bis zu 60% Ersparnis",
+        "title": "Bis zu 70% Ersparnis",
         "desc": "Dieselben Materialien und Methoden wie in Deutschland, aber zu fairen Preisen"
       },
       "fast": {
         "title": "Keine Wartezeiten",
-        "desc": "Schnelle Behandlungszeiten — Beginn wenige Tage nach der Anfrage"
+        "desc": "Die Behandlung kann wenige Tage nach Ihrer Anfrage beginnen"
       },
       "comfort": {
         "title": "Komfort + Erholung",
@@ -52,11 +52,11 @@
   },
   "services": {
     "tag": "Leistungen",
-    "title": "Unsere Dienstleistungen",
+    "title": "Behandlungen, die wir organisieren",
     "subtitle": "Wir arbeiten nur mit Kliniken, die wir selbst geprüft haben",
     "dental": {
       "title": "Zahnmedizin",
-      "desc": "Implantate, Veneers, Kronen, All-on-4. Deutsche und Schweizer Materialien mit lebenslanger Garantie.",
+      "desc": "Implantate, Veneers, Kronen, All-on-4. Deutsche und Schweizer Materialien, lebenslange Garantie auf Implantate.",
       "price": "Implantate ab"
     },
     "plastic": {
@@ -80,8 +80,8 @@
   "about": {
     "tag": "Über uns",
     "title": "Was wir wirklich tun",
-    "lead": "Wir sind ein unabhängiger Beratungs- und Betreuungsservice, der Ihre Interessen in jeder Phase der Behandlung in der Türkei schützt.",
-    "text": "Wir vermitteln nicht einfach an eine Klinik — wir übernehmen den gesamten Prozess, damit Sie sich sicher und geborgen fühlen.",
+    "lead": "Wir sind keine Klinik, sondern unabhängige Berater. Wir vertreten Ihre Interessen gegenüber der Klinik, von der ersten Anfrage bis zur Nachsorge.",
+    "text": "Wir vermitteln nicht nur eine Klinik, sondern kümmern uns um den ganzen Ablauf: Termine, Übersetzung, Reise und Nachsorge.",
     "features": {
       "consultation": "Kostenlose Online-Beratung",
       "selection": "Auswahl einer geprüften Klinik und eines Arztes",
@@ -95,12 +95,12 @@
   },
   "audience": {
     "tag": "Für wen",
-    "title": "Diese Lösung ist für Sie, wenn...",
+    "title": "Das passt zu Ihnen, wenn …",
     "items": {
-      "germany": "Sie in Deutschland oder der EU leben und eine hochwertige Behandlung suchen",
-      "quality": "Sie Qualität ohne Überzahlung wollen — dieselben Materialien, aber günstiger",
-      "safety": "Sie Sicherheit, Klarheit und professionellen Service schätzen",
-      "trust": "Sie kein Risiko eingehen wollen, eine Klinik blind zu wählen"
+      "germany": "Sie in Deutschland oder der EU leben und über eine Behandlung im Ausland nachdenken",
+      "quality": "Sie nicht zu viel bezahlen möchten: dieselben Materialien, aber günstiger",
+      "safety": "Sie vorher genau wissen möchten, was gemacht wird und was es kostet",
+      "trust": "Sie keine Klinik auf gut Glück im Internet aussuchen wollen"
     }
   },
   "process": {
@@ -110,7 +110,7 @@
     "steps": {
       "consultation": {
         "title": "Beratung",
-        "desc": "Wir besprechen kostenlos Ihre Situation, beantworten Fragen, bewerten Möglichkeiten"
+        "desc": "Kostenloses Gespräch: Sie schildern Ihr Anliegen, wir beantworten Ihre Fragen und sagen, was möglich ist"
       },
       "plan": {
         "title": "Behandlungsplan",
@@ -118,11 +118,11 @@
       },
       "trip": {
         "title": "Reise",
-        "desc": "Wir organisieren Flug, Transfer, Unterkunft. Wir holen Sie ab und begleiten Sie persönlich"
+        "desc": "Wir helfen bei der Flugbuchung, organisieren Transfer und Unterkunft. Wir holen Sie ab und begleiten Sie persönlich"
       },
       "result": {
         "title": "Ergebnis",
-        "desc": "Wir kontrollieren die Behandlungsqualität, bieten Unterstützung nach der Rückkehr"
+        "desc": "Wir prüfen mit Ihnen das Ergebnis und bleiben nach Ihrer Rückkehr Ihr Ansprechpartner"
       }
     }
   },
@@ -138,17 +138,17 @@
       "oleg": {
         "name": "Oleg",
         "role": "Hauptkoordinator",
-        "desc": "Koordiniert alle Projekte, kontrolliert die Qualität in jeder Phase. Ihr Hauptansprechpartner für alle Fragen."
+        "desc": "Leitet die Koordination und begleitet jeden Fall von der Anfrage bis zur Nachsorge. Ihr erster Ansprechpartner bei allen Fragen."
       },
       "alexander": {
         "name": "Alexander",
         "role": "Finanzberater",
-        "desc": "Berät Kunden in finanziellen Fragen, unterstützt bei Kostenkalkulationen, Budgetplanung und der Auswahl optimaler finanzieller Lösungen."
+        "desc": "Berechnet die Kosten, hilft bei der Budgetplanung und bespricht mit Ihnen, wie Sie die Behandlung bezahlen können."
       },
       "galina": {
         "name": "Galina",
         "role": "Koordinatorin",
-        "desc": "Organisiert Reisen und Unterkünfte. Immer erreichbar für organisatorische Fragen."
+        "desc": "Organisiert Reise und Unterkunft. Bei Fragen zu Hotel und Transfer ist sie Ihre Ansprechpartnerin."
       }
     },
     "languages": {
@@ -162,13 +162,13 @@
   "cta": {
     "title": "Vereinbaren Sie eine kostenlose Beratung",
     "subtitle": "unverbindlich",
-    "text": "Wir sagen Ihnen ehrlich, ob eine Behandlung in der Türkei für Sie geeignet ist und welche Alternativen es gibt. Kein Druck — nur nützliche Informationen.",
+    "text": "Wir sagen Ihnen ehrlich, ob sich eine Behandlung in der Türkei für Sie lohnt und welche Alternativen es gibt. Sie müssen danach nichts buchen.",
     "btn": "Beratung erhalten"
   },
   "contact": {
     "tag": "Kontakt",
     "title": "Kontaktieren Sie uns",
-    "subtitle": "Hinterlassen Sie eine Anfrage — wir rufen innerhalb von 24 Stunden zurück",
+    "subtitle": "Schreiben Sie uns, wir rufen Sie innerhalb von 24 Stunden zurück",
     "form": {
       "firstName": "Vorname",
       "lastName": "Nachname",
@@ -198,7 +198,7 @@
     }
   },
   "footer": {
-    "description": "Hochwertige Medizin in der Türkei mit Vollbetreuung für Kunden aus Deutschland und Europa.",
+    "description": "Wir organisieren Behandlungen in türkischen Kliniken für Patienten aus Deutschland und Europa, von der Beratung bis zur Nachsorge.",
     "services": "Leistungen",
     "company": "Unternehmen",
     "aboutUs": "Über uns",
@@ -228,7 +228,7 @@
       "ministry": "Gesundheitsministerium Türkei",
       "ministryDesc": "Offizielle Akkreditierung",
       "german": "Deutsche Materialien",
-      "germanDesc": "Premium-Qualität",
+      "germanDesc": "Wie in deutschen Praxen",
       "swiss": "Schweizer Implantate",
       "swissDesc": "Lebenslange Garantie",
       "certified": "Medizintourismus",
@@ -260,7 +260,7 @@
       },
       "allOn": {
         "title": "All-on-4 / All-on-6",
-        "desc": "Vollständige Rekonstruktion auf 4 oder 6 Implantaten. Festsitzende Zähne bei totalem Zahnverlust.",
+        "desc": "Komplette Versorgung auf 4 oder 6 Implantaten. Festsitzender Zahnersatz bei zahnlosem Kiefer.",
         "price": "ab"
       },
       "bone": {
@@ -270,7 +270,7 @@
       }
     },
     "pricingTag": "Preisvergleich",
-    "pricingTitle": "Bis zu 70% Ersparnis",
+    "pricingTitle": "Bis zu 80% Ersparnis",
     "pricingSubtitle": "Dieselben Materialien wie in deutschen Praxen, zu türkischen Preisen",
     "pricingTable": {
       "procedure": "Behandlung",
@@ -278,9 +278,17 @@
       "ourPrice": "Unser Preis",
       "savings": "Ersparnis"
     },
+    "pricingRows": {
+      "implant": "Zahnimplantat (Premium)",
+      "ceramicCrown": "Keramikkrone",
+      "zirconiumCrown": "Zirkonkrone",
+      "veneer": "Veneer",
+      "allOn4": "All-on-4 (pro Kiefer)",
+      "smileMakeover": "Smile Makeover (20 Veneers)"
+    },
     "clinicTag": "Klinik",
     "clinicTitle": "Dentanatura Clinic",
-    "clinicSubtitle": "In Antalya, seit 20 Jahren in Betrieb",
+    "clinicSubtitle": "Seit 20 Jahren in Antalya",
     "doctor": {
       "name": "Dr. Mevlüt",
       "role": "Gründer der Klinik und Chefarzt",
@@ -302,7 +310,7 @@
     },
     "packageTag": "All-Inclusive",
     "packageTitle": "Ihr Paket",
-    "packageSubtitle": "Sie buchen den Flug. Um alles andere kümmern wir uns.",
+    "packageSubtitle": "Sie buchen den Flug, wir helfen bei der Auswahl. Um alles andere kümmern wir uns.",
     "package": {
       "hotel": {
         "title": "Hotel",
@@ -321,7 +329,7 @@
         "desc": "Kostenloser Plan vor der Anreise mit genauen Kosten."
       }
     },
-    "packageNote": "Ab €3.200: Bei einer Behandlung über €3.200 ist das komplette Paket kostenlos inklusive."
+    "packageNote": "Ab €3.200: Bei Behandlungen ab €3.200 ist das komplette Paket im Preis enthalten."
   },
   "plastic": {
     "videos": {
@@ -356,10 +364,10 @@
         },
         "safety": {
           "title": "Sicherheit",
-          "desc": "JCI- und ISO-akkreditierte Kliniken, die internationalen Qualitätsstandards entsprechen"
+          "desc": "Die Kliniken sind nach JCI und ISO akkreditiert und werden regelmäßig extern geprüft"
         },
         "individual": {
-          "title": "Individueller Ansatz",
+          "title": "Auf Sie abgestimmt",
           "desc": "Der Chirurg plant den Eingriff nach Ihrer Anatomie und Ihren Wünschen"
         },
         "equipment": {
@@ -367,12 +375,12 @@
           "desc": "Aktuelle OP-Techniken mit kleineren Schnitten und kürzerer Erholung"
         },
         "care": {
-          "title": "Umfassende Betreuung",
+          "title": "Betreuung bis zur Genesung",
           "desc": "Wir begleiten Sie von der ersten Beratung bis zur Genesung und sind während Ihres Aufenthalts jederzeit erreichbar"
         },
         "recovery": {
           "title": "Schnelle Erholung",
-          "desc": "Einsatz minimalinvasiver Techniken zur Verkürzung der Rehabilitationszeit"
+          "desc": "Minimalinvasive Techniken verkürzen die Erholungszeit"
         }
       }
     },
@@ -387,14 +395,14 @@
       "list": {
         "rhinoplasty": {
           "title": "Rhinoplastik",
-          "desc": "Nasenkorrektur zur Verbesserung der Ästhetik und Atemfunktion",
+          "desc": "Korrigiert die Form der Nase und, wenn nötig, die Nasenatmung",
           "price": "€3.000",
           "duration": "2-3 Stunden",
           "recovery": "7-10 Tage"
         },
         "mammoplasty": {
           "title": "Mammoplastik",
-          "desc": "Brustvergrößerung, -verkleinerung oder -straffung für harmonische Proportionen",
+          "desc": "Vergrößerung, Verkleinerung oder Straffung der Brust",
           "price": "€4.500",
           "duration": "2-4 Stunden",
           "recovery": "10-14 Tage"
@@ -408,21 +416,21 @@
         },
         "liposuction": {
           "title": "Fettabsaugung",
-          "desc": "Entfernung lokaler Fettdepots für präzise Konturierung",
+          "desc": "Entfernt Fettpolster, die auf Sport und Diät nicht reagieren",
           "price": "€2.500",
           "duration": "1-3 Stunden",
           "recovery": "7-10 Tage"
         },
         "facelift": {
           "title": "Facelifting",
-          "desc": "Gesichtsstraffung zur Verjüngung und Beseitigung altersbedingter Veränderungen",
+          "desc": "Strafft erschlaffte Haut an Wangen, Kinnlinie und Hals",
           "price": "€5.500",
           "duration": "4-6 Stunden",
           "recovery": "14-21 Tage"
         },
         "mommyMakeover": {
           "title": "Mommy Makeover",
-          "desc": "Umfassende Körperkorrektur nach Schwangerschaft",
+          "desc": "Bauchdeckenstraffung, Brustkorrektur und Fettabsaugung in einer Operation nach Schwangerschaften",
           "price": "€7.500",
           "duration": "5-7 Stunden",
           "recovery": "21-30 Tage"
@@ -432,11 +440,11 @@
     "benefits": {
       "tag": "Leistungspaket",
       "title": "Was im Preis enthalten ist",
-      "description": "Ein Preis für die Operation, den Klinikaufenthalt und alles drumherum.",
+      "description": "Ein Preis für Operation, Klinikaufenthalt, Kompressionswäsche, Transfers und Dolmetscher.",
       "savingsLabel": "Ersparnis im Vergleich zu Deutschland",
-      "savingsValue": "Bis zu 60-70%",
+      "savingsValue": "Bis zu 70%",
       "list": [
-        "Beratung mit plastischem Chirurgen",
+        "Beratungsgespräch mit dem plastischen Chirurgen",
         "Alle präoperativen Tests",
         "Operation und Anästhesie",
         "Klinikaufenthalt",
@@ -453,7 +461,7 @@
       "steps": {
         "consultation": {
           "title": "Beratung",
-          "desc": "Erstberatung online oder persönlich, Besprechung von Zielen und Erwartungen"
+          "desc": "Erstes Gespräch online oder vor Ort: Was möchten Sie verändern, und was ist realistisch?"
         },
         "planning": {
           "title": "Planung",
@@ -465,7 +473,7 @@
         },
         "recovery": {
           "title": "Erholung",
-          "desc": "Postoperative Überwachung und Unterstützung bis zur vollständigen Genesung"
+          "desc": "Kontrolltermine in der Klinik, danach bleiben wir in Kontakt, bis Sie sich vollständig erholt haben"
         }
       }
     },
@@ -483,7 +491,7 @@
     "contact": {
       "tag": "Kontakt",
       "title": "Kontaktieren Sie uns",
-      "subtitle": "Erhalten Sie eine kostenlose Beratung und einen personalisierten Behandlungsplan",
+      "subtitle": "Kostenlose Beratung und ein Behandlungsplan mit Preis für Ihren Fall",
       "directContact": "Oder kontaktieren Sie uns direkt:",
       "whatsapp": "WhatsApp",
       "email": "E-Mail"
@@ -501,20 +509,20 @@
         "price": "Durchschnittspreis",
         "grafts": "Grafts",
         "survival": "Anwachsrate",
-        "operations": "Operationen pro Jahr"
+        "operations": "Operationen pro Jahr in der Türkei"
       }
     },
     "why": {
       "tag": "Vorteile",
-      "title": "Warum die Türkei für Haartransplantation wählen",
+      "title": "Warum eine Haartransplantation in der Türkei?",
       "subtitle": "Mehr Erfahrung und niedrigere Preise als irgendwo sonst in Europa",
       "items": {
         "leaders": {
           "title": "Die meiste Erfahrung weltweit",
-          "desc": "Die Türkei führt jährlich über 1,5 Millionen Haartransplantationen durch - mehr als jedes andere Land"
+          "desc": "Die Türkei führt jährlich über 1,5 Millionen Haartransplantationen durch – mehr als jedes andere Land"
         },
         "guarantee": {
-          "title": "Lebenslange Garantie",
+          "title": "Ein Ergebnis fürs Leben",
           "desc": "Haare aus der Spenderzone am Hinterkopf sind gegen Haarausfall resistent und wachsen nach der Verpflanzung weiter"
         },
         "technology": {
@@ -526,12 +534,12 @@
           "desc": "Die Teams führen 50–100 Transplantationen im Monat durch"
         },
         "precision": {
-          "title": "Implantationspräzision",
+          "title": "Natürlicher Haaransatz",
           "desc": "Jedes Graft wird im richtigen Winkel, in der richtigen Richtung und Tiefe gesetzt, damit der Haaransatz natürlich aussieht"
         },
         "survival": {
           "title": "Hohe Anwachsrate",
-          "desc": "Bis zu 95-98% der transplantierten Follikel wachsen erfolgreich an dank minimaler Zeit außerhalb des Körpers"
+          "desc": "Bis zu 95-98% der verpflanzten Follikel wachsen an, weil sie nur kurz außerhalb des Körpers sind"
         }
       }
     },
@@ -547,7 +555,7 @@
       "list": {
         "fue": {
           "title": "FUE (Follicular Unit Extraction)",
-          "desc": "Klassische Methode zur Extraktion von Follikeln einzeln mit minimaler Narbenbildung",
+          "desc": "Klassische Methode: Die Follikel werden einzeln entnommen, es bleiben nur winzige Narben",
           "price": "€1.800 - €2.500",
           "grafts": "2.000-3.000",
           "recovery": "7 Tage",
@@ -555,7 +563,7 @@
         },
         "sapphire": {
           "title": "FUE Sapphire",
-          "desc": "Verwendung von Saphirklingen für präzisere Kanäle und schnellere Heilung",
+          "desc": "Die Kanäle werden mit Saphir- statt Stahlklingen geöffnet: präziser, und die Haut heilt schneller",
           "price": "€2.500 - €3.500",
           "grafts": "3.000-4.000",
           "recovery": "5 Tage",
@@ -563,7 +571,7 @@
         },
         "dhi": {
           "title": "DHI (Direct Hair Implantation)",
-          "desc": "Direkte Implantation mit Choi Pen ohne vorherige Kanalbildung",
+          "desc": "Die Grafts werden mit dem Choi-Pen direkt eingesetzt, ohne vorher Kanäle zu öffnen",
           "price": "€3.000 - €4.500",
           "grafts": "3.000-5.000",
           "recovery": "5 Tage",
@@ -571,7 +579,7 @@
         },
         "dhiPrp": {
           "title": "DHI + PRP-Therapie",
-          "desc": "Kombination von DHI mit plättchenreichem Plasma für verbessertes Wachstum und Dichte",
+          "desc": "DHI plus Eigenbluttherapie (PRP), die das Anwachsen und Wachstum der Haare unterstützt",
           "price": "€4.000 - €5.500",
           "grafts": "4.000-5.000",
           "recovery": "4 Tage",
@@ -579,7 +587,7 @@
         },
         "beard": {
           "title": "Barttransplantation",
-          "desc": "Wiederherstellung der Bart- und Schnurrbartdichte mit natürlichen Ergebnissen",
+          "desc": "Für einen dichteren Bart und Schnurrbart, auch bei kahlen Stellen",
           "price": "€1.500 - €2.500",
           "grafts": "1.500-2.500",
           "recovery": "5 Tage",
@@ -610,8 +618,7 @@
         "Nachsorge-Set",
         "4-5* Hotel-Unterkunft (3-5 Nächte)",
         "VIP-Transfer Flughafen-Hotel-Klinik",
-        "Persönlicher russischsprachiger Übersetzer",
-        "Lebenslange Ergebnisgarantie"
+        "Persönlicher Dolmetscher (Russisch/Deutsch)"
       ]
     },
     "process": {
@@ -622,15 +629,15 @@
       "steps": {
         "analysis": {
           "title": "Online-Analyse",
-          "desc": "Senden Sie Fotos, erhalten Sie kostenlose Analyse und Behandlungsplan vom Spezialisten"
+          "desc": "Sie senden uns Fotos und erhalten kostenlos eine Analyse und einen Behandlungsplan vom Spezialisten"
         },
         "preparation": {
           "title": "Vorbereitung",
-          "desc": "Hotel und Transfer buchen, präoperative Tests durchführen"
+          "desc": "Wir buchen Hotel und Transfer, die Voruntersuchungen finden in der Klinik statt"
         },
         "operation": {
           "title": "Operation",
-          "desc": "Extraktion und Implantation von Grafts (6-8 Stunden) unter Lokalanästhesie"
+          "desc": "Entnahme und Einsetzen der Grafts (6-8 Stunden) unter örtlicher Betäubung"
         },
         "result": {
           "title": "Ergebnis",
@@ -640,7 +647,7 @@
       "timeline": {
         "weeks": {
           "title": "2-4 Wochen",
-          "desc": "Ausfall transplantierter Haare (normal)"
+          "desc": "Die verpflanzten Haare fallen aus. Das ist normal."
         },
         "months3": {
           "title": "3-4 Monate",
@@ -658,7 +665,7 @@
     },
     "results": {
       "tag": "Ergebnisse",
-      "title": "Die Türkei ist weltweit führend bei Haartransplantationen",
+      "title": "In keinem Land werden mehr Haare transplantiert",
       "subtitle": "Patienten aus ganz Europa kommen für eine Haartransplantation in türkische Kliniken",
       "getFreeAnalysis": "Kostenlose Analyse erhalten",
       "stats": {
@@ -671,7 +678,7 @@
     "contact": {
       "tag": "Kontakt",
       "title": "Kostenlose Haaranalyse erhalten",
-      "subtitle": "Senden Sie Fotos und erfahren Sie die genauen Kosten und Anzahl der Grafts",
+      "subtitle": "Schicken Sie uns Fotos, und wir sagen Ihnen, wie viele Grafts Sie brauchen und was es genau kostet",
       "directContact": "Oder direkt kontaktieren:",
       "whatsapp": "WhatsApp",
       "email": "E-Mail"
@@ -687,7 +694,7 @@
       "allTreatments": "Alle Behandlungen",
       "stats": {
         "price": "Durchschnittspreis",
-        "downtime": "Keine Ausfallzeit",
+        "downtime": "Kaum Ausfallzeit",
         "savings": "Ersparnis",
         "procedures": "Behandlungen"
       }
@@ -710,7 +717,7 @@
           "desc": "Ziel ist ein frischeres Aussehen, kein anderes Gesicht"
         },
         "individual": {
-          "title": "Individueller Plan",
+          "title": "Passend zu Ihrer Haut",
           "desc": "Behandlung abgestimmt auf Ihren Hauttyp und Ihr Alter"
         },
         "fast": {
@@ -718,8 +725,8 @@
           "desc": "Ergebnis sofort nach der Behandlung sichtbar, maximale Wirkung nach 7-14 Tagen"
         },
         "minimal": {
-          "title": "Minimaler Zeitaufwand",
-          "desc": "Die meisten Behandlungen dauern 20-60 Minuten ohne Krankenhausaufenthalt"
+          "title": "Wenig Zeitaufwand",
+          "desc": "Die meisten Behandlungen dauern 20-60 Minuten, ein Klinikaufenthalt ist nicht nötig"
         }
       }
     },
@@ -735,7 +742,7 @@
       "list": {
         "botox": {
           "title": "Botox",
-          "desc": "Glättung von Mimikfalten auf der Stirn, zwischen den Augenbrauen und um die Augen",
+          "desc": "Glättet Mimikfalten auf der Stirn, zwischen den Augenbrauen und um die Augen",
           "price": "€150 - €300",
           "duration": "20-30 Minuten",
           "result": "3-6 Monate",
@@ -743,7 +750,7 @@
         },
         "fillers": {
           "title": "Dermalfiller",
-          "desc": "Wiederherstellung des Volumens von Lippen, Wangen und Korrektur von Nasolabialfalten",
+          "desc": "Geben Lippen und Wangen Volumen zurück und mildern Nasolabialfalten",
           "price": "€200 - €500",
           "duration": "30-45 Minuten",
           "result": "6-18 Monate",
@@ -751,7 +758,7 @@
         },
         "mesotherapy": {
           "title": "Mesotherapie",
-          "desc": "Vitamin-Cocktail-Injektionen zur Verbesserung der Hautqualität und Hydratation",
+          "desc": "Mikroinjektionen mit Vitaminen, die die Haut mit Feuchtigkeit versorgen und ihren Zustand verbessern",
           "price": "€80 - €150",
           "duration": "30 Minuten",
           "result": "3-6 Monate",
@@ -759,7 +766,7 @@
         },
         "prp": {
           "title": "PRP-Therapie",
-          "desc": "Plättchenreiches Plasma zur Hautverjüngung und Regenerationsförderung",
+          "desc": "Plasma aus Ihrem eigenen Blut regt die Erneuerung der Haut an",
           "price": "€150 - €250",
           "duration": "45 Minuten",
           "result": "6-12 Monate",
@@ -767,7 +774,7 @@
         },
         "peeling": {
           "title": "Chemisches Peeling",
-          "desc": "Hauterneuerung, Reduzierung von Pigmentierung und Texturverbesserung",
+          "desc": "Erneuert die Haut, hellt Pigmentflecken auf und verfeinert das Hautbild",
           "price": "€100 - €250",
           "duration": "30-60 Minuten",
           "result": "3-6 Monate",
@@ -775,7 +782,7 @@
         },
         "laser": {
           "title": "Laser-Resurfacing",
-          "desc": "Entfernung von Narben, Falten und Verbesserung des gesamten Hauttons",
+          "desc": "Glättet Narben und Falten und gleicht den Hautton aus",
           "price": "€200 - €400",
           "duration": "30-90 Minuten",
           "result": "12-24 Monate",
@@ -783,15 +790,15 @@
         },
         "threads": {
           "title": "Fadenlifting",
-          "desc": "Gesichts- und Halsstraffung mit biologisch abbaubaren Fäden",
+          "desc": "Strafft Gesicht und Hals mit Fäden, die sich mit der Zeit auflösen",
           "price": "€300 - €600",
           "duration": "60-90 Minuten",
           "result": "12-24 Monate",
           "downtime": "3-5 Tage"
         },
         "removal": {
-          "title": "Läsionsentfernung",
-          "desc": "Sichere Entfernung von Muttermalen, Papillomen und anderen gutartigen Formationen",
+          "title": "Entfernung von Hautveränderungen",
+          "desc": "Entfernung von Muttermalen, Papillomen und anderen gutartigen Hautveränderungen",
           "price": "€50 - €200",
           "duration": "15-30 Minuten",
           "result": "Dauerhaft",
@@ -815,11 +822,11 @@
       "savingsValue": "Bis zu 70%",
       "list": [
         "Erstberatung mit Dermatologen",
-        "Individueller Behandlungsplan",
-        "Original zertifizierte Produkte",
-        "Behandlung mit Anästhesie",
+        "Behandlungsplan für Ihre Haut",
+        "Zertifizierte Originalpräparate",
+        "Behandlung mit örtlicher Betäubung",
         "Nachsorgeempfehlungen",
-        "Heimbehandlungsprodukte-Set",
+        "Pflegeset für zu Hause",
         "Nachuntersuchung",
         "Online-Beratung nach der Behandlung"
       ]
@@ -828,11 +835,11 @@
       "tag": "Ablauf",
       "title": "Wie Behandlungen ablaufen",
       "subtitle": "Die meisten Behandlungen sind in einem Termin erledigt",
-      "featuresTitle": "Behandlungsmerkmale",
+      "featuresTitle": "Auf einen Blick",
       "steps": {
         "consultation": {
           "title": "Beratung",
-          "desc": "Untersuchung durch Spezialisten, Zielgespräch und Behandlungsauswahl"
+          "desc": "Der Arzt untersucht Ihre Haut, bespricht Ihre Wünsche und wählt die Behandlung aus"
         },
         "preparation": {
           "title": "Vorbereitung",
@@ -840,7 +847,7 @@
         },
         "procedure": {
           "title": "Behandlung",
-          "desc": "Injektionen oder Gerätemanipulationen (20-90 Minuten)"
+          "desc": "Injektionen oder Gerätebehandlung (20-90 Minuten)"
         },
         "care": {
           "title": "Nachsorge",
@@ -857,7 +864,7 @@
           "desc": "Nur FDA/CE-zertifizierte Produkte"
         },
         "effective": {
-          "title": "Effektiv",
+          "title": "Lange Wirkung",
           "desc": "Ergebnis sofort sichtbar und hält monatelang"
         }
       }
@@ -876,7 +883,7 @@
     "contact": {
       "tag": "Kontakt",
       "title": "Beratungstermin vereinbaren",
-      "subtitle": "Erhalten Sie einen individuellen Behandlungsplan und erfahren Sie die genauen Kosten",
+      "subtitle": "Sie erhalten einen Behandlungsplan für Ihre Haut und den genauen Preis",
       "directContact": "Oder direkt kontaktieren:",
       "whatsapp": "WhatsApp",
       "email": "E-Mail"

@@ -71,7 +71,7 @@ function HeroSection() {
                 <div className="text-sm text-secondary-500">{t('plastic.hero.stats.accreditation')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-primary-600">60%</div>
+                <div className="text-3xl font-bold text-primary-600">70%</div>
                 <div className="text-sm text-secondary-500">{t('plastic.hero.stats.savings')}</div>
               </div>
             </div>
