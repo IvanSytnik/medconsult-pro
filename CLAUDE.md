@@ -37,8 +37,8 @@ One Next.js app in `web/` (App Router, TypeScript, Tailwind) with Payload CMS 3 
 ## Phases
 
 1. **Next.js port** — rebuild the current site in `web/` 1:1 (same look, same copy from the JSON files, same routes plus locale prefix). Contact form becomes a Next.js route handler. Branch `feat/next-app`. Status: in review. All seven pages in four locales, locale routing, `/api/submit` and `/api/health`, metadata with hreflang, sitemap and robots are done; build and lint pass and full-page screenshots matched `frontend/` at 375 and 1440 px in DE and RU. Next.js 16.4 stays: `@payloadcms/next` 3.91 supports `>=16.3.3 <17`. Deployed to the separate Vercel project `medconsult-web` (Root Directory `web`, production branch `feat/next-app`): https://medconsult-web.vercel.app. The form sends e-mail through Resend; domain is `medconsult.sytnik-studio.com`, indexing is off. Remaining: Resend env vars and DNS, a real form submission test on the subdomain, then merge.
-2. **Payload + content migration** — add Payload, Postgres, media storage; seed all collections/globals from the JSON locales; pages read from Payload. Status: not started.
-3. **Blocks and theme** — page builder blocks and theme global. Status: not started.
+2. **Payload, data and block pages** — add Payload, Postgres, media storage; every page is built from blocks (one block type per existing section, each with a hidden flag, order set in the admin); collections, globals and blocks are seeded from the JSON locales and the data hardcoded in JSX; the frontend reads everything from Payload. Branch `feat/payload`. Status: in progress.
+3. **Theme and block styles** — theme global (colours, font, logo, radius) and per-block style variants. Status: not started.
 4. **Lead CRM** — leads collection, pipeline views, roles, Telegram hook. Status: not started.
 5. **Cutover** — point Vercel to `web/`, retire `frontend/` and `backend/`. Status: not started.
 
