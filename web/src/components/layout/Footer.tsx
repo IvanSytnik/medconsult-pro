@@ -1,12 +1,15 @@
 import { Activity } from 'lucide-react'
-import { getLocale, getTranslations } from 'next-intl/server'
+import { getLocale } from 'next-intl/server'
 import WhatsAppGlyph from '@/components/ui/WhatsAppGlyph'
 import { Link } from '@/i18n/navigation'
 import { localePath } from '@/i18n/routing'
-import { CONTACT } from '@/lib/site'
+import type { ContactLinks } from '@/lib/cms'
+import type { Service, SiteSetting } from '@/payload-types'
 
-export default async function Footer() {
-  const t = await getTranslations()
+type Props = { settings: SiteSetting; services: Service[]; contact: ContactLinks }
+
+export default async function Footer({ settings, services, contact }: Props) {
+  const footer = settings.footer
   const locale = await getLocale()
   const year = new Date().getFullYear()
   const href = (path: string) => localePath(locale, path)
@@ -24,16 +27,16 @@ export default async function Footer() {
                 MedConsult<span className="text-primary-400">Turkey</span>
               </span>
             </Link>
-            <p className="text-sm leading-relaxed">{t('footer.description')}</p>
+            <p className="text-sm leading-relaxed">{footer?.description}</p>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-5">{t('footer.services')}</h4>
+            <h4 className="text-white font-semibold mb-5">{footer?.servicesTitle}</h4>
             <ul className="space-y-3">
-              {(['dental', 'plastic', 'hair', 'aesthetic'] as const).map((key) => (
-                <li key={key}>
-                  <Link href={`/${key}`} className="hover:text-primary-400 transition-colors">
-                    {t(`services.${key}.title`)}
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link href={`/${service.slug}`} className="hover:text-primary-400 transition-colors">
+                    {service.title}
                   </Link>
                 </li>
               ))}
@@ -41,44 +44,31 @@ export default async function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-5">{t('footer.company')}</h4>
+            <h4 className="text-white font-semibold mb-5">{footer?.companyTitle}</h4>
             <ul className="space-y-3">
-              <li>
-                <a href={href('/#why')} className="hover:text-primary-400 transition-colors">
-                  {t('footer.aboutUs')}
-                </a>
-              </li>
-              <li>
-                <a href={href('/#team')} className="hover:text-primary-400 transition-colors">
-                  {t('team.tag')}
-                </a>
-              </li>
-              <li>
-                <a href={href('/#contact')} className="hover:text-primary-400 transition-colors">
-                  {t('nav.contact')}
-                </a>
-              </li>
-              <li>
-                <a href={href('/impressum')} className="hover:text-primary-400 transition-colors">
-                  {t('footer.impressum')}
-                </a>
-              </li>
+              {footer?.companyLinks?.map((link) => (
+                <li key={link.id}>
+                  <a href={href(link.href ?? '/')} className="hover:text-primary-400 transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-5">{t('nav.contact')}</h4>
+            <h4 className="text-white font-semibold mb-5">{footer?.contactTitle}</h4>
             <div className="space-y-2">
-              <a href={CONTACT.phoneHref} className="block hover:text-primary-400 transition-colors">
-                {CONTACT.phone}
+              <a href={contact.phoneHref} className="block hover:text-primary-400 transition-colors">
+                {contact.phone}
               </a>
-              <a href={CONTACT.emailHref} className="block hover:text-primary-400 transition-colors">
-                {CONTACT.email}
+              <a href={contact.emailHref} className="block hover:text-primary-400 transition-colors">
+                {contact.email}
               </a>
             </div>
             <div className="mt-4">
               <a
-                href={CONTACT.whatsappHref}
+                href={contact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#25d366] text-white rounded-lg text-sm font-medium hover:bg-[#1da851] transition-colors"
@@ -92,14 +82,14 @@ export default async function Footer() {
 
         <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
           <p>
-            © {year} MedConsult Turkey. {t('footer.copyright')}
+            © {year} MedConsult Turkey. {footer?.copyright}
           </p>
           <div className="flex gap-6">
             <a href={href('/privacy')} className="hover:text-primary-400 transition-colors">
-              {t('footer.privacy')}
+              {footer?.privacyLabel}
             </a>
             <a href={href('/impressum')} className="hover:text-primary-400 transition-colors">
-              {t('footer.impressum')}
+              {footer?.impressumLabel}
             </a>
           </div>
         </div>

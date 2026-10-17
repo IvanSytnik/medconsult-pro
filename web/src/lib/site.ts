@@ -14,32 +14,26 @@ export const SITE_URL = (
 /** Search engines are kept out until the site is cut over to its final domain. */
 export const ALLOW_INDEXING = process.env.NEXT_PUBLIC_ALLOW_INDEXING === 'true'
 
-export const CONTACT = {
-  phone: '+49 173 6631438',
-  phoneHref: 'tel:+491736631438',
-  whatsappHref: 'https://wa.me/491736631438',
-  floatWhatsappHref: 'https://wa.me/4915751129620',
-  formWhatsapp: '+4915751129620',
-  email: 'info@medconsult-turkey.com',
-  emailHref: 'mailto:info@medconsult-turkey.com',
+/** Fixed routes that are not CMS pages. */
+export const LEGAL_PATHS = ['/impressum', '/privacy'] as const
+
+/** Locale-independent path of a CMS page: "" for the start page, "/<slug>" otherwise. */
+export function pagePath(slug: string): string {
+  return slug === 'home' ? '' : `/${slug}`
 }
 
-/** Every public page, as a locale-independent path. */
-export const PAGES = ['', '/dental', '/plastic', '/hair', '/aesthetic', '/impressum', '/privacy'] as const
-export type PagePath = (typeof PAGES)[number]
-
-export function absoluteUrl(locale: string, path: PagePath): string {
+export function absoluteUrl(locale: string, path: string): string {
   return `${SITE_URL}${localePrefix(locale)}${path}` || SITE_URL
 }
 
-export function alternateLanguages(path: PagePath): Record<string, string> {
+export function alternateLanguages(path: string): Record<string, string> {
   const languages: Record<string, string> = {}
   for (const locale of routing.locales) languages[locale] = absoluteUrl(locale, path)
   languages['x-default'] = absoluteUrl(routing.defaultLocale, path)
   return languages
 }
 
-export function pageMetadata(locale: string, path: PagePath, title: string, description: string): Metadata {
+export function pageMetadata(locale: string, path: string, title: string, description: string): Metadata {
   const fullTitle = path === '' ? `${SITE_NAME} – ${title}` : `${title} | ${SITE_NAME}`
   const url = absoluteUrl(locale, path)
   return {
