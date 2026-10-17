@@ -37,12 +37,19 @@ One Next.js app in `web/` (App Router, TypeScript, Tailwind) with Payload CMS 3 
 ## Phases
 
 1. **Next.js port** — rebuild the current site in `web/` 1:1 (same look, same copy from the JSON files, same routes plus locale prefix). Contact form becomes a Next.js route handler. Branch `feat/next-app`. Status: in review. All seven pages in four locales, locale routing, `/api/submit` and `/api/health`, metadata with hreflang, sitemap and robots are done; build and lint pass and full-page screenshots matched `frontend/` at 375 and 1440 px in DE and RU. Next.js 16.4 stays: `@payloadcms/next` 3.91 supports `>=16.3.3 <17`. Deployed to the separate Vercel project `medconsult-web` (Root Directory `web`, production branch `feat/next-app`): https://medconsult-web.vercel.app. The form sends e-mail through Resend; domain is `medconsult.sytnik-studio.com`, indexing is off. Remaining: Resend env vars and DNS, a real form submission test on the subdomain, then merge.
-2. **Payload, data and block pages** — add Payload, Postgres, media storage; every page is built from blocks (one block type per existing section, each with a hidden flag, order set in the admin); collections, globals and blocks are seeded from the JSON locales and the data hardcoded in JSX; the frontend reads everything from Payload. Branch `feat/payload`. Status: in progress.
+2. **Payload, data and block pages** — add Payload, Postgres, media storage; every page is built from blocks (one block type per existing section, each with a hidden flag, order set in the admin); collections, globals and blocks are seeded from the JSON locales and the data hardcoded in JSX; the frontend reads everything from Payload. Branch `feat/payload`. Status: in review. Payload 3.91 at `/admin` (collections: pages, services, treatments, clinics, team-members, videos, media, users; globals: site-settings, legal; 20 block types). Pages are SSG and revalidated by afterChange hooks. Seed is idempotent (`npm run seed`, `SEED_FORCE=1` resets to the original content); the Vercel build runs migrations and seeds an empty database; the first admin sign-up becomes owner. Verified locally on Postgres 16: build and lint pass, seed twice on an empty database without duplicates, all 28 screenshots (7 pages × 375/1440 × DE/RU) identical to phase 1 apart from photos (remote Unsplash images could not be downloaded in the test environment and show placeholders), text/photo/block-order edits appear on the site after saving. Remaining: `PAYLOAD_SECRET` on Vercel, check the preview, create the owner account, then merge.
 3. **Theme and block styles** — theme global (colours, font, logo, radius) and per-block style variants. Status: not started.
 4. **Lead CRM** — leads collection, pipeline views, roles, Telegram hook. Status: not started.
 5. **Cutover** — point Vercel to `web/`, retire `frontend/` and `backend/`. Status: not started.
 
 Update the status line of a phase when it changes.
+
+## Working with the CMS (`web/`)
+
+- Copy, prices, photos, team, videos and section order live in Payload, not in JSX or JSON. `web/messages/*.json` only holds interface strings the CMS does not manage (form labels, language names).
+- After changing collections, globals or blocks: `npm run generate:types`, `npm run migrate:create`, commit the migration. Deployed databases change only through migrations.
+- New section type: add a block in `src/payload/blocks.ts`, a renderer in `src/components/blocks/`, and a case in `RenderBlocks.tsx`.
+- The seed (`src/seed/`) is the reference copy of the original site; keep it working when the schema changes.
 
 ## Conventions
 
@@ -68,4 +75,5 @@ Update the status line of a phase when it changes.
   - Dental clinic section: three small clinic photos under the team photo.
   - Hair hero: main photo.
   - Hair methods: FUE card photo.
-- Other photos still hotlink Unsplash (plastic, hair, aesthetic, home "about"); replace with own media when Payload lands.
+- Other photos (plastic, hair, aesthetic, home "about") are Unsplash stock images; the seed downloads them into the media library. Replace them with own photos in the admin.
+- Mobile layout: at 375 px several pages scroll horizontally (DE hair is 483 px wide). Same in phase 1; fix in phase 3.
