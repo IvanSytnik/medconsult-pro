@@ -1,10 +1,9 @@
 import WhatsAppGlyph from '@/components/ui/WhatsAppGlyph'
-import { CONTACT } from '@/lib/site'
 
-export default function WhatsAppFloat() {
+export default function WhatsAppFloat({ href }: { href: string }) {
   return (
     <a
-      href={CONTACT.floatWhatsappHref}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 w-14 h-14 bg-[#25d366] rounded-full flex items-center justify-center text-white shadow-lg z-50 hover:scale-110 hover:bg-[#1da851] transition-all"

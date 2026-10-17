@@ -2,13 +2,15 @@
 
 import clsx from 'clsx'
 import { Activity, Menu, X } from 'lucide-react'
-import { useLocale, useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { languages, localePath, type Locale } from '@/i18n/routing'
 
-export default function Navbar() {
-  const t = useTranslations()
+type NavLink = { label: string; href: string }
+
+/** Links are stored locale-independent ("/#services") and prefixed with the active locale here. */
+export default function Navbar({ links, ctaLabel, ctaHref }: { links: NavLink[]; ctaLabel: string; ctaHref: string }) {
   const locale = useLocale()
   const pathname = usePathname()
   const router = useRouter()
@@ -32,13 +34,8 @@ export default function Navbar() {
     router.replace(pathname, { locale: next })
   }
 
-  const navLinks = [
-    { href: localePath(locale, '/#services'), label: t('nav.services') },
-    { href: localePath(locale, '/#why'), label: t('nav.why') },
-    { href: localePath(locale, '/#team'), label: t('nav.team') },
-    { href: localePath(locale, '/#contact'), label: t('nav.contact') },
-  ]
-  const contactHref = localePath(locale, '/#contact')
+  const navLinks = links.map((link) => ({ label: link.label, href: localePath(locale, link.href) }))
+  const contactHref = localePath(locale, ctaHref)
 
   return (
     <nav
@@ -75,7 +72,7 @@ export default function Navbar() {
                 href={contactHref}
                 className="ml-2 px-5 py-2.5 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all"
               >
-                {t('nav.consultation')}
+                {ctaLabel}
               </a>
             </li>
           </ul>
@@ -134,7 +131,7 @@ export default function Navbar() {
             className="block px-4 py-3 bg-primary-600 text-white font-semibold text-center rounded-lg mt-4"
             onClick={() => setIsOpen(false)}
           >
-            {t('nav.consultation')}
+            {ctaLabel}
           </a>
 
           <div className="flex justify-center gap-2 pt-4 border-t border-secondary-100 mt-4">

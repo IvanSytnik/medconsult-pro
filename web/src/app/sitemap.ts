@@ -1,13 +1,21 @@
 import type { MetadataRoute } from 'next'
 import { routing } from '@/i18n/routing'
-import { absoluteUrl, alternateLanguages, PAGES } from '@/lib/site'
+import { getPageSlugs, HOME_SLUG } from '@/lib/cms'
+import { absoluteUrl, alternateLanguages, LEGAL_PATHS, pagePath } from '@/lib/site'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  return PAGES.flatMap((path) =>
+export const revalidate = 3600
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const slugs = await getPageSlugs()
+  const entries = [
+    ...slugs.map((slug) => ({ path: pagePath(slug), priority: slug === HOME_SLUG ? 1 : 0.8 })),
+    ...LEGAL_PATHS.map((path) => ({ path, priority: 0.3 })),
+  ]
+  return entries.flatMap(({ path, priority }) =>
     routing.locales.map((locale) => ({
       url: absoluteUrl(locale, path),
       changeFrequency: 'monthly' as const,
-      priority: path === '' ? 1 : path === '/impressum' || path === '/privacy' ? 0.3 : 0.8,
+      priority,
       alternates: { languages: alternateLanguages(path) },
     }))
   )

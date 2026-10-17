@@ -3,24 +3,27 @@
 import clsx from 'clsx'
 import { useLocale, useTranslations } from 'next-intl'
 import { useState, type FormEvent } from 'react'
-import { CONTACT } from '@/lib/site'
 
 type Status = { type: '' | 'success' | 'error'; text: string; whatsappUrl?: string }
 
-export default function ContactForm({ source = 'main' }: { source?: string }) {
+export type ServiceOption = { value: string; label: string }
+
+type Props = {
+  source?: string
+  /** Services offered in the select; "other" is appended automatically. */
+  services: ServiceOption[]
+  /** Number offered as a WhatsApp fallback when sending fails. */
+  fallbackWhatsapp: string
+}
+
+export default function ContactForm({ source = 'main', services: serviceOptions, fallbackWhatsapp }: Props) {
   const t = useTranslations()
   const locale = useLocale()
   const [isLoading, setIsLoading] = useState(false)
   const [message, setMessage] = useState<Status>({ type: '', text: '' })
   const [agreed, setAgreed] = useState(false)
 
-  const services = [
-    { value: 'dental', label: t('services.dental.title') },
-    { value: 'plastic', label: t('services.plastic.title') },
-    { value: 'hair', label: t('services.hair.title') },
-    { value: 'aesthetic', label: t('services.aesthetic.title') },
-    { value: 'other', label: t('contact.form.serviceOther') },
-  ]
+  const services = [...serviceOptions, { value: 'other', label: t('contact.form.serviceOther') }]
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -58,7 +61,7 @@ export default function ContactForm({ source = 'main' }: { source?: string }) {
     } catch (error) {
       console.error('Form error:', error)
       const whatsappMsg = encodeURIComponent(
-        `${t('hero.btnConsultation')}\n\n` +
+        `${t('contact.form.whatsappSubject')}\n\n` +
           `Name: ${data.firstName} ${data.lastName}\n` +
           `Email: ${data.email}\n` +
           `Phone: ${data.phone}\n` +
@@ -68,7 +71,7 @@ export default function ContactForm({ source = 'main' }: { source?: string }) {
       setMessage({
         type: 'error',
         text: t('contact.form.error'),
-        whatsappUrl: `https://wa.me/${CONTACT.formWhatsapp.replace(/[^0-9]/g, '')}?text=${whatsappMsg}`,
+        whatsappUrl: `https://wa.me/${fallbackWhatsapp.replace(/[^0-9]/g, '')}?text=${whatsappMsg}`,
       })
     } finally {
       setIsLoading(false)

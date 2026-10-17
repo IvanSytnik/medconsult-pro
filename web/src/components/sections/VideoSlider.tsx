@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react'
 export type Video = { id: number; url: string; thumbnail: string }
 
 type Props = {
+  anchor?: string
   videos: Video[]
   /** Grid classes for the thumbnail column; dental and plastic lay thumbnails out differently. */
   thumbnailGridClass: string
@@ -15,6 +16,7 @@ type Props = {
   ctaTitle: string
   ctaDesc: string
   primaryLabel: string
+  primaryHref: string
   secondaryLabel: string
   secondaryHref: string
 }
@@ -22,6 +24,7 @@ type Props = {
 type FullscreenVideo = HTMLVideoElement & { webkitRequestFullscreen?: () => void }
 
 export default function VideoSlider({
+  anchor,
   videos,
   thumbnailGridClass,
   tag,
@@ -30,6 +33,7 @@ export default function VideoSlider({
   ctaTitle,
   ctaDesc,
   primaryLabel,
+  primaryHref,
   secondaryLabel,
   secondaryHref,
 }: Props) {
@@ -75,7 +79,7 @@ export default function VideoSlider({
   }
 
   return (
-    <section className="py-24 bg-white">
+    <section id={anchor} className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
@@ -176,7 +180,7 @@ export default function VideoSlider({
                   }`}
                   style={{ aspectRatio: '9/16' }}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element -- remote media moves to the CMS in phase 2 */}
+                  {/* eslint-disable-next-line @next/next/no-img-element -- poster can be an external Cloudinary URL */}
                   <img src={video.thumbnail} alt={`Video ${index + 1}`} className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
 
@@ -205,7 +209,7 @@ export default function VideoSlider({
           <h3 className="text-2xl md:text-3xl font-bold mb-4">{ctaTitle}</h3>
           <p className="text-secondary-600 text-lg mb-6 max-w-2xl mx-auto">{ctaDesc}</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#contact" className="inline-flex items-center gap-2 btn btn-primary btn-lg">
+            <a href={primaryHref} className="inline-flex items-center gap-2 btn btn-primary btn-lg">
               {primaryLabel}
               <ChevronRight className="w-5 h-5" />
             </a>

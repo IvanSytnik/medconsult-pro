@@ -1,18 +1,5 @@
 import type { ComponentProps } from 'react'
-import {
-  Award,
-  Bone,
-  Building2,
-  CheckCircle2,
-  Crown,
-  Diamond,
-  Scissors,
-  Smile,
-  Sparkles,
-  Syringe,
-  Wrench,
-  type LucideIcon,
-} from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
 const sizes = {
   xs: 'w-4 h-4',
@@ -47,17 +34,3 @@ export default function MedicalIcon({ icon: Icon, size = 'md', gradient = false,
 
   return <Icon className={`${sizeClass} text-primary-600 ${className}`} strokeWidth={1.5} {...props} />
 }
-
-export type IconComponent = (props: IconProps) => React.JSX.Element
-
-export const ToothIcon: IconComponent = (props) => <MedicalIcon icon={Smile} {...props} />
-export const CrownIcon: IconComponent = (props) => <MedicalIcon icon={Crown} {...props} />
-export const DentalImplantIcon: IconComponent = (props) => <MedicalIcon icon={Award} {...props} />
-export const SyringeIcon: IconComponent = (props) => <MedicalIcon icon={Syringe} {...props} />
-export const ScissorsIcon: IconComponent = (props) => <MedicalIcon icon={Scissors} {...props} />
-export const WrenchIcon: IconComponent = (props) => <MedicalIcon icon={Wrench} {...props} />
-export const DiamondIcon: IconComponent = (props) => <MedicalIcon icon={Diamond} {...props} />
-export const SparkleIcon: IconComponent = (props) => <MedicalIcon icon={Sparkles} {...props} />
-export const BoneIcon: IconComponent = (props) => <MedicalIcon icon={Bone} {...props} />
-export const HospitalIcon: IconComponent = (props) => <MedicalIcon icon={Building2} {...props} />
-export const CheckIcon: IconComponent = (props) => <MedicalIcon icon={CheckCircle2} {...props} />
