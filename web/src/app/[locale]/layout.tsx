@@ -6,13 +6,14 @@ import Navbar from '@/components/layout/Navbar'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import { resolveLocale } from '@/i18n/locale'
 import { routing } from '@/i18n/routing'
-import { SITE_NAME, SITE_URL } from '@/lib/site'
+import { ALLOW_INDEXING, SITE_NAME, SITE_URL } from '@/lib/site'
 import '../globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: SITE_NAME,
   icons: { icon: '/favicon.svg' },
+  robots: ALLOW_INDEXING ? undefined : { index: false, follow: false },
 }
 
 export const viewport: Viewport = {

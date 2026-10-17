@@ -11,6 +11,9 @@ export const SITE_URL = (
     : 'http://localhost:3000')
 ).replace(/\/$/, '')
 
+/** Search engines are kept out until the site is cut over to its final domain. */
+export const ALLOW_INDEXING = process.env.NEXT_PUBLIC_ALLOW_INDEXING === 'true'
+
 export const CONTACT = {
   phone: '+49 000 0000000',
   phoneHref: 'tel:+490000000000',
