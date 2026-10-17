@@ -1,5 +1,5 @@
 import 'server-only'
-import nodemailer, { type Transporter } from 'nodemailer'
+import { Resend } from 'resend'
 
 export type Submission = {
   firstName: string
@@ -22,24 +22,21 @@ const config = {
     chatId: process.env.TELEGRAM_CHAT_ID,
   },
   email: {
-    host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.EMAIL_PORT ?? '', 10) || 587,
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
+    apiKey: process.env.RESEND_API_KEY,
+    from: process.env.EMAIL_FROM || 'MedConsult Turkey <noreply@sytnik-studio.com>',
     to: process.env.EMAIL_TO || 'info@medconsult-turkey.com',
   },
 }
 
-let transporter: Transporter | null | undefined
-function getTransporter(): Transporter | null {
-  if (transporter !== undefined) return transporter
-  const { host, port, user, pass } = config.email
-  transporter = user && pass ? nodemailer.createTransport({ host, port, secure: port === 465, auth: { user, pass } }) : null
-  return transporter
+let resend: Resend | null | undefined
+function getResend(): Resend | null {
+  if (resend !== undefined) return resend
+  resend = config.email.apiKey ? new Resend(config.email.apiKey) : null
+  return resend
 }
 
 export function integrations() {
-  return { telegram: Boolean(config.telegram.botToken), email: getTransporter() !== null }
+  return { telegram: Boolean(config.telegram.botToken && config.telegram.chatId), email: getResend() !== null }
 }
 
 export function escapeHtml(value: unknown): string {
@@ -135,7 +132,7 @@ ${data.message ? `<b>Nachricht:</b>\n${escapeHtml(data.message)}` : ''}
 }
 
 export async function sendEmail(data: Submission): Promise<boolean> {
-  const mailer = getTransporter()
+  const mailer = getResend()
   if (!mailer) {
     console.log('Email not configured')
     return false
@@ -183,13 +180,14 @@ export async function sendEmail(data: Submission): Promise<boolean> {
   `
 
   try {
-    await mailer.sendMail({
-      from: `"MedConsult Turkey" <${config.email.user}>`,
-      to: config.email.to,
+    const { error } = await mailer.emails.send({
+      from: config.email.from,
+      to: config.email.to.split(',').map((address) => address.trim()).filter(Boolean),
       replyTo: data.email,
       subject: `Neue Anfrage: ${data.firstName} ${data.lastName} — ${EMAIL_SERVICE_NAMES[data.service] || 'Beratung'}`.replace(/[\r\n]+/g, ' '),
       html,
     })
+    if (error) throw new Error(`${error.name}: ${error.message}`)
     return true
   } catch (error) {
     console.error('Email error:', error instanceof Error ? error.message : error)
