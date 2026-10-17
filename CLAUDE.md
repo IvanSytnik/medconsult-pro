@@ -15,6 +15,14 @@ Website and back office for a medical-tourism coordination service.
 - `backend/`: Express API with `POST /api/submit` (contact form to Telegram and e-mail) and `GET /api/health`.
 - Production stays on this stack until the new app reaches parity.
 
+## Hosting, domain and e-mail
+
+- The new app (`web/`) runs on the Vercel project `medconsult-web` at https://medconsult.sytnik-studio.com (studio domain, used for the demo until the client has its own domain). `NEXT_PUBLIC_SITE_URL` drives `metadataBase`, canonical, hreflang, sitemap and robots.
+- DNS for `sytnik-studio.com` is on Cloudflare: `CNAME medconsult -> cname.vercel-dns.com`, proxy off (DNS only, grey cloud), otherwise Vercel cannot issue the certificate.
+- Outgoing mail: Resend (`resend` SDK) with the whole `sytnik-studio.com` domain verified (DKIM, SPF/MX on `send.`, DMARC `p=none`). Env: `RESEND_API_KEY`, `EMAIL_FROM`, `EMAIL_TO`. Without `RESEND_API_KEY` the form skips e-mail and still notifies Telegram.
+- Incoming mail: Cloudflare Email Routing forwards addresses on `sytnik-studio.com` to Gmail.
+- Indexing is off until cutover (`robots.txt` disallow, `noindex` meta and `X-Robots-Tag`). Set `NEXT_PUBLIC_ALLOW_INDEXING=true` only on the final domain.
+
 ## Target architecture
 
 One Next.js app in `web/` (App Router, TypeScript, Tailwind) with Payload CMS 3 embedded, Postgres, and object storage for media.
@@ -28,7 +36,7 @@ One Next.js app in `web/` (App Router, TypeScript, Tailwind) with Payload CMS 3 
 
 ## Phases
 
-1. **Next.js port** — rebuild the current site in `web/` 1:1 (same look, same copy from the JSON files, same routes plus locale prefix). Contact form becomes a Next.js route handler. Branch `feat/next-app`. Status: in review. All seven pages in four locales, locale routing, `/api/submit` and `/api/health`, metadata with hreflang, sitemap and robots are done; build and lint pass and full-page screenshots matched `frontend/` at 375 and 1440 px in DE and RU. Next.js 16.4 stays: `@payloadcms/next` 3.91 supports `>=16.3.3 <17`. Deployed to the separate Vercel project `medconsult-web` (Root Directory `web`, production branch `feat/next-app`): https://medconsult-web.vercel.app. Remaining: Telegram/e-mail env vars on `medconsult-web`, a real form submission test, then merge.
+1. **Next.js port** — rebuild the current site in `web/` 1:1 (same look, same copy from the JSON files, same routes plus locale prefix). Contact form becomes a Next.js route handler. Branch `feat/next-app`. Status: in review. All seven pages in four locales, locale routing, `/api/submit` and `/api/health`, metadata with hreflang, sitemap and robots are done; build and lint pass and full-page screenshots matched `frontend/` at 375 and 1440 px in DE and RU. Next.js 16.4 stays: `@payloadcms/next` 3.91 supports `>=16.3.3 <17`. Deployed to the separate Vercel project `medconsult-web` (Root Directory `web`, production branch `feat/next-app`): https://medconsult-web.vercel.app. The form sends e-mail through Resend; domain is `medconsult.sytnik-studio.com`, indexing is off. Remaining: Resend env vars and DNS, a real form submission test on the subdomain, then merge.
 2. **Payload + content migration** — add Payload, Postgres, media storage; seed all collections/globals from the JSON locales; pages read from Payload. Status: not started.
 3. **Blocks and theme** — page builder blocks and theme global. Status: not started.
 4. **Lead CRM** — leads collection, pipeline views, roles, Telegram hook. Status: not started.
@@ -47,6 +55,8 @@ Update the status line of a phase when it changes.
 - Before every commit: build passes, all four locales have identical keys, no emoji.
 
 ## Open questions for the client
+
+- A real launch needs the client's own domain (the Impressum lists info@medconsult-turkey.com); move DNS, Resend and Email Routing to it at cutover.
 
 - Hair transplant clinics: Istanbul (hair page) or Antalya (contacts)?
 - What exactly the hair package price covers, given method prices depend on graft count.
