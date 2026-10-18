@@ -21,6 +21,7 @@ Website and back office for a medical-tourism coordination service.
 - DNS for `sytnik-studio.com` is on Cloudflare: `CNAME medconsult -> cname.vercel-dns.com`, proxy off (DNS only, grey cloud), otherwise Vercel cannot issue the certificate.
 - Outgoing mail: Resend (`resend` SDK) with the whole `sytnik-studio.com` domain verified (DKIM, SPF/MX on `send.`, DMARC `p=none`). Env: `RESEND_API_KEY`, `EMAIL_FROM`, `EMAIL_TO`. Without `RESEND_API_KEY` the form skips e-mail and still notifies Telegram.
 - Incoming mail: Cloudflare Email Routing forwards addresses on `sytnik-studio.com` to Gmail.
+- Media: Vercel Blob store with **public** access (the Payload 3.91 adapter cannot write to private stores). Connected to `medconsult-web`, provides `BLOB_READ_WRITE_TOKEN`.
 - Indexing is off until cutover (`robots.txt` disallow, `noindex` meta and `X-Robots-Tag`). Set `NEXT_PUBLIC_ALLOW_INDEXING=true` only on the final domain.
 
 ## Target architecture
