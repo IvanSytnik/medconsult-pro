@@ -4,7 +4,7 @@ export function SectionHeading({ tag, title, subtitle }: { tag: string; title: s
   return (
     <div className="text-center max-w-2xl mx-auto mb-16">
       <span className="section-tag">{tag}</span>
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+      <h2 className="text-3xl md:text-4xl font-bold mb-4 break-words hyphenate-long">{title}</h2>
       {subtitle && <p className="text-secondary-500 text-lg">{subtitle}</p>}
     </div>
   )

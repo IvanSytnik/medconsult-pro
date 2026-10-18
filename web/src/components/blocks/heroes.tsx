@@ -92,15 +92,15 @@ export function ServiceHero({ block }: { block: ServiceHeroBlock }) {
   const style = heroStyle(block, 'min-h-[600px]')
   return (
     <section id={block.anchor || undefined} className={clsx('relative flex items-center', style.className)}>
-      <div className="max-w-6xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="min-w-0 max-w-6xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md mb-6">
               <MedicalIcon icon={getIcon(block.badgeIcon)} size="sm" />
               <span className="font-medium text-secondary-700">{block.tag}</span>
             </div>
 
-            <h1 className={clsx('text-4xl md:text-5xl font-bold mb-4', style.heading)}>
+            <h1 className={clsx('text-4xl md:text-5xl font-bold mb-4 break-words hyphenate-long', style.heading)}>
               {block.title}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
                 {block.titleAccent}
@@ -110,11 +110,11 @@ export function ServiceHero({ block }: { block: ServiceHeroBlock }) {
             <p className={clsx('text-lg mb-8 leading-relaxed', style.body)}>{block.description}</p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <a href={block.primary?.href || '#contact'} className="btn btn-primary btn-lg">
+              <a href={block.primary?.href || '#contact'} className="btn btn-primary btn-lg btn-wrap">
                 <MessageCircle className="w-5 h-5" />
                 {block.primary?.label}
               </a>
-              <a href={block.secondary?.href || '#'} className="btn btn-outline btn-lg">
+              <a href={block.secondary?.href || '#'} className="btn btn-outline btn-lg btn-wrap">
                 {block.secondary?.label}
               </a>
             </div>
@@ -123,7 +123,7 @@ export function ServiceHero({ block }: { block: ServiceHeroBlock }) {
               {block.stats?.map((stat) => (
                 <div key={stat.id}>
                   <div className="text-3xl font-bold text-primary-600">{stat.value}</div>
-                  <div className="text-sm text-secondary-500">{stat.label}</div>
+                  <div className="text-sm text-secondary-500 hyphenate-long">{stat.label}</div>
                 </div>
               ))}
             </div>

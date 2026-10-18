@@ -323,7 +323,7 @@ export function TrustBar({ block }: { block: TrustBarBlock }) {
                     <MedicalIcon icon={Icon} className="w-6 h-6 text-primary-600" />
                   )}
                 </div>
-                <div>
+                <div className="min-w-0 max-sm:hyphens-auto max-sm:[hyphenate-limit-chars:11]">
                   <div className="font-semibold text-secondary-800">{item.title}</div>
                   <div className="text-sm text-secondary-500">{item.desc}</div>
                 </div>
@@ -617,7 +617,7 @@ export function Results({ block }: { block: ResultsBlock }) {
             })}
           </div>
 
-          <a href="#contact" className={clsx('btn btn-lg', dark ? 'btn-white' : 'btn-primary')}>
+          <a href="#contact" className={clsx('btn btn-lg btn-wrap', dark ? 'btn-white' : 'btn-primary')}>
             <CmsIcon name={block.ctaIcon || 'calendar'} className="w-5 h-5" />
             {block.ctaLabel}
           </a>
