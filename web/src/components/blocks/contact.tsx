@@ -4,16 +4,18 @@ import { SectionHeading } from '@/components/sections/common'
 import VideoSliderClient from '@/components/sections/VideoSlider'
 import { mediaOf, populated, type ContactLinks } from '@/lib/cms'
 import type { ContactBlock, Video, VideoSliderBlock } from '@/payload-types'
+import { sectionStyle } from './style'
 
 type ContactProps = { block: ContactBlock; contact: ContactLinks; services: ServiceOption[] }
 
 export function Contact({ block, contact, services }: ContactProps) {
   const anchor = block.anchor || undefined
+  const { className } = sectionStyle(block)
   const form = <ContactForm source={block.source || 'main'} services={services} fallbackWhatsapp={contact.formWhatsapp} />
 
   if (block.variant === 'compact') {
     return (
-      <section id={anchor} className="py-24">
+      <section id={anchor} className={className}>
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading tag={block.tag ?? ''} title={block.title ?? ''} subtitle={block.subtitle ?? undefined} />
           <div className="max-w-2xl mx-auto">{form}</div>
@@ -24,7 +26,7 @@ export function Contact({ block, contact, services }: ContactProps) {
 
   if (block.variant === 'direct') {
     return (
-      <section id={anchor} className="py-24">
+      <section id={anchor} className={className}>
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="section-tag">{block.tag}</span>
@@ -96,7 +98,7 @@ export function Contact({ block, contact, services }: ContactProps) {
   ]
 
   return (
-    <section id={anchor} className="py-24">
+    <section id={anchor} className={className}>
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeading tag={block.tag ?? ''} title={block.title ?? ''} subtitle={block.subtitle ?? undefined} />
 
@@ -141,6 +143,7 @@ export function VideoSlider({ block }: { block: VideoSliderBlock }) {
   return (
     <VideoSliderClient
       anchor={block.anchor || undefined}
+      className={sectionStyle(block).className}
       videos={videos}
       thumbnailGridClass={THUMBNAIL_GRID[block.thumbnails ?? 'four']}
       tag={block.tag ?? ''}

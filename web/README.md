@@ -21,11 +21,18 @@ npm run generate:types       # src/payload-types.ts
 npm run migrate:create       # new file in src/migrations, commit it
 ```
 
+`migrate:create` asks for every new enum or column whether it is new or renamed. When a field moves (as `background`
+moved into `style`), answer "create" and copy the old values in the generated `up`/`down` by hand.
+
 ## Structure
 
 - `src/payload.config.ts` – Payload config: Postgres, Vercel Blob, localisation (German default, fallback to German).
 - `src/payload/` – collections (pages, services, treatments, clinics, team, videos, media, users), globals
-  (site settings, legal) and page blocks (one per section type, each with an anchor and a hidden flag).
+  (site settings, legal, theme) and page blocks (one per section type, each with an anchor, a hidden flag and a
+  style: background and spacing).
+- `src/lib/theme.ts` – theme defaults and the CSS variables built from the theme global (colour scales, font,
+  radius). Tailwind's `primary-*`, `secondary-*`, `font-sans` and `rounded-*` read these variables, so theme changes
+  in the admin need no rebuild. `src/lib/block-style.ts` lists the block backgrounds and each block's default.
 - `src/app/(frontend)/[locale]/[[...slug]]` – every CMS page; `home` is `/`, other slugs become `/<slug>`.
   `impressum` and `privacy` render the legal global.
 - `src/components/blocks/` – one renderer per block type.

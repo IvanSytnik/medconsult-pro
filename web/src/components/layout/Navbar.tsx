@@ -1,16 +1,18 @@
 'use client'
 
 import clsx from 'clsx'
-import { Activity, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useLocale } from 'next-intl'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { languages, localePath, type Locale } from '@/i18n/routing'
 
 type NavLink = { label: string; href: string }
 
 /** Links are stored locale-independent ("/#services") and prefixed with the active locale here. */
-export default function Navbar({ links, ctaLabel, ctaHref }: { links: NavLink[]; ctaLabel: string; ctaHref: string }) {
+type Props = { logo: ReactNode; links: NavLink[]; ctaLabel: string; ctaHref: string }
+
+export default function Navbar({ logo, links, ctaLabel, ctaHref }: Props) {
   const locale = useLocale()
   const pathname = usePathname()
   const router = useRouter()
@@ -48,12 +50,7 @@ export default function Navbar({ links, ctaLabel, ctaHref }: { links: NavLink[];
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-[72px]">
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-11 h-11 bg-gradient-to-br from-primary-600 to-primary-500 rounded-lg flex items-center justify-center text-white">
-              <Activity className="w-6 h-6" />
-            </div>
-            <span className="text-xl font-bold text-secondary-900">
-              MedConsult<span className="text-primary-600">Turkey</span>
-            </span>
+            {logo}
           </Link>
 
           <ul className="hidden lg:flex items-center gap-1">

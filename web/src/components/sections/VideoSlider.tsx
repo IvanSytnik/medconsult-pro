@@ -7,6 +7,8 @@ export type Video = { id: number; url: string; thumbnail: string }
 
 type Props = {
   anchor?: string
+  /** Section padding and background from the block style. */
+  className: string
   videos: Video[]
   /** Grid classes for the thumbnail column; dental and plastic lay thumbnails out differently. */
   thumbnailGridClass: string
@@ -25,6 +27,7 @@ type FullscreenVideo = HTMLVideoElement & { webkitRequestFullscreen?: () => void
 
 export default function VideoSlider({
   anchor,
+  className,
   videos,
   thumbnailGridClass,
   tag,
@@ -79,7 +82,7 @@ export default function VideoSlider({
   }
 
   return (
-    <section id={anchor} className="py-24 bg-white">
+    <section id={anchor} className={className}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">

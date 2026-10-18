@@ -1,39 +1,34 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
+import { RADIUS_SCALE, SHADES, themeVariables } from './src/lib/theme'
+
+type ScaleName = 'primary' | 'secondary'
+
+/** Theme colours are CSS variables holding RGB channels, so opacity modifiers such as `primary-100/50` keep working. */
+const colorScale = (name: ScaleName) =>
+  Object.fromEntries(SHADES.map((shade) => [shade, `rgb(var(--color-${name}-${shade}) / <alpha-value>)`]))
+
+/**
+ * Utilities read --color-<name>-<shade>, which points at the theme's --<name>-<shade>. Dark sections point the
+ * neutral scale the other way round (50 <-> 900), so grey text and light panels of any block stay readable there.
+ */
+const aliases = (name: ScaleName, inverted = false) =>
+  Object.fromEntries(
+    SHADES.map((shade, i) => [`--color-${name}-${shade}`, `var(--${name}-${inverted ? SHADES[SHADES.length - 1 - i] : shade})`])
+  )
 
 const config: Config = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     extend: {
-      colors: {
-        primary: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0f766e',
-          700: '#0d5d56',
-          800: '#115e59',
-          900: '#134e4a',
-        },
-        secondary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-        },
-      },
+      colors: { primary: colorScale('primary'), secondary: colorScale('secondary') },
       fontFamily: {
-        // Self-hosted variable Inter (@fontsource-variable/inter), same family the old site loaded from Google Fonts.
-        sans: ['"Inter Variable"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        // Set by the theme; the default is the self-hosted variable Inter (@fontsource-variable/inter).
+        sans: ['var(--font-sans)'],
       },
+      borderRadius: Object.fromEntries(
+        Object.entries(RADIUS_SCALE).map(([size, factor]) => [size, factor === 1 ? 'var(--radius)' : `calc(var(--radius) * ${factor})`])
+      ),
       animation: {
         float: 'float 6s ease-in-out infinite',
         'fade-in': 'fadeIn 0.6s ease-out forwards',
@@ -55,7 +50,19 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Default theme values; the layout overrides them with the theme saved in the CMS.
+    plugin(({ addBase }) =>
+      addBase({
+        ':root': { ...themeVariables(null), ...aliases('primary'), ...aliases('secondary') },
+        '.section-dark > *': aliases('secondary', true),
+        // White cards and buttons inside a dark section keep the normal palette and dark text. :where() keeps the
+        // specificity low, so text and background utilities on these elements still win.
+        '.section-dark :where(.card, .bg-white, .btn-white)': aliases('secondary'),
+        '.section-dark :where(.card, .bg-white)': { color: 'rgb(var(--secondary-800))' },
+      })
+    ),
+  ],
 }
 
 export default config
