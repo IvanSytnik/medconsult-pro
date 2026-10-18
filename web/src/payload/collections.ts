@@ -56,7 +56,11 @@ export const Media: CollectionConfig = {
       { name: 'card', width: 800 },
       { name: 'large', width: 1600 },
     ],
-    adminThumbnail: 'thumbnail',
+    // Files are served straight from Blob, so the admin preview must use the stored Blob URL as well.
+    adminThumbnail: ({ doc }) => {
+      const sizes = doc.sizes as { thumbnail?: { url?: string | null } } | undefined
+      return sizes?.thumbnail?.url || (doc.url as string | undefined) || null
+    },
     focalPoint: true,
   },
   fields: [
