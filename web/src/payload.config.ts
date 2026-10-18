@@ -11,6 +11,15 @@ import { GLOBALS } from './payload/globals'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
+/**
+ * pg currently treats sslmode=require (what Neon hands out) as verify-full and warns that this will change.
+ * Spelling out verify-full keeps today's certificate checks and silences the warning.
+ */
+function connectionString(url: string): string {
+  if (/[?&]uselibpqcompat=/.test(url)) return url
+  return url.replace(/([?&])sslmode=(prefer|require|verify-ca)(?=&|$)/, '$1sslmode=verify-full')
+}
+
 export default buildConfig({
   admin: {
     user: 'users',
@@ -39,7 +48,7 @@ export default buildConfig({
   },
   secret: process.env.PAYLOAD_SECRET || '',
   db: postgresAdapter({
-    pool: { connectionString: process.env.DATABASE_URL || '' },
+    pool: { connectionString: connectionString(process.env.DATABASE_URL || '') },
     migrationDir: path.resolve(dirname, 'migrations'),
     // Local development syncs the schema automatically; deployed databases change only through migrations.
     push: process.env.NODE_ENV !== 'production',
