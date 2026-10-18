@@ -11,11 +11,24 @@
   body {
     @apply font-sans text-secondary-800 bg-white antialiased;
   }
+
+  /* Narrow columns on phones: hyphenate only words too long to ever fit (German compounds). */
+  @media (max-width: 639px) {
+    .hyphenate-long {
+      hyphens: auto;
+      hyphenate-limit-chars: 15;
+    }
+  }
 }
 
 @layer components {
   .btn {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-base cursor-pointer border-2 border-transparent transition-all duration-300 whitespace-nowrap;
+  }
+
+  /* Buttons whose label can be wider than a phone screen: wrap there instead of widening the page. */
+  .btn-wrap {
+    @apply max-w-full text-center whitespace-normal sm:whitespace-nowrap;
   }
 
   .btn-primary {
