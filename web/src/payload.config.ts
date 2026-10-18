@@ -6,6 +6,7 @@ import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { buildConfig } from 'payload'
 import sharp from 'sharp'
 import { COLLECTIONS } from './payload/collections'
+import { resendAdapter } from './payload/email'
 import { GLOBALS } from './payload/globals'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -25,6 +26,7 @@ export default buildConfig({
   collections: COLLECTIONS,
   globals: GLOBALS,
   editor: lexicalEditor(),
+  email: resendAdapter(),
   localization: {
     locales: [
       { code: 'de', label: 'Deutsch' },
