@@ -13,7 +13,13 @@ const dirname = path.dirname(fileURLToPath(import.meta.url))
 export default buildConfig({
   admin: {
     user: 'users',
-    meta: { titleSuffix: ' – MedConsult Admin' },
+    meta: {
+      titleSuffix: ' – MedConsult Admin',
+      icons: [
+        { rel: 'icon', type: 'image/svg+xml', url: '/favicon.svg' },
+        { rel: 'icon', sizes: '48x48', url: '/favicon.ico' },
+      ],
+    },
     importMap: { baseDir: path.resolve(dirname) },
   },
   collections: COLLECTIONS,
