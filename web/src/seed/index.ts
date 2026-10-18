@@ -3,7 +3,8 @@
  *
  *   npm run seed            create whatever is missing, keep existing documents untouched
  *   SEED_FORCE=1 npm run seed   overwrite seeded documents with the original content
- *   SEED_IF_EMPTY=1             only seed a database without pages (used by the Vercel build)
+ *   SEED_IF_EMPTY=1             seed only a database without pages; otherwise just re-upload missing media files
+ *                               (used by the Vercel build)
  *   SEED_SKIP_OWNER=1           do not create the owner account (the first admin sign-up becomes owner)
  *
  * Safe to run repeatedly: documents are matched by slug/key/filename, never duplicated.
@@ -35,14 +36,12 @@ const FORCE = process.env.SEED_FORCE === '1'
 /** A fresh context per operation: Payload plugins keep per-request state in it (the storage plugin stashes the
  *  uploaded file there), so sharing one object between operations makes later uploads skip or reuse files. */
 const context = () => ({ disableRevalidate: true })
-const counts = { created: 0, updated: 0, skipped: 0 }
+const counts = { created: 0, updated: 0, skipped: 0, repaired: 0 }
 
 const payload = await getPayload({ config })
 
-if (process.env.SEED_IF_EMPTY === '1' && (await payload.count({ collection: 'pages' })).totalDocs > 0) {
-  console.log('Database already has content; skipping seed.')
-  process.exit(0)
-}
+// On a database that already has content, SEED_IF_EMPTY only repairs seeded media whose files are missing.
+const MEDIA_ONLY = process.env.SEED_IF_EMPTY === '1' && (await payload.count({ collection: 'pages' })).totalDocs > 0
 
 const messages = Object.fromEntries(
   await Promise.all(
@@ -104,33 +103,72 @@ async function seedGlobal(slug: 'site-settings' | 'legal', build: (locale: Local
 
 const MIME: Record<string, string> = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml' }
 
-/** Uploads a file once (matched by its seed key). Returns null when a remote image cannot be downloaded. */
-async function ensureMedia(filename: string, source: string, alt: (locale: Locale) => string): Promise<number | null> {
-  const { docs } = await payload.find({ collection: 'media', where: { seedKey: { equals: filename } }, limit: 1, depth: 0 })
-  if (docs[0]) {
-    counts.skipped++
-    return docs[0].id
-  }
-
-  let data: Buffer
+/** Reads a seed file from disk or downloads it. Returns null (and logs) when it cannot be fetched. */
+async function loadSource(filename: string, source: string): Promise<Buffer | null> {
   try {
     if (/^https?:/.test(source)) {
       const response = await fetch(source, { signal: AbortSignal.timeout(20_000) })
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
-      data = Buffer.from(await response.arrayBuffer())
-    } else {
-      data = await readFile(path.join(dirname, 'media', source))
+      return Buffer.from(await response.arrayBuffer())
     }
+    return await readFile(path.join(dirname, 'media', source))
   } catch (error) {
     payload.logger.warn(`Skipping ${filename} (${source}): ${error instanceof Error ? error.message : error}`)
     return null
   }
+}
 
-  const mimetype = MIME[path.extname(filename)] ?? 'application/octet-stream'
+/** True only when the stored file URL answers 404, i.e. the record exists but its file is gone. */
+async function fileMissing(url: string | null | undefined): Promise<boolean> {
+  if (!url || !/^https?:/.test(url)) return false
+  try {
+    const response = await fetch(url, { method: 'HEAD', signal: AbortSignal.timeout(10_000) })
+    return response.status === 404
+  } catch {
+    return false
+  }
+}
+
+const fileOf = (data: Buffer, filename: string) => ({
+  data,
+  mimetype: MIME[path.extname(filename)] ?? 'application/octet-stream',
+  name: filename,
+  size: data.length,
+})
+
+/** Uploads a file once (matched by its seed key) and re-uploads it into the same record when its file is missing
+ *  from storage. Returns null when a remote image cannot be downloaded. */
+async function ensureMedia(filename: string, source: string, alt: (locale: Locale) => string): Promise<number | null> {
+  const { docs } = await payload.find({ collection: 'media', where: { seedKey: { equals: filename } }, limit: 1, depth: 0 })
+  const existing = docs[0]
+  if (existing) {
+    if (await fileMissing(existing.url)) {
+      const data = await loadSource(filename, source)
+      if (data) {
+        await payload.update({
+          collection: 'media',
+          id: existing.id,
+          data: {},
+          file: fileOf(data, filename),
+          depth: 0,
+          context: context(),
+        })
+        counts.repaired++
+        payload.logger.info(`Re-uploaded missing file ${filename}`)
+        return existing.id
+      }
+    }
+    counts.skipped++
+    return existing.id
+  }
+  if (MEDIA_ONLY) return null
+
+  const data = await loadSource(filename, source)
+  if (!data) return null
   const created = await payload.create({
     collection: 'media',
     data: { alt: alt('de'), seedKey: filename },
-    file: { data, mimetype, name: filename, size: data.length },
+    file: fileOf(data, filename),
     locale: 'de',
     depth: 0,
     context: context(),
@@ -179,6 +217,11 @@ for (const [key, url] of Object.entries(REMOTE_IMAGES) as [keyof typeof REMOTE_I
 const teamPhotos: Record<string, number | null> = {}
 for (const member of TEAM) {
   teamPhotos[member.key] = await ensureMedia(`team-${member.key}.png`, member.photo, (l) => t[l].team.members[member.msgKey].name)
+}
+
+if (MEDIA_ONLY) {
+  console.log(`Database already has content; media check: ${counts.repaired} re-uploaded, ${counts.skipped} fine.`)
+  process.exit(0)
 }
 
 // --- Collections ---------------------------------------------------------------------------------
@@ -239,5 +282,7 @@ await seedGlobal('site-settings', (l) => siteSettings(t[l]), (doc) => Boolean(do
 await seedGlobal('legal', (l) => legal(t[l]), (doc) => Boolean((doc.impressum as Data | undefined)?.title))
 if (process.env.SEED_SKIP_OWNER !== '1') await seedOwner()
 
-console.log(`Seed finished: ${counts.created} created, ${counts.updated} updated, ${counts.skipped} unchanged.`)
+console.log(
+  `Seed finished: ${counts.created} created, ${counts.updated} updated, ${counts.repaired} re-uploaded, ${counts.skipped} unchanged.`
+)
 process.exit(0)
