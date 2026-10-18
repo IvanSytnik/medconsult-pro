@@ -3,7 +3,7 @@ import config from '@payload-config'
 import { getPayload } from 'payload'
 import { cache } from 'react'
 import type { Locale } from '@/i18n/routing'
-import type { Media, Page, Service, SiteSetting } from '@/payload-types'
+import type { Media, Page, Service, SiteSetting, Theme } from '@/payload-types'
 
 export const getPayloadClient = () => getPayload({ config })
 
@@ -36,6 +36,11 @@ export async function getPageSlugs(): Promise<string[]> {
 export const getSiteSettings = cache(async (locale: Locale): Promise<SiteSetting> => {
   const payload = await getPayloadClient()
   return payload.findGlobal({ slug: 'site-settings', locale, depth: 0 })
+})
+
+export const getTheme = cache(async (): Promise<Theme> => {
+  const payload = await getPayloadClient()
+  return payload.findGlobal({ slug: 'theme', depth: 1 })
 })
 
 export const getLegal = cache(async (locale: Locale) => {

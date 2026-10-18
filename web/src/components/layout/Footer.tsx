@@ -1,14 +1,14 @@
-import { Activity } from 'lucide-react'
 import { getLocale } from 'next-intl/server'
 import WhatsAppGlyph from '@/components/ui/WhatsAppGlyph'
 import { Link } from '@/i18n/navigation'
 import { localePath } from '@/i18n/routing'
 import type { ContactLinks } from '@/lib/cms'
-import type { Service, SiteSetting } from '@/payload-types'
+import type { Service, SiteSetting, Theme } from '@/payload-types'
+import Logo from './Logo'
 
-type Props = { settings: SiteSetting; services: Service[]; contact: ContactLinks }
+type Props = { settings: SiteSetting; services: Service[]; contact: ContactLinks; logo: Theme['logo'] }
 
-export default async function Footer({ settings, services, contact }: Props) {
+export default async function Footer({ settings, services, contact, logo }: Props) {
   const footer = settings.footer
   const locale = await getLocale()
   const year = new Date().getFullYear()
@@ -20,12 +20,7 @@ export default async function Footer({ settings, services, contact }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-secondary-800">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center text-white">
-                <Activity className="w-5 h-5" />
-              </div>
-              <span className="text-lg font-bold text-white">
-                MedConsult<span className="text-primary-400">Turkey</span>
-              </span>
+              <Logo logo={logo} variant="footer" />
             </Link>
             <p className="text-sm leading-relaxed">{footer?.description}</p>
           </div>

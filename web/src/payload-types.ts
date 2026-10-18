@@ -103,10 +103,12 @@ export interface Config {
   globals: {
     'site-settings': SiteSetting;
     legal: Legal;
+    theme: Theme;
   };
   globalsSelect: {
     'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
     legal: LegalSelect<false> | LegalSelect<true>;
+    theme: ThemeSelect<false> | ThemeSelect<true>;
   };
   locale: 'de' | 'ru' | 'uk' | 'en';
   widgets: {
@@ -191,6 +193,16 @@ export interface HomeHeroBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   badge?: string | null;
   title?: string | null;
   titleAccent?: string | null;
@@ -280,6 +292,16 @@ export interface ServiceHeroBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   badgeIcon?:
     | (
         | 'smile'
@@ -414,6 +436,16 @@ export interface DentalHeroBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   backLabel?: string | null;
   badgeIcon?:
     | (
@@ -505,10 +537,19 @@ export interface IconCardsBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
-  background?: ('none' | 'white' | 'muted') | null;
   items?:
     | {
         icon?:
@@ -574,10 +615,19 @@ export interface ServicesGridBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
-  background?: ('none' | 'white' | 'muted') | null;
   services?: (number | Service)[] | null;
   moreLabel?: string | null;
   id?: string | null;
@@ -656,6 +706,16 @@ export interface AboutBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   lead?: string | null;
@@ -686,6 +746,16 @@ export interface AudienceBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   items?:
@@ -712,10 +782,19 @@ export interface ProcessBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
-  background?: ('none' | 'white' | 'muted') | null;
   steps?:
     | {
         title?: string | null;
@@ -795,10 +874,19 @@ export interface TeamBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
-  background?: ('none' | 'white' | 'muted') | null;
   members?: (number | TeamMember)[] | null;
   chiefLabel?: string | null;
   whatsappLabel?: string | null;
@@ -839,6 +927,16 @@ export interface CtaBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   title?: string | null;
   subtitle?: string | null;
   text?: string | null;
@@ -866,6 +964,16 @@ export interface ContactBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   variant?: ('full' | 'compact' | 'direct') | null;
   tag?: string | null;
   title?: string | null;
@@ -908,6 +1016,16 @@ export interface TrustBarBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   items?:
     | {
         icon?:
@@ -977,6 +1095,16 @@ export interface TreatmentListBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
@@ -1064,10 +1192,19 @@ export interface ProcedureCardsBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
-  background?: ('none' | 'white' | 'muted') | null;
   treatments?: (number | Treatment)[] | null;
   /**
    * Which treatment details each card shows
@@ -1099,10 +1236,19 @@ export interface PricingTableBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
-  background?: ('none' | 'white' | 'muted') | null;
   columns?: {
     procedure?: string | null;
     germany?: string | null;
@@ -1176,6 +1322,16 @@ export interface ClinicBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   clinic?: (number | null) | Clinic;
   id?: string | null;
@@ -1268,6 +1424,16 @@ export interface PackageBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
@@ -1337,6 +1503,16 @@ export interface VideoSliderBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
@@ -1401,6 +1577,16 @@ export interface BenefitsBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   description?: string | null;
@@ -1430,6 +1616,16 @@ export interface ResultsBlock {
    * Hide this section on the site
    */
   hidden?: boolean | null;
+  /**
+   * Section style
+   */
+  style?: {
+    background?: ('none' | 'white' | 'muted' | 'gradient' | 'dark' | 'primary') | null;
+    /**
+     * Compact halves the space above and below the section
+     */
+    spacing?: ('normal' | 'compact') | null;
+  };
   tag?: string | null;
   title?: string | null;
   subtitle?: string | null;
@@ -1704,6 +1900,12 @@ export interface PagesSelect<T extends boolean = true> {
 export interface HomeHeroBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   badge?: T;
   title?: T;
   titleAccent?: T;
@@ -1744,6 +1946,12 @@ export interface HomeHeroBlockSelect<T extends boolean = true> {
 export interface ServiceHeroBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   badgeIcon?: T;
   tag?: T;
   title?: T;
@@ -1781,6 +1989,12 @@ export interface ServiceHeroBlockSelect<T extends boolean = true> {
 export interface DentalHeroBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   backLabel?: T;
   badgeIcon?: T;
   badge?: T;
@@ -1823,10 +2037,15 @@ export interface DentalHeroBlockSelect<T extends boolean = true> {
 export interface IconCardsBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
-  background?: T;
   items?:
     | T
     | {
@@ -1845,10 +2064,15 @@ export interface IconCardsBlockSelect<T extends boolean = true> {
 export interface ServicesGridBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
-  background?: T;
   services?: T;
   moreLabel?: T;
   id?: T;
@@ -1861,6 +2085,12 @@ export interface ServicesGridBlockSelect<T extends boolean = true> {
 export interface AboutBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   lead?: T;
@@ -1884,6 +2114,12 @@ export interface AboutBlockSelect<T extends boolean = true> {
 export interface AudienceBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   items?:
@@ -1903,10 +2139,15 @@ export interface AudienceBlockSelect<T extends boolean = true> {
 export interface ProcessBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
-  background?: T;
   steps?:
     | T
     | {
@@ -1938,10 +2179,15 @@ export interface ProcessBlockSelect<T extends boolean = true> {
 export interface TeamBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
-  background?: T;
   members?: T;
   chiefLabel?: T;
   whatsappLabel?: T;
@@ -1955,6 +2201,12 @@ export interface TeamBlockSelect<T extends boolean = true> {
 export interface CtaBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   title?: T;
   subtitle?: T;
   text?: T;
@@ -1974,6 +2226,12 @@ export interface CtaBlockSelect<T extends boolean = true> {
 export interface ContactBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   variant?: T;
   tag?: T;
   title?: T;
@@ -2010,6 +2268,12 @@ export interface ContactBlockSelect<T extends boolean = true> {
 export interface TrustBarBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   items?:
     | T
     | {
@@ -2029,6 +2293,12 @@ export interface TrustBarBlockSelect<T extends boolean = true> {
 export interface TreatmentListBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
@@ -2043,10 +2313,15 @@ export interface TreatmentListBlockSelect<T extends boolean = true> {
 export interface ProcedureCardsBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
-  background?: T;
   treatments?: T;
   rows?:
     | T
@@ -2068,10 +2343,15 @@ export interface ProcedureCardsBlockSelect<T extends boolean = true> {
 export interface PricingTableBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
-  background?: T;
   columns?:
     | T
     | {
@@ -2100,6 +2380,12 @@ export interface PricingTableBlockSelect<T extends boolean = true> {
 export interface ClinicBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   clinic?: T;
   id?: T;
@@ -2112,6 +2398,12 @@ export interface ClinicBlockSelect<T extends boolean = true> {
 export interface PackageBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
@@ -2134,6 +2426,12 @@ export interface PackageBlockSelect<T extends boolean = true> {
 export interface VideoSliderBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
@@ -2163,6 +2461,12 @@ export interface VideoSliderBlockSelect<T extends boolean = true> {
 export interface BenefitsBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   description?: T;
@@ -2185,6 +2489,12 @@ export interface BenefitsBlockSelect<T extends boolean = true> {
 export interface ResultsBlockSelect<T extends boolean = true> {
   anchor?: T;
   hidden?: T;
+  style?:
+    | T
+    | {
+        background?: T;
+        spacing?: T;
+      };
   tag?: T;
   title?: T;
   subtitle?: T;
@@ -2542,6 +2852,71 @@ export interface Legal {
   createdAt?: string | null;
 }
 /**
+ * Colours, font, logo and corner radius of the whole site.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "theme".
+ */
+export interface Theme {
+  id: number;
+  primary?: {
+    mode?: ('scale' | 'base') | null;
+    /**
+     * Becomes shade 600 (buttons, links); lighter and darker shades are mixed with white and black.
+     */
+    base?: string | null;
+    scale?: {
+      s50?: string | null;
+      s100?: string | null;
+      s200?: string | null;
+      s300?: string | null;
+      s400?: string | null;
+      s500?: string | null;
+      s600?: string | null;
+      s700?: string | null;
+      s800?: string | null;
+      s900?: string | null;
+    };
+  };
+  secondary?: {
+    mode?: ('scale' | 'base') | null;
+    /**
+     * Becomes shade 600 (buttons, links); lighter and darker shades are mixed with white and black.
+     */
+    base?: string | null;
+    scale?: {
+      s50?: string | null;
+      s100?: string | null;
+      s200?: string | null;
+      s300?: string | null;
+      s400?: string | null;
+      s500?: string | null;
+      s600?: string | null;
+      s700?: string | null;
+      s800?: string | null;
+      s900?: string | null;
+    };
+  };
+  font?: ('inter' | 'manrope' | 'montserrat' | 'open-sans' | 'roboto' | 'system') | null;
+  radius?: ('none' | 'small' | 'medium' | 'large' | 'xlarge') | null;
+  logo?: {
+    /**
+     * Replaces the icon in front of the name. Square or wide image, shown 44 px high.
+     */
+    image?: (number | null) | Media;
+    /**
+     * Leave both parts empty to show only the image
+     */
+    text?: string | null;
+    /**
+     * Second part, in the brand colour
+     */
+    accent?: string | null;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "site-settings_select".
  */
@@ -2617,6 +2992,64 @@ export interface LegalSelect<T extends boolean = true> {
         lastUpdated?: T;
         contactTitle?: T;
         contactText?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "theme_select".
+ */
+export interface ThemeSelect<T extends boolean = true> {
+  primary?:
+    | T
+    | {
+        mode?: T;
+        base?: T;
+        scale?:
+          | T
+          | {
+              s50?: T;
+              s100?: T;
+              s200?: T;
+              s300?: T;
+              s400?: T;
+              s500?: T;
+              s600?: T;
+              s700?: T;
+              s800?: T;
+              s900?: T;
+            };
+      };
+  secondary?:
+    | T
+    | {
+        mode?: T;
+        base?: T;
+        scale?:
+          | T
+          | {
+              s50?: T;
+              s100?: T;
+              s200?: T;
+              s300?: T;
+              s400?: T;
+              s500?: T;
+              s600?: T;
+              s700?: T;
+              s800?: T;
+              s900?: T;
+            };
+      };
+  font?: T;
+  radius?: T;
+  logo?:
+    | T
+    | {
+        image?: T;
+        text?: T;
+        accent?: T;
       };
   updatedAt?: T;
   createdAt?: T;

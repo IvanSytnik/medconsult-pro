@@ -1,11 +1,11 @@
 import type { Block, Field } from 'payload'
-import { background, blockMeta, heading, icon, image, link, stats, text, textarea } from './fields'
+import { blockMeta, blockStyle, heading, icon, image, link, stats, text, textarea } from './fields'
 
 const block = (slug: string, label: string, fields: Field[]): Block => ({
   slug,
   labels: { singular: label, plural: label },
   interfaceName: `${slug.charAt(0).toUpperCase()}${slug.slice(1)}Block`,
-  fields: [...blockMeta, ...fields],
+  fields: [...blockMeta, blockStyle(slug), ...fields],
 })
 
 const textList = (name: string): Field => ({ name, type: 'array', fields: [text('text')] })
@@ -54,11 +54,10 @@ export const DentalHero = block('dentalHero', 'Hero (with back link and checklis
   stats(),
 ])
 
-export const IconCards = block('iconCards', 'Icon cards', [...heading(), background, iconItems()])
+export const IconCards = block('iconCards', 'Icon cards', [...heading(), iconItems()])
 
 export const ServicesGrid = block('servicesGrid', 'Services grid', [
   ...heading(),
-  background,
   { name: 'services', type: 'relationship', relationTo: 'services', hasMany: true },
   text('moreLabel'),
 ])
@@ -81,7 +80,6 @@ export const Audience = block('audience', 'Audience', [
 
 export const Process = block('process', 'Process steps', [
   ...heading(),
-  background,
   { name: 'steps', type: 'array', fields: [text('title'), textarea('desc')] },
   {
     name: 'extra',
@@ -106,7 +104,6 @@ export const Process = block('process', 'Process steps', [
 
 export const Team = block('team', 'Team', [
   ...heading(),
-  background,
   { name: 'members', type: 'relationship', relationTo: 'team-members', hasMany: true },
   { type: 'row', fields: [text('chiefLabel'), text('whatsappLabel')] },
 ])
@@ -175,7 +172,6 @@ export const TreatmentList = block('treatmentList', 'Treatments (icon list)', [
 
 export const ProcedureCards = block('procedureCards', 'Treatments (photo cards)', [
   ...heading(),
-  background,
   { name: 'treatments', type: 'relationship', relationTo: 'treatments', hasMany: true },
   {
     name: 'rows',
@@ -202,7 +198,6 @@ export const ProcedureCards = block('procedureCards', 'Treatments (photo cards)'
 
 export const PricingTable = block('pricingTable', 'Price comparison table', [
   ...heading(),
-  background,
   {
     name: 'columns',
     type: 'group',

@@ -2,6 +2,7 @@
  * Content of the site as it was before the CMS: copy from the JSON locales plus the figures, prices,
  * team data and media that were hardcoded in the page components. Texts are taken over unchanged.
  */
+import { DEFAULT_LOGO, DEFAULT_SCALES, DEFAULT_THEME, SHADES, type Scale } from '../lib/theme'
 import type messages from './data/de.json'
 
 export type Messages = typeof messages
@@ -193,7 +194,7 @@ export function pages(m: Messages, r: Refs) {
       {
         blockType: 'servicesGrid',
         anchor: 'services',
-        background: 'muted',
+        style: { background: 'muted' },
         tag: m.services.tag,
         title: m.services.title,
         subtitle: m.services.subtitle,
@@ -229,7 +230,7 @@ export function pages(m: Messages, r: Refs) {
       {
         blockType: 'team',
         anchor: 'team',
-        background: 'muted',
+        style: { background: 'muted' },
         tag: m.team.tag,
         title: m.team.title,
         subtitle: m.team.subtitle,
@@ -304,7 +305,7 @@ export function pages(m: Messages, r: Refs) {
       {
         blockType: 'pricingTable',
         anchor: 'pricing',
-        background: 'muted',
+        style: { background: 'muted' },
         tag: d.pricingTag,
         title: d.pricingTitle,
         subtitle: d.pricingSubtitle,
@@ -387,7 +388,7 @@ export function pages(m: Messages, r: Refs) {
       },
       {
         blockType: 'iconCards',
-        background: 'white',
+        style: { background: 'white' },
         tag: p.why.tag,
         title: p.why.title,
         subtitle: p.why.subtitle,
@@ -406,7 +407,7 @@ export function pages(m: Messages, r: Refs) {
       {
         blockType: 'procedureCards',
         anchor: 'procedures',
-        background: 'muted',
+        style: { background: 'muted' },
         tag: p.procedures.tag,
         title: p.procedures.title,
         subtitle: p.procedures.subtitle,
@@ -442,7 +443,7 @@ export function pages(m: Messages, r: Refs) {
       },
       {
         blockType: 'process',
-        background: 'muted',
+        style: { background: 'muted' },
         tag: p.process.tag,
         title: p.process.title,
         subtitle: p.process.subtitle,
@@ -493,7 +494,7 @@ export function pages(m: Messages, r: Refs) {
       },
       {
         blockType: 'iconCards',
-        background: 'white',
+        style: { background: 'white' },
         tag: h.why.tag,
         title: h.why.title,
         subtitle: h.why.subtitle,
@@ -512,7 +513,7 @@ export function pages(m: Messages, r: Refs) {
       {
         blockType: 'procedureCards',
         anchor: 'methods',
-        background: 'muted',
+        style: { background: 'muted' },
         tag: h.methods.tag,
         title: h.methods.title,
         subtitle: h.methods.subtitle,
@@ -537,7 +538,7 @@ export function pages(m: Messages, r: Refs) {
       },
       {
         blockType: 'process',
-        background: 'muted',
+        style: { background: 'muted' },
         tag: h.process.tag,
         title: h.process.title,
         subtitle: h.process.subtitle,
@@ -601,7 +602,7 @@ export function pages(m: Messages, r: Refs) {
       },
       {
         blockType: 'iconCards',
-        background: 'white',
+        style: { background: 'white' },
         tag: a.why.tag,
         title: a.why.title,
         subtitle: a.why.subtitle,
@@ -620,7 +621,7 @@ export function pages(m: Messages, r: Refs) {
       {
         blockType: 'procedureCards',
         anchor: 'treatments',
-        background: 'muted',
+        style: { background: 'muted' },
         tag: a.treatments.tag,
         title: a.treatments.title,
         subtitle: a.treatments.subtitle,
@@ -645,7 +646,7 @@ export function pages(m: Messages, r: Refs) {
       },
       {
         blockType: 'process',
-        background: 'muted',
+        style: { background: 'muted' },
         tag: a.process.tag,
         title: a.process.title,
         subtitle: a.process.subtitle,
@@ -810,5 +811,18 @@ export function legal(m: Messages) {
       contactTitle: pr.contactTitle,
       contactText: pr.contactText,
     },
+  }
+}
+
+const scaleFields = (scale: Scale) => Object.fromEntries(SHADES.map((shade) => [`s${shade}`, scale[shade]]))
+
+/** The original look: the hand-picked palette, Inter, 0.5rem radius and the text logo. */
+export function theme() {
+  return {
+    primary: { mode: 'scale', base: DEFAULT_SCALES.primary['600'], scale: scaleFields(DEFAULT_SCALES.primary) },
+    secondary: { mode: 'scale', base: DEFAULT_SCALES.secondary['600'], scale: scaleFields(DEFAULT_SCALES.secondary) },
+    font: DEFAULT_THEME.font,
+    radius: DEFAULT_THEME.radius,
+    logo: { image: null, ...DEFAULT_LOGO },
   }
 }

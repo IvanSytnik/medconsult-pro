@@ -38,7 +38,8 @@
     @apply inline-block bg-primary-100 text-primary-600 px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wide mb-4;
   }
 
-  .section-tag-light {
+  /* Sections with a dark or brand-colour background (block style). */
+  .section-dark .section-tag {
     @apply bg-white/15 text-white;
   }
 

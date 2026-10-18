@@ -1,4 +1,5 @@
 import type { Field, SelectField, TextField } from 'payload'
+import { BACKGROUNDS, defaultBackground, SPACINGS } from '../lib/block-style'
 import { ICON_NAMES } from '../lib/icon-names'
 
 /** Localised plain text. */
@@ -29,16 +30,33 @@ export const heading = (opts: { subtitle?: boolean } = {}): Field[] => [
   ...(opts.subtitle === false ? [] : [textarea('subtitle')]),
 ]
 
-export const background: Field = {
-  name: 'background',
-  type: 'select',
-  defaultValue: 'none',
-  options: [
-    { label: 'None', value: 'none' },
-    { label: 'White', value: 'white' },
-    { label: 'Light grey', value: 'muted' },
+/** Section background and vertical spacing; the default background is the block's original look. */
+export const blockStyle = (blockType: string): Field => ({
+  name: 'style',
+  type: 'group',
+  admin: { description: 'Section style' },
+  fields: [
+    {
+      type: 'row',
+      fields: [
+        {
+          name: 'background',
+          type: 'select',
+          defaultValue: defaultBackground(blockType),
+          options: BACKGROUNDS.map(({ value, label }) => ({ value, label })),
+          admin: { width: '50%' },
+        },
+        {
+          name: 'spacing',
+          type: 'select',
+          defaultValue: 'normal',
+          options: SPACINGS.map(({ value, label }) => ({ value, label })),
+          admin: { width: '50%', description: 'Compact halves the space above and below the section' },
+        },
+      ],
+    },
   ],
-}
+})
 
 export const link = (name: string, labelOpts: Partial<TextField> = {}): Field => ({
   name,

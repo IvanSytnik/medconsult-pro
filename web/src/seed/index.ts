@@ -24,6 +24,7 @@ import {
   SERVICES,
   siteSettings,
   TEAM,
+  theme,
   TREATMENTS,
   VIDEOS,
   type Locale,
@@ -88,14 +89,19 @@ async function upsert(collection: CollectionSlug, where: Where, build: (locale: 
   return stored.id as number
 }
 
-async function seedGlobal(slug: 'site-settings' | 'legal', build: (locale: Locale) => Data, isSeeded: (doc: Data) => boolean) {
+async function seedGlobal(
+  slug: 'site-settings' | 'legal' | 'theme',
+  build: (locale: Locale) => Data,
+  isSeeded: (doc: Data) => boolean,
+  localized = true
+) {
   const current = (await payload.findGlobal({ slug, depth: 0 })) as unknown as Data
   if (isSeeded(current) && !FORCE) {
     counts.skipped++
     return
   }
   const stored = await payload.updateGlobal({ slug, data: build('de'), locale: 'de', depth: 0, context: context() })
-  for (const locale of LOCALES.filter((l) => l !== 'de')) {
+  for (const locale of localized ? LOCALES.filter((l) => l !== 'de') : []) {
     await payload.updateGlobal({ slug, data: withIds(build(locale), stored) as Data, locale, depth: 0, context: context() })
   }
   counts.updated++
@@ -280,6 +286,7 @@ for (const [index, page] of pages(t.de, refs).entries()) {
 
 await seedGlobal('site-settings', (l) => siteSettings(t[l]), (doc) => Boolean(doc.phone))
 await seedGlobal('legal', (l) => legal(t[l]), (doc) => Boolean((doc.impressum as Data | undefined)?.title))
+await seedGlobal('theme', () => theme(), (doc) => Boolean(doc.updatedAt), false)
 if (process.env.SEED_SKIP_OWNER !== '1') await seedOwner()
 
 console.log(

@@ -28,9 +28,8 @@ import type {
   TrustBarBlock,
 } from '@/payload-types'
 import MediaImage from './MediaImage'
+import { sectionStyle } from './style'
 
-const BACKGROUND = { none: '', white: 'bg-white', muted: 'bg-secondary-50' } as const
-const bg = (value: keyof typeof BACKGROUND | null | undefined) => BACKGROUND[value ?? 'none']
 const id = (anchor: string | null | undefined) => anchor || undefined
 
 function Heading({ block }: { block: { tag?: string | null; title?: string | null; subtitle?: string | null } }) {
@@ -39,7 +38,7 @@ function Heading({ block }: { block: { tag?: string | null; title?: string | nul
 
 export function IconCards({ block }: { block: IconCardsBlock }) {
   return (
-    <section id={id(block.anchor)} className={clsx('py-24', bg(block.background))}>
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <Heading block={block} />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -61,7 +60,7 @@ export function IconCards({ block }: { block: IconCardsBlock }) {
 
 export function ServicesGrid({ block }: { block: ServicesGridBlock }) {
   return (
-    <section id={id(block.anchor)} className={clsx('py-24', bg(block.background))}>
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <Heading block={block} />
 
@@ -104,7 +103,7 @@ export function ServicesGrid({ block }: { block: ServicesGridBlock }) {
 
 export function About({ block }: { block: AboutBlock }) {
   return (
-    <section id={id(block.anchor)} className="py-24">
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
@@ -141,11 +140,12 @@ export function About({ block }: { block: AboutBlock }) {
 }
 
 export function Audience({ block }: { block: AudienceBlock }) {
+  const { className, dark } = sectionStyle(block)
   return (
-    <section id={id(block.anchor)} className="py-24 bg-gradient-to-br from-secondary-800 to-primary-900 text-white">
+    <section id={id(block.anchor)} className={className}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-tag section-tag-light">{block.tag}</span>
+          <span className="section-tag">{block.tag}</span>
           <h2 className="text-3xl md:text-4xl font-bold">{block.title}</h2>
         </div>
 
@@ -153,7 +153,10 @@ export function Audience({ block }: { block: AudienceBlock }) {
           {block.items?.map((item) => (
             <div
               key={item.id}
-              className="bg-white/10 border border-white/15 rounded-xl p-8 text-center hover:bg-white/15 transition-all hover:-translate-y-1"
+              className={clsx(
+                'rounded-xl p-8 text-center transition-all hover:-translate-y-1',
+                dark ? 'bg-white/10 border border-white/15 hover:bg-white/15' : 'card hover:shadow-lg'
+              )}
             >
               <div className="text-3xl mb-4">{item.label}</div>
               <p className="opacity-90">{item.text}</p>
@@ -168,7 +171,7 @@ export function Audience({ block }: { block: AudienceBlock }) {
 export function Process({ block }: { block: ProcessBlock }) {
   const extra = block.extra
   return (
-    <section id={id(block.anchor)} className={clsx('py-24', bg(block.background))}>
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <Heading block={block} />
         <ProcessSteps steps={(block.steps ?? []).map((s) => ({ title: s.title ?? '', desc: s.desc ?? '' }))} />
@@ -217,7 +220,7 @@ export function Process({ block }: { block: ProcessBlock }) {
 
 export function Team({ block, languageNames }: { block: TeamBlock; languageNames: Record<string, string> }) {
   return (
-    <section id={id(block.anchor)} className={clsx('py-24', bg(block.background))}>
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <Heading block={block} />
 
@@ -285,14 +288,15 @@ export function Team({ block, languageNames }: { block: TeamBlock; languageNames
 }
 
 export function CTA({ block }: { block: CtaBlock }) {
+  const { className, dark } = sectionStyle(block, { normal: 'py-20', compact: 'py-12' })
   return (
-    <section id={id(block.anchor)} className="py-20 bg-gradient-to-r from-primary-600 to-primary-700 text-white text-center">
+    <section id={id(block.anchor)} className={clsx(className, 'text-center')}>
       <div className="max-w-3xl mx-auto px-6">
         <Mail className="w-16 h-16 mx-auto mb-6 opacity-90" />
         <h2 className="text-3xl md:text-4xl font-bold mb-2">{block.title}</h2>
         <p className="text-xl opacity-90 mb-6">{block.subtitle}</p>
         <p className="opacity-90 mb-8 max-w-xl mx-auto">{block.text}</p>
-        <a href={block.button?.href || '#contact'} className="btn btn-white btn-lg">
+        <a href={block.button?.href || '#contact'} className={clsx('btn btn-lg', dark ? 'btn-white' : 'btn-primary')}>
           {block.button?.label}
         </a>
       </div>
@@ -302,7 +306,10 @@ export function CTA({ block }: { block: CtaBlock }) {
 
 export function TrustBar({ block }: { block: TrustBarBlock }) {
   return (
-    <section id={id(block.anchor)} className="py-8 border-y border-secondary-200 bg-white">
+    <section
+      id={id(block.anchor)}
+      className={clsx(sectionStyle(block, { normal: 'py-8', compact: 'py-4' }).className, 'border-y border-secondary-200')}
+    >
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {block.items?.map((item) => {
@@ -331,7 +338,7 @@ export function TrustBar({ block }: { block: TrustBarBlock }) {
 
 export function TreatmentList({ block }: { block: TreatmentListBlock }) {
   return (
-    <section id={id(block.anchor)} className="py-24">
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <Heading block={block} />
 
@@ -356,7 +363,7 @@ export function TreatmentList({ block }: { block: TreatmentListBlock }) {
 
 export function ProcedureCards({ block }: { block: ProcedureCardsBlock }) {
   return (
-    <section id={id(block.anchor)} className={clsx('py-24', bg(block.background))}>
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <Heading block={block} />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -408,7 +415,7 @@ export function ProcedureCards({ block }: { block: ProcedureCardsBlock }) {
 export function PricingTable({ block }: { block: PricingTableBlock }) {
   const columns = block.columns
   return (
-    <section id={id(block.anchor)} className={clsx('py-24', bg(block.background))}>
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <Heading block={block} />
 
@@ -448,7 +455,7 @@ export function Clinic({ block }: { block: ClinicBlock }) {
   const gallery = clinic.gallery?.length ? clinic.gallery : [{ id: '1', image: null }, { id: '2', image: null }, { id: '3', image: null }]
 
   return (
-    <section id={id(block.anchor)} className="py-24">
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeading tag={block.tag ?? ''} title={clinic.name} subtitle={clinic.subtitle ?? undefined} />
 
@@ -512,30 +519,38 @@ export function Clinic({ block }: { block: ClinicBlock }) {
 }
 
 export function Package({ block }: { block: PackageBlock }) {
+  const { className, dark } = sectionStyle(block)
+  const muted = dark ? 'text-white/80' : 'text-secondary-600'
   return (
-    <section id={id(block.anchor)} className="py-24 bg-gradient-to-br from-secondary-800 to-primary-900 text-white">
+    <section id={id(block.anchor)} className={className}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-tag section-tag-light">{block.tag}</span>
+          <span className="section-tag">{block.tag}</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{block.title}</h2>
-          <p className="text-white/80 text-lg">{block.subtitle}</p>
+          <p className={clsx(muted, 'text-lg')}>{block.subtitle}</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {block.items?.map((item) => {
             const Icon = getIcon(item.icon)
             return (
-              <div key={item.id} className="bg-white/10 border border-white/15 rounded-xl p-8 text-center hover:bg-white/15 transition-colors">
-                <Icon className="w-10 h-10 mx-auto mb-4 opacity-90" />
+              <div
+                key={item.id}
+                className={clsx(
+                  'rounded-xl p-8 text-center transition-colors',
+                  dark ? 'bg-white/10 border border-white/15 hover:bg-white/15' : 'card'
+                )}
+              >
+                <Icon className={clsx('w-10 h-10 mx-auto mb-4', dark ? 'opacity-90' : 'text-primary-600')} />
                 <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-white/80 text-sm">{item.desc}</p>
+                <p className={clsx(muted, 'text-sm')}>{item.desc}</p>
               </div>
             )
           })}
         </div>
 
         {block.note && (
-          <div className="text-center bg-white/10 p-5 rounded-lg">
+          <div className={clsx('text-center p-5 rounded-lg', dark ? 'bg-white/10' : 'bg-secondary-50')}>
             <p className="font-medium">{block.note}</p>
           </div>
         )}
@@ -546,7 +561,7 @@ export function Package({ block }: { block: PackageBlock }) {
 
 export function Benefits({ block }: { block: BenefitsBlock }) {
   return (
-    <section id={id(block.anchor)} className="py-24">
+    <section id={id(block.anchor)} className={sectionStyle(block).className}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -575,11 +590,12 @@ export function Benefits({ block }: { block: BenefitsBlock }) {
 }
 
 export function Results({ block }: { block: ResultsBlock }) {
+  const { className, dark } = sectionStyle(block)
   return (
-    <section id={id(block.anchor)} className="py-24 bg-gradient-to-br from-secondary-800 to-primary-900 text-white">
+    <section id={id(block.anchor)} className={className}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto">
-          <span className="section-tag section-tag-light">{block.tag}</span>
+          <span className="section-tag">{block.tag}</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6">{block.title}</h2>
           <p className="text-xl opacity-90 mb-12">{block.subtitle}</p>
 
@@ -587,7 +603,7 @@ export function Results({ block }: { block: ResultsBlock }) {
             {block.stats?.map((stat) => {
               const Icon = stat.icon ? getIcon(stat.icon) : null
               return (
-                <div key={stat.id} className="bg-white/10 border border-white/15 rounded-xl p-8">
+                <div key={stat.id} className={clsx('rounded-xl p-8', dark ? 'bg-white/10 border border-white/15' : 'card')}>
                   {Icon ? (
                     <div className="mb-2 flex justify-center">
                       <Icon className="w-10 h-10" strokeWidth={2} aria-hidden="true" />
@@ -601,7 +617,7 @@ export function Results({ block }: { block: ResultsBlock }) {
             })}
           </div>
 
-          <a href="#contact" className="btn btn-white btn-lg">
+          <a href="#contact" className={clsx('btn btn-lg', dark ? 'btn-white' : 'btn-primary')}>
             <CmsIcon name={block.ctaIcon || 'calendar'} className="w-5 h-5" />
             {block.ctaLabel}
           </a>

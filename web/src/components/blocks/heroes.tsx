@@ -1,9 +1,11 @@
+import clsx from 'clsx'
 import { ArrowLeft, CheckCircle2, MessageCircle } from 'lucide-react'
 import MedicalIcon from '@/components/ui/MedicalIcon'
 import { Link } from '@/i18n/navigation'
 import { getIcon } from '@/lib/icons'
 import type { DentalHeroBlock, HomeHeroBlock, ServiceHeroBlock } from '@/payload-types'
 import MediaImage from './MediaImage'
+import { sectionStyle } from './style'
 
 const FLOATING_POSITIONS = [
   { className: 'top-[10%] left-[5%]', delay: undefined },
@@ -12,10 +14,19 @@ const FLOATING_POSITIONS = [
   { className: 'bottom-[15%] right-[5%]', delay: '4.5s' },
 ]
 
+/** Heroes keep their own padding; compact spacing drops the minimum height instead. */
+function heroStyle(block: Parameters<typeof sectionStyle>[0], minHeight: string) {
+  const { className, dark } = sectionStyle(block, { normal: minHeight, compact: '' })
+  return { className, heading: dark ? 'text-white' : 'text-secondary-900', body: dark ? 'text-white/80' : 'text-secondary-600' }
+}
+
 export function HomeHero({ block }: { block: HomeHeroBlock }) {
+  const style = heroStyle(block, 'min-h-screen')
   return (
-    <section id={block.anchor || undefined} className="relative min-h-screen flex items-center pt-[72px] pb-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50 -z-10" />
+    <section
+      id={block.anchor || undefined}
+      className={clsx('relative flex items-center pt-[72px] pb-20 overflow-hidden', style.className)}
+    >
       <div className="absolute top-0 right-0 w-[60%] h-full bg-gradient-radial from-primary-100/50 to-transparent opacity-50 -z-10" />
 
       <div className="max-w-6xl mx-auto px-6 py-20">
@@ -26,14 +37,14 @@ export function HomeHero({ block }: { block: HomeHeroBlock }) {
               <span className="font-medium text-secondary-700">{block.badge}</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary-900 mb-4 leading-tight">
+            <h1 className={clsx('text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight', style.heading)}>
               {block.title}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
                 {block.titleAccent}
               </span>
             </h1>
 
-            <p className="text-lg text-secondary-600 mb-8 leading-relaxed">{block.subtitle}</p>
+            <p className={clsx('text-lg mb-8 leading-relaxed', style.body)}>{block.subtitle}</p>
 
             <div className="flex flex-wrap gap-4 mb-12">
               <a href={block.primary?.href || '#contact'} className="btn btn-primary btn-lg">
@@ -78,11 +89,9 @@ export function HomeHero({ block }: { block: HomeHeroBlock }) {
 
 /** Two-column service hero used by the plastic, hair and aesthetic pages. */
 export function ServiceHero({ block }: { block: ServiceHeroBlock }) {
+  const style = heroStyle(block, 'min-h-[600px]')
   return (
-    <section
-      id={block.anchor || undefined}
-      className="relative min-h-[600px] flex items-center bg-gradient-to-br from-primary-50 via-white to-secondary-50"
-    >
+    <section id={block.anchor || undefined} className={clsx('relative flex items-center', style.className)}>
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -91,14 +100,14 @@ export function ServiceHero({ block }: { block: ServiceHeroBlock }) {
               <span className="font-medium text-secondary-700">{block.tag}</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-4">
+            <h1 className={clsx('text-4xl md:text-5xl font-bold mb-4', style.heading)}>
               {block.title}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-400">
                 {block.titleAccent}
               </span>
             </h1>
 
-            <p className="text-lg text-secondary-600 mb-8 leading-relaxed">{block.description}</p>
+            <p className={clsx('text-lg mb-8 leading-relaxed', style.body)}>{block.description}</p>
 
             <div className="flex flex-wrap gap-4 mb-12">
               <a href={block.primary?.href || '#contact'} className="btn btn-primary btn-lg">
@@ -141,9 +150,12 @@ export function ServiceHero({ block }: { block: ServiceHeroBlock }) {
 }
 
 export function DentalHero({ block }: { block: DentalHeroBlock }) {
+  const style = heroStyle(block, 'min-h-[90vh]')
   return (
-    <section id={block.anchor || undefined} className="relative pt-[72px] pb-20 min-h-[90vh] flex items-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50 -z-10" />
+    <section
+      id={block.anchor || undefined}
+      className={clsx('relative pt-[72px] pb-20 flex items-center overflow-hidden', style.className)}
+    >
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -160,9 +172,9 @@ export function DentalHero({ block }: { block: DentalHeroBlock }) {
               <span className="font-medium">{block.badge}</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-2">{block.title}</h1>
+            <h1 className={clsx('text-4xl md:text-5xl font-bold mb-2', style.heading)}>{block.title}</h1>
             <p className="text-xl text-primary-600 font-medium mb-6">{block.subtitle}</p>
-            <p className="text-lg text-secondary-600 mb-8">{block.description}</p>
+            <p className={clsx('text-lg mb-8', style.body)}>{block.description}</p>
 
             <div className="flex flex-wrap gap-4 mb-10">
               <a href={block.primary?.href || '#contact'} className="btn btn-primary btn-lg">
