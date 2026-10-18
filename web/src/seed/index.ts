@@ -32,7 +32,9 @@ import {
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 const FORCE = process.env.SEED_FORCE === '1'
-const context = { disableRevalidate: true }
+/** A fresh context per operation: Payload plugins keep per-request state in it (the storage plugin stashes the
+ *  uploaded file there), so sharing one object between operations makes later uploads skip or reuse files. */
+const context = () => ({ disableRevalidate: true })
 const counts = { created: 0, updated: 0, skipped: 0 }
 
 const payload = await getPayload({ config })
@@ -78,10 +80,10 @@ async function upsert(collection: CollectionSlug, where: Where, build: (locale: 
 
   const de = build('de')
   const stored = existing
-    ? await payload.update({ collection, id: existing.id, data: de, locale: 'de', depth: 0, context })
-    : await payload.create({ collection, data: de, locale: 'de', depth: 0, context })
+    ? await payload.update({ collection, id: existing.id, data: de, locale: 'de', depth: 0, context: context() })
+    : await payload.create({ collection, data: de, locale: 'de', depth: 0, context: context() })
   for (const locale of LOCALES.filter((l) => l !== 'de')) {
-    await payload.update({ collection, id: stored.id, data: withIds(build(locale), stored) as Data, locale, depth: 0, context })
+    await payload.update({ collection, id: stored.id, data: withIds(build(locale), stored) as Data, locale, depth: 0, context: context() })
   }
   counts[existing ? 'updated' : 'created']++
   return stored.id as number
@@ -93,9 +95,9 @@ async function seedGlobal(slug: 'site-settings' | 'legal', build: (locale: Local
     counts.skipped++
     return
   }
-  const stored = await payload.updateGlobal({ slug, data: build('de'), locale: 'de', depth: 0, context })
+  const stored = await payload.updateGlobal({ slug, data: build('de'), locale: 'de', depth: 0, context: context() })
   for (const locale of LOCALES.filter((l) => l !== 'de')) {
-    await payload.updateGlobal({ slug, data: withIds(build(locale), stored) as Data, locale, depth: 0, context })
+    await payload.updateGlobal({ slug, data: withIds(build(locale), stored) as Data, locale, depth: 0, context: context() })
   }
   counts.updated++
 }
@@ -131,10 +133,10 @@ async function ensureMedia(filename: string, source: string, alt: (locale: Local
     file: { data, mimetype, name: filename, size: data.length },
     locale: 'de',
     depth: 0,
-    context,
+    context: context(),
   })
   for (const locale of LOCALES.filter((l) => l !== 'de')) {
-    await payload.update({ collection: 'media', id: created.id, data: { alt: alt(locale) }, locale, depth: 0, context })
+    await payload.update({ collection: 'media', id: created.id, data: { alt: alt(locale) }, locale, depth: 0, context: context() })
   }
   counts.created++
   return created.id
@@ -145,7 +147,7 @@ async function seedOwner() {
   if (totalDocs > 0) return
   const email = process.env.OWNER_EMAIL || 'ivan.sytnik02@gmail.com'
   const password = randomBytes(12).toString('base64url')
-  await payload.create({ collection: 'users', data: { email, password, name: 'Owner', role: 'owner' }, context })
+  await payload.create({ collection: 'users', data: { email, password, name: 'Owner', role: 'owner' }, context: context() })
   console.log(`\nOwner account created (shown once):\n  login:    ${email}\n  password: ${password}\n`)
 }
 
