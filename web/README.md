@@ -27,7 +27,7 @@ moved into `style`), answer "create" and copy the old values in the generated `u
 ## Structure
 
 - `src/payload.config.ts` – Payload config: Postgres, Vercel Blob, localisation (German default, fallback to German).
-- `src/payload/` – collections (pages, services, treatments, clinics, team, videos, media, users), globals
+- `src/payload/` – collections (leads, pages, services, treatments, clinics, team, videos, media, users), globals
   (site settings, legal, theme) and page blocks (one per section type, each with an anchor, a hidden flag and a
   style: background and spacing).
 - `src/lib/theme.ts` – theme defaults and the CSS variables built from the theme global (colour scales, font,
@@ -40,7 +40,13 @@ moved into `style`), answer "create" and copy the old values in the generated `u
 - `src/seed/` – idempotent seed: the original copy (`data/*.json`) plus the figures, prices, team and media that
   used to be hardcoded. `SEED_FORCE=1` resets seeded documents to the original content.
 - `messages/{de,ru,uk,en}.json` – only interface strings the CMS does not manage (form labels, language names).
-- `src/app/api/submit` – contact form handler (validation, Telegram, Resend e-mail, rate limit).
+- `src/app/api/submit` – contact form handler (validation, rate limit). Saves the lead in the `leads` collection
+  first, then notifies Telegram (name, service, language, admin link) and sends the Resend e-mail; a failing
+  channel is logged and does not lose the lead.
+- `src/payload/leads.ts` – lead CRM: pipeline status, coordinator, notes history, form origin (language, page, UTM,
+  consent). Coordinators see leads assigned to them and unassigned ones; only the owner deletes. The board view at
+  `/admin/leads-board` is `src/components/admin/LeadsBoardView.tsx`. Leads hold patient data: see "Patient data" in
+  the repository's CLAUDE.md before seeding, logging or taking screenshots.
 
 Pages are statically generated; saving anything in the admin revalidates the site.
 
