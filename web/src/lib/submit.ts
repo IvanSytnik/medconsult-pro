@@ -6,6 +6,7 @@ export type Submission = {
   lastName: string
   email: string
   phone: string
+  whatsapp: string
   service: string
   message: string
   source: string
@@ -68,6 +69,7 @@ export function parseSubmission(body: unknown): { data: Submission } | { error: 
     lastName: clean(b.lastName, LIMITS.name),
     email: clean(b.email, LIMITS.email),
     phone: clean(b.phone, LIMITS.phone),
+    whatsapp: clean(b.whatsapp, LIMITS.phone),
     service: clean(b.service, LIMITS.short),
     message: clean(b.message, LIMITS.message),
     source: clean(b.source, LIMITS.short),
@@ -85,18 +87,7 @@ export function parseSubmission(body: unknown): { data: Submission } | { error: 
   return { data }
 }
 
-const TELEGRAM_SERVICE_NAMES: Record<string, string> = {
-  dental: 'Stomatologie',
-  plastic: 'Plastische Chirurgie',
-  hair: 'Haartransplantation',
-  aesthetic: 'Ästhetische Medizin',
-  implants: 'Implantate',
-  crowns: 'Kronen',
-  veneers: 'Veneers',
-  'all-on': 'All-on-4/6',
-}
-
-const EMAIL_SERVICE_NAMES: Record<string, string> = {
+const SERVICE_NAMES: Record<string, string> = {
   dental: 'Stomatologie / Стоматология',
   plastic: 'Plastische Chirurgie / Пластическая хирургия',
   hair: 'Haartransplantation / Пересадка волос',
@@ -108,28 +99,65 @@ const EMAIL_SERVICE_NAMES: Record<string, string> = {
   other: 'Andere / Другое',
 }
 
+const TIME = new Intl.DateTimeFormat('de-DE', {
+  day: '2-digit',
+  month: '2-digit',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  timeZone: 'Europe/Berlin',
+})
+
+type Row = { label: string; value: string; href?: string }
+
 /**
- * Short notice for the team chat: name, service, language and a link to the lead in the admin.
- * Contact details and the message stay in the CRM (and the e-mail), not in Telegram.
+ * What the team is told about a new lead, in Telegram and in the e-mail alike. The patient's message is only
+ * flagged; its text stays in the admin.
  */
-export async function sendTelegram(data: Submission, leadUrl: string | null): Promise<boolean> {
+export function notificationRows(data: Submission, receivedAt: Date): Row[] {
+  const utm = [data.utm.source, data.utm.campaign].filter(Boolean).join(' / ')
+  const rows: (Row | false)[] = [
+    { label: 'Name', value: `${data.firstName} ${data.lastName}`.trim() },
+    { label: 'Telefon', value: data.phone || '—', href: data.phone ? `tel:${data.phone.replace(/[^\d+]/g, '')}` : undefined },
+    { label: 'E-Mail', value: data.email, href: `mailto:${data.email}` },
+    Boolean(data.whatsapp) && { label: 'WhatsApp', value: data.whatsapp },
+    { label: 'Service', value: SERVICE_NAMES[data.service] || data.service || '—' },
+    { label: 'Sprache', value: data.language || 'de' },
+    { label: 'Seite', value: data.page || data.source || '—' },
+    Boolean(utm) && { label: 'UTM', value: utm },
+    { label: 'Zeit', value: TIME.format(receivedAt) },
+    { label: 'Nachricht', value: data.message ? 'ja / есть сообщение' : 'nein / нет' },
+  ]
+  return rows.filter((row): row is Row => Boolean(row))
+}
+
+const NOT_SAVED = 'Nicht im CRM gespeichert / Не сохранено в CRM'
+const OPEN_IN_ADMIN = 'Im Admin öffnen / Открыть в админке'
+
+/**
+ * The Bot API does not accept tel: links; Telegram makes a phone number tappable itself when it is written
+ * without spaces, so the number is sent in that form.
+ */
+export function telegramText(data: Submission, leadUrl: string | null, receivedAt: Date): string {
+  return [
+    '<b>MedConsult</b> · Neue Anfrage / Новая заявка',
+    '',
+    ...notificationRows(data, receivedAt).map(
+      (r) => `<b>${r.label}:</b> ${escapeHtml(r.href?.startsWith('tel:') ? r.href.slice(4) : r.value)}`
+    ),
+    '',
+    leadUrl ? `<a href="${escapeHtml(leadUrl)}">${OPEN_IN_ADMIN}</a>` : NOT_SAVED,
+  ].join('\n')
+}
+
+export async function sendTelegram(data: Submission, leadUrl: string | null, receivedAt: Date): Promise<boolean> {
   const { botToken, chatId } = config.telegram
   if (!botToken || !chatId) {
     console.log('Telegram not configured')
     return false
   }
 
-  const text = [
-    '<b>Neue Anfrage / Новая заявка</b>',
-    '',
-    `<b>Name:</b> ${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}`.trim(),
-    `<b>Service:</b> ${escapeHtml(TELEGRAM_SERVICE_NAMES[data.service] || data.service) || '—'}`,
-    `<b>Sprache:</b> ${escapeHtml(data.language) || 'de'}`,
-    '',
-    leadUrl
-      ? `<a href="${escapeHtml(leadUrl)}">Im Admin öffnen / Открыть в админке</a>`
-      : 'Nicht im CRM gespeichert, Details in der E-Mail / Не сохранено в CRM, детали в письме',
-  ].join('\n')
+  const text = telegramText(data, leadUrl, receivedAt)
 
   try {
     const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -146,62 +174,43 @@ export async function sendTelegram(data: Submission, leadUrl: string | null): Pr
   }
 }
 
-export async function sendEmail(data: Submission, leadUrl: string | null): Promise<boolean> {
+export function emailHtml(data: Submission, leadUrl: string | null, receivedAt: Date): string {
+  const row = 'padding: 12px 0; border-bottom: 1px solid #e5e7eb;'
+  const cell = (r: Row) => (r.href ? `<a href="${escapeHtml(r.href)}">${escapeHtml(r.value)}</a>` : escapeHtml(r.value))
+  const rows = notificationRows(data, receivedAt)
+    .map((r) => `<tr><td style="${row} font-weight: bold;">${r.label}:</td><td style="${row}">${cell(r)}</td></tr>`)
+    .join('\n          ')
+
+  return `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <div style="background: linear-gradient(135deg, #0f766e 0%, #0d5d56 100%); color: white; padding: 30px; text-align: center; border-radius: 12px 12px 0 0;">
+        <h1 style="margin: 0; font-size: 24px;">MedConsult</h1>
+        <p style="margin: 10px 0 0; opacity: 0.9;">Neue Anfrage / Новая заявка</p>
+      </div>
+      <div style="padding: 30px; background: #f9fafb; border: 1px solid #e5e7eb;">
+        <table style="width: 100%; border-collapse: collapse;">
+          ${rows}
+        </table>
+        <p style="margin: 24px 0 0;">${leadUrl ? `<a href="${escapeHtml(leadUrl)}">${OPEN_IN_ADMIN}</a>` : NOT_SAVED}</p>
+      </div>
+    </div>
+  `
+}
+
+export async function sendEmail(data: Submission, leadUrl: string | null, receivedAt: Date): Promise<boolean> {
   const mailer = getResend()
   if (!mailer) {
     console.log('Email not configured')
     return false
   }
 
-  const e = {
-    firstName: escapeHtml(data.firstName),
-    lastName: escapeHtml(data.lastName),
-    email: escapeHtml(data.email),
-    phone: escapeHtml(data.phone),
-    message: escapeHtml(data.message),
-    source: escapeHtml(data.source),
-    language: escapeHtml(data.language),
-    timestamp: escapeHtml(data.timestamp),
-    service: escapeHtml(EMAIL_SERVICE_NAMES[data.service] || data.service || '—'),
-  }
-  const row = 'padding: 12px 0; border-bottom: 1px solid #e5e7eb;'
-
-  const html = `
-    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <div style="background: linear-gradient(135deg, #0f766e 0%, #0d5d56 100%); color: white; padding: 30px; text-align: center; border-radius: 12px 12px 0 0;">
-        <h1 style="margin: 0; font-size: 24px;">Neue Anfrage / Новая заявка</h1>
-        <p style="margin: 10px 0 0; opacity: 0.9;">MedConsult Turkey</p>
-      </div>
-      <div style="padding: 30px; background: #f9fafb; border: 1px solid #e5e7eb;">
-        <table style="width: 100%; border-collapse: collapse;">
-          <tr><td style="${row} font-weight: bold;">Name:</td><td style="${row}">${e.firstName} ${e.lastName}</td></tr>
-          <tr><td style="${row} font-weight: bold;">Email:</td><td style="${row}"><a href="mailto:${e.email}">${e.email}</a></td></tr>
-          <tr><td style="${row} font-weight: bold;">Telefon:</td><td style="${row}">${e.phone ? `<a href="tel:${e.phone}">${e.phone}</a>` : '—'}</td></tr>
-          <tr><td style="${row} font-weight: bold;">Service:</td><td style="${row}">${e.service}</td></tr>
-          <tr><td style="${row} font-weight: bold;">Quelle:</td><td style="${row}">${e.source || 'main'}</td></tr>
-          <tr><td style="${row} font-weight: bold;">Sprache:</td><td style="${row}">${e.language || 'de'}</td></tr>
-          <tr><td style="${row} font-weight: bold;">Zeit:</td><td style="${row}">${e.timestamp}</td></tr>
-          <tr><td style="padding: 12px 0; font-weight: bold;">CRM:</td><td style="padding: 12px 0;">${leadUrl ? `<a href="${escapeHtml(leadUrl)}">Im Admin öffnen / Открыть в админке</a>` : 'Nicht gespeichert / Не сохранено'}</td></tr>
-        </table>
-        ${
-          e.message
-            ? `<div style="margin-top: 20px; padding: 20px; background: white; border-radius: 8px; border: 1px solid #e5e7eb;">
-          <strong>Nachricht / Сообщение:</strong>
-          <p style="margin: 10px 0 0; white-space: pre-wrap;">${e.message}</p>
-        </div>`
-            : ''
-        }
-      </div>
-    </div>
-  `
-
   try {
     const { error } = await mailer.emails.send({
       from: config.email.from,
       to: config.email.to.split(',').map((address) => address.trim()).filter(Boolean),
       replyTo: data.email,
-      subject: `Neue Anfrage: ${data.firstName} ${data.lastName} — ${EMAIL_SERVICE_NAMES[data.service] || 'Beratung'}`.replace(/[\r\n]+/g, ' '),
-      html,
+      subject: `Neue Anfrage: ${data.firstName} ${data.lastName} — ${SERVICE_NAMES[data.service] || 'Beratung'}`.replace(/[\r\n]+/g, ' '),
+      html: emailHtml(data, leadUrl, receivedAt),
     })
     if (error) throw new Error(`${error.name}: ${error.message}`)
     return true

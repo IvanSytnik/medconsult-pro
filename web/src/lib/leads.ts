@@ -34,6 +34,7 @@ export async function saveLead(data: Submission): Promise<number> {
       name: `${data.firstName} ${data.lastName}`.trim(),
       email: data.email,
       phone: data.phone || undefined,
+      whatsapp: data.whatsapp || undefined,
       service: docs[0]?.id,
       status: 'new',
       message: data.message || undefined,

@@ -33,6 +33,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: false, error: parsed.error }, { status: 400 })
   }
 
+  const receivedAt = new Date()
   // The lead is stored first, so a failing notification channel never loses it.
   let leadUrl: string | null = null
   try {
@@ -42,7 +43,10 @@ export async function POST(request: Request) {
     console.error('Lead not saved:', describeError(error))
   }
 
-  const [telegram, email] = await Promise.all([sendTelegram(parsed.data, leadUrl), sendEmail(parsed.data, leadUrl)])
+  const [telegram, email] = await Promise.all([
+    sendTelegram(parsed.data, leadUrl, receivedAt),
+    sendEmail(parsed.data, leadUrl, receivedAt),
+  ])
   console.log(
     `Submission handled | lead: ${leadUrl ? 'saved' : 'failed'} | telegram: ${telegram ? 'ok' : 'failed'} | email: ${email ? 'ok' : 'failed'}`
   )
