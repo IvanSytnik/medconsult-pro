@@ -11,9 +11,16 @@ export type Submission = {
   source: string
   language: string
   timestamp: string
+  /** Path of the page the form was sent from. */
+  page: string
+  consent: boolean
+  utm: Record<UtmKey, string>
 }
 
-const LIMITS = { name: 100, email: 254, phone: 40, short: 50, message: 3000 }
+export const UTM_KEYS = ['source', 'medium', 'campaign', 'term', 'content'] as const
+export type UtmKey = (typeof UTM_KEYS)[number]
+
+const LIMITS = { name: 100, email: 254, phone: 40, short: 50, message: 3000, page: 300, utm: 200 }
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const config = {
@@ -55,6 +62,7 @@ function clean(value: unknown, max: number): string {
 /** Trims and caps every field; returns an error message if the submission is not acceptable. */
 export function parseSubmission(body: unknown): { data: Submission } | { error: string } {
   const b = (body && typeof body === 'object' ? body : {}) as Record<string, unknown>
+  const utm = (b.utm && typeof b.utm === 'object' ? b.utm : {}) as Record<string, unknown>
   const data: Submission = {
     firstName: clean(b.firstName, LIMITS.name),
     lastName: clean(b.lastName, LIMITS.name),
@@ -65,10 +73,15 @@ export function parseSubmission(body: unknown): { data: Submission } | { error: 
     source: clean(b.source, LIMITS.short),
     language: clean(b.language, 10),
     timestamp: clean(b.timestamp, 40),
+    page: clean(b.page, LIMITS.page),
+    consent: b.consent === true,
+    utm: Object.fromEntries(UTM_KEYS.map((key) => [key, clean(utm[`utm_${key}`], LIMITS.utm)])) as Record<UtmKey, string>,
   }
+  if (!data.page.startsWith('/')) data.page = ''
 
   if (!data.firstName || !data.email) return { error: 'Name and email are required' }
   if (!EMAIL_RE.test(data.email)) return { error: 'Invalid email format' }
+  if (!data.consent) return { error: 'Consent is required' }
   return { data }
 }
 
@@ -95,32 +108,34 @@ const EMAIL_SERVICE_NAMES: Record<string, string> = {
   other: 'Andere / Другое',
 }
 
-export async function sendTelegram(data: Submission): Promise<boolean> {
+/**
+ * Short notice for the team chat: name, service, language and a link to the lead in the admin.
+ * Contact details and the message stay in the CRM (and the e-mail), not in Telegram.
+ */
+export async function sendTelegram(data: Submission, leadUrl: string | null): Promise<boolean> {
   const { botToken, chatId } = config.telegram
   if (!botToken || !chatId) {
     console.log('Telegram not configured')
     return false
   }
 
-  const text = `
-<b>Neue Anfrage / Новая заявка</b>
-
-<b>Name:</b> ${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}
-<b>Email:</b> ${escapeHtml(data.email)}
-<b>Telefon:</b> ${escapeHtml(data.phone) || '—'}
-<b>Service:</b> ${escapeHtml(TELEGRAM_SERVICE_NAMES[data.service] || data.service) || '—'}
-<b>Quelle:</b> ${escapeHtml(data.source) || 'main'}
-<b>Sprache:</b> ${escapeHtml(data.language) || 'de'}
-<b>Zeit:</b> ${escapeHtml(data.timestamp)}
-
-${data.message ? `<b>Nachricht:</b>\n${escapeHtml(data.message)}` : ''}
-  `.trim()
+  const text = [
+    '<b>Neue Anfrage / Новая заявка</b>',
+    '',
+    `<b>Name:</b> ${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}`.trim(),
+    `<b>Service:</b> ${escapeHtml(TELEGRAM_SERVICE_NAMES[data.service] || data.service) || '—'}`,
+    `<b>Sprache:</b> ${escapeHtml(data.language) || 'de'}`,
+    '',
+    leadUrl
+      ? `<a href="${escapeHtml(leadUrl)}">Im Admin öffnen / Открыть в админке</a>`
+      : 'Nicht im CRM gespeichert, Details in der E-Mail / Не сохранено в CRM, детали в письме',
+  ].join('\n')
 
   try {
     const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML' }),
+      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML', link_preview_options: { is_disabled: true } }),
     })
     const result = (await response.json()) as { ok: boolean; description?: string }
     if (!result.ok) throw new Error(result.description)
@@ -131,7 +146,7 @@ ${data.message ? `<b>Nachricht:</b>\n${escapeHtml(data.message)}` : ''}
   }
 }
 
-export async function sendEmail(data: Submission): Promise<boolean> {
+export async function sendEmail(data: Submission, leadUrl: string | null): Promise<boolean> {
   const mailer = getResend()
   if (!mailer) {
     console.log('Email not configured')
@@ -165,7 +180,8 @@ export async function sendEmail(data: Submission): Promise<boolean> {
           <tr><td style="${row} font-weight: bold;">Service:</td><td style="${row}">${e.service}</td></tr>
           <tr><td style="${row} font-weight: bold;">Quelle:</td><td style="${row}">${e.source || 'main'}</td></tr>
           <tr><td style="${row} font-weight: bold;">Sprache:</td><td style="${row}">${e.language || 'de'}</td></tr>
-          <tr><td style="padding: 12px 0; font-weight: bold;">Zeit:</td><td style="padding: 12px 0;">${e.timestamp}</td></tr>
+          <tr><td style="${row} font-weight: bold;">Zeit:</td><td style="${row}">${e.timestamp}</td></tr>
+          <tr><td style="padding: 12px 0; font-weight: bold;">CRM:</td><td style="padding: 12px 0;">${leadUrl ? `<a href="${escapeHtml(leadUrl)}">Im Admin öffnen / Открыть в админке</a>` : 'Nicht gespeichert / Не сохранено'}</td></tr>
         </table>
         ${
           e.message

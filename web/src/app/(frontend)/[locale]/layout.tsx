@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import Footer from '@/components/layout/Footer'
 import Logo from '@/components/layout/Logo'
 import Navbar from '@/components/layout/Navbar'
+import UtmCapture from '@/components/layout/UtmCapture'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import { resolveLocale } from '@/i18n/locale'
 import { routing } from '@/i18n/routing'
@@ -52,6 +53,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
             <main className="flex-1">{children}</main>
             <Footer settings={settings} services={services} contact={contact} logo={theme.logo} />
             <WhatsAppFloat href={contact.floatWhatsappHref} />
+            <UtmCapture />
           </div>
         </NextIntlClientProvider>
       </body>

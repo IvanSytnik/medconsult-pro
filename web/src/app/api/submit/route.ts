@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { describeError, saveLead } from '@/lib/leads'
 import { clientIp, createRateLimiter } from '@/lib/rate-limit'
 import { parseSubmission, sendEmail, sendTelegram } from '@/lib/submit'
 
@@ -32,9 +33,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: false, error: parsed.error }, { status: 400 })
   }
 
-  const [telegram, email] = await Promise.all([sendTelegram(parsed.data), sendEmail(parsed.data)])
-  console.log(`Submission handled | telegram: ${telegram ? 'ok' : 'failed'} | email: ${email ? 'ok' : 'failed'}`)
+  // The lead is stored first, so a failing notification channel never loses it.
+  let leadUrl: string | null = null
+  try {
+    const id = await saveLead(parsed.data)
+    leadUrl = `${new URL(request.url).origin}/admin/collections/leads/${id}`
+  } catch (error) {
+    console.error('Lead not saved:', describeError(error))
+  }
 
-  if (telegram || email) return NextResponse.json({ success: true })
-  return NextResponse.json({ success: false, error: 'Failed to send notifications' }, { status: 500 })
+  const [telegram, email] = await Promise.all([sendTelegram(parsed.data, leadUrl), sendEmail(parsed.data, leadUrl)])
+  console.log(
+    `Submission handled | lead: ${leadUrl ? 'saved' : 'failed'} | telegram: ${telegram ? 'ok' : 'failed'} | email: ${email ? 'ok' : 'failed'}`
+  )
+
+  if (leadUrl || telegram || email) return NextResponse.json({ success: true })
+  return NextResponse.json({ success: false, error: 'Failed to process the request' }, { status: 500 })
 }
