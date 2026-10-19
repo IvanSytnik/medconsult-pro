@@ -22,6 +22,7 @@ Website and back office for a medical-tourism coordination service.
 - Outgoing mail: Resend (`resend` SDK) with the whole `sytnik-studio.com` domain verified (DKIM, SPF/MX on `send.`, DMARC `p=none`). Env: `RESEND_API_KEY`, `EMAIL_FROM`, `EMAIL_TO`. Without `RESEND_API_KEY` the form skips e-mail and still notifies Telegram.
 - Incoming mail: Cloudflare Email Routing forwards addresses on `sytnik-studio.com` to Gmail.
 - Media: Vercel Blob store with **public** access (the Payload 3.91 adapter cannot write to private stores). Connected to `medconsult-web`, provides `BLOB_READ_WRITE_TOKEN`.
+- Databases: Neon project `neon-champagne-engine` (Vercel-managed org). Branch `main` is production and the only one with real leads. Branch `dev` (created from `main` on 2026-10-19, before the CRM existed, so it holds the seeded content and admin accounts but no leads) serves every Preview deployment: Preview `DATABASE_URL` is set by hand to the pooled `dev` URL; the Neon integration is connected to Production only and does not create branches for previews, so no preview ever gets a copy of production. Preview builds run migrations on `dev`, so a feature branch's migration lands there first; never reset or recreate `dev` from `main` after launch (that copies production leads); if `dev` needs fresh content, re-seed it (`SEED_FORCE=1`). Local development uses Docker Postgres.
 - Indexing is off until cutover (`robots.txt` disallow, `noindex` meta and `X-Robots-Tag`). Set `NEXT_PUBLIC_ALLOW_INDEXING=true` only on the final domain.
 
 ## Target architecture
@@ -56,14 +57,14 @@ Leads hold personal and health data (GDPR Art. 9). Rules:
 Where the data is:
 
 - Postgres (Neon on Vercel, local Docker in development): tables `leads` and `leads_notes`; `payload_locked_documents_rels` may reference a lead while it is open in the admin.
-- Neon keeps history for point-in-time restore (retention depends on the plan) and preview branches are copies of the production branch at the time they were created, so they contain the leads of that moment.
+- Neon keeps history of `main` for point-in-time restore (retention depends on the plan). Previews use the `dev` branch, which never receives production leads (see Hosting).
 - Telegram chat (`TELEGRAM_CHAT_ID`) and the mailbox of `EMAIL_TO` (plus Resend's sending log): the notification fields above, without the message text.
 
 Deleting a lead on a patient's request (owner):
 
 1. Admin > CRM > Leads, find the lead (search by name, e-mail or phone), open it, Delete. This removes the row and its notes from Postgres.
 2. Delete the matching Telegram message in the team chat and the notification e-mail in the `EMAIL_TO` mailbox (and Gmail's trash).
-3. Delete Neon preview branches created before the deletion, or wait until they are removed; the production branch's restore history expires on its own after the retention window.
+3. Nothing to do for previews (`dev` has no production leads); the production branch's restore history expires on its own after the retention window. Never create Neon branches from `main` after launch.
 4. Note the date of the request and the deletion outside the CRM (no patient data), so the request can be shown to have been handled.
 
 ## Working with the CMS (`web/`)
