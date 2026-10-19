@@ -3,6 +3,7 @@
 import clsx from 'clsx'
 import { useLocale, useTranslations } from 'next-intl'
 import { useState, type FormEvent } from 'react'
+import { storedUtm } from '@/lib/utm'
 
 type Status = { type: '' | 'success' | 'error'; text: string; whatsappUrl?: string }
 
@@ -45,6 +46,9 @@ export default function ContactForm({ source = 'main', services: serviceOptions,
       source,
       language: locale,
       timestamp: new Date().toLocaleString('de-DE'),
+      page: window.location.pathname,
+      consent: agreed,
+      utm: storedUtm(),
     }
 
     try {
