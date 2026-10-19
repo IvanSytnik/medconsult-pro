@@ -31,6 +31,12 @@ export default buildConfig({
       ],
     },
     importMap: { baseDir: path.resolve(dirname) },
+    components: {
+      afterNavLinks: ['/components/admin/LeadsBoardNavLink#default'],
+      views: {
+        leadsBoard: { Component: '/components/admin/LeadsBoardView#default', path: '/leads-board', exact: true },
+      },
+    },
   },
   collections: COLLECTIONS,
   globals: GLOBALS,

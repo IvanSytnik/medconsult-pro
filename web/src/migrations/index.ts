@@ -1,5 +1,6 @@
 import * as migration_20261017_220404_initial from './20261017_220404_initial';
 import * as migration_20261018_215337_theme_block_styles from './20261018_215337_theme_block_styles';
+import * as migration_20261019_000052_crm_leads from './20261019_000052_crm_leads';
 
 export const migrations = [
   {
@@ -10,6 +11,11 @@ export const migrations = [
   {
     up: migration_20261018_215337_theme_block_styles.up,
     down: migration_20261018_215337_theme_block_styles.down,
-    name: '20261018_215337_theme_block_styles'
+    name: '20261018_215337_theme_block_styles',
+  },
+  {
+    up: migration_20261019_000052_crm_leads.up,
+    down: migration_20261019_000052_crm_leads.down,
+    name: '20261019_000052_crm_leads'
   },
 ];

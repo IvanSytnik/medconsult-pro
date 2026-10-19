@@ -23,3 +23,16 @@ export const contentAccess = {
   update: isOwner,
   delete: isOwner,
 }
+
+/**
+ * Leads: the owner sees every lead; a coordinator sees leads assigned to them and new ones nobody has taken yet.
+ * Anonymous requests get nothing (the contact form writes through the local API).
+ */
+export const leadAccess: Access = ({ req }) => {
+  const r = role(req)
+  if (r === 'owner') return true
+  if (r !== 'coordinator' || !req.user) return false
+  return { or: [{ assignedTo: { equals: req.user.id } }, { assignedTo: { exists: false } }] }
+}
+
+export const staffAccess: Access = ({ req }) => isStaff({ req })

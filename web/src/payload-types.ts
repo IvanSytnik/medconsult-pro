@@ -67,6 +67,7 @@ export interface Config {
   };
   blocks: {};
   collections: {
+    leads: Lead;
     pages: Page;
     services: Service;
     treatments: Treatment;
@@ -82,6 +83,7 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
+    leads: LeadsSelect<false> | LeadsSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
     treatments: TreatmentsSelect<false> | TreatmentsSelect<true>;
@@ -137,6 +139,147 @@ export interface UserAuthOperations {
     email: string;
     password: string;
   };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "leads".
+ */
+export interface Lead {
+  id: number;
+  name: string;
+  email?: string | null;
+  phone?: string | null;
+  whatsapp?: string | null;
+  service?: (number | null) | Service;
+  status: 'new' | 'contacted' | 'consultation' | 'offer_sent' | 'booked' | 'treated' | 'closed' | 'lost';
+  assignedTo?: (number | null) | User;
+  message?: string | null;
+  /**
+   * History of contacts and decisions. Author and date are filled in when saved.
+   */
+  notes?:
+    | {
+        text: string;
+        authorName?: string | null;
+        date?: string | null;
+        author?: (number | null) | User;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Language of the page the form was sent from
+   */
+  language?: ('de' | 'ru' | 'uk' | 'en') | null;
+  source?: {
+    /**
+     * Path of the page with the form
+     */
+    page?: string | null;
+    /**
+     * Form placement, e.g. main or dental
+     */
+    form?: string | null;
+  };
+  utm?: {
+    source?: string | null;
+    medium?: string | null;
+    campaign?: string | null;
+    term?: string | null;
+    content?: string | null;
+  };
+  consent?: {
+    given?: boolean | null;
+    at?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services".
+ */
+export interface Service {
+  id: number;
+  title: string;
+  /**
+   * Page path and form value, e.g. dental
+   */
+  slug: string;
+  icon?:
+    | (
+        | 'smile'
+        | 'crown'
+        | 'award'
+        | 'syringe'
+        | 'scissors'
+        | 'wrench'
+        | 'diamond'
+        | 'sparkles'
+        | 'bone'
+        | 'building'
+        | 'check-circle'
+        | 'stethoscope'
+        | 'wallet'
+        | 'clock'
+        | 'palmtree'
+        | 'shield'
+        | 'users'
+        | 'heart-pulse'
+        | 'microscope'
+        | 'target'
+        | 'trending-up'
+        | 'calendar'
+        | 'sprout'
+        | 'badge-check'
+        | 'zap'
+        | 'star'
+        | 'flask'
+        | 'globe'
+        | 'hotel'
+        | 'car'
+        | 'headphones'
+        | 'clipboard-list'
+        | 'mail'
+        | 'phone'
+        | 'message-circle'
+        | 'map-pin'
+        | 'infinity'
+      )
+    | null;
+  order?: number | null;
+  description?: string | null;
+  priceLabel?: string | null;
+  priceFrom?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "users".
+ */
+export interface User {
+  id: number;
+  name?: string | null;
+  role: 'owner' | 'coordinator';
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  resetPasswordRequestedAt?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+  collection: 'users';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -633,65 +776,6 @@ export interface ServicesGridBlock {
   id?: string | null;
   blockName?: string | null;
   blockType: 'servicesGrid';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "services".
- */
-export interface Service {
-  id: number;
-  title: string;
-  /**
-   * Page path and form value, e.g. dental
-   */
-  slug: string;
-  icon?:
-    | (
-        | 'smile'
-        | 'crown'
-        | 'award'
-        | 'syringe'
-        | 'scissors'
-        | 'wrench'
-        | 'diamond'
-        | 'sparkles'
-        | 'bone'
-        | 'building'
-        | 'check-circle'
-        | 'stethoscope'
-        | 'wallet'
-        | 'clock'
-        | 'palmtree'
-        | 'shield'
-        | 'users'
-        | 'heart-pulse'
-        | 'microscope'
-        | 'target'
-        | 'trending-up'
-        | 'calendar'
-        | 'sprout'
-        | 'badge-check'
-        | 'zap'
-        | 'star'
-        | 'flask'
-        | 'globe'
-        | 'hotel'
-        | 'car'
-        | 'headphones'
-        | 'clipboard-list'
-        | 'mail'
-        | 'phone'
-        | 'message-circle'
-        | 'map-pin'
-        | 'infinity'
-      )
-    | null;
-  order?: number | null;
-  description?: string | null;
-  priceLabel?: string | null;
-  priceFrom?: string | null;
-  updatedAt: string;
-  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1729,34 +1813,6 @@ export interface ResultsBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "users".
- */
-export interface User {
-  id: number;
-  name?: string | null;
-  role: 'owner' | 'coordinator';
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  resetPasswordRequestedAt?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
-  collection: 'users';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -1779,6 +1835,10 @@ export interface PayloadKv {
 export interface PayloadLockedDocument {
   id: number;
   document?:
+    | ({
+        relationTo: 'leads';
+        value: number | Lead;
+      } | null)
     | ({
         relationTo: 'pages';
         value: number | Page;
@@ -1852,6 +1912,53 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "leads_select".
+ */
+export interface LeadsSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  phone?: T;
+  whatsapp?: T;
+  service?: T;
+  status?: T;
+  assignedTo?: T;
+  message?: T;
+  notes?:
+    | T
+    | {
+        text?: T;
+        authorName?: T;
+        date?: T;
+        author?: T;
+        id?: T;
+      };
+  language?: T;
+  source?:
+    | T
+    | {
+        page?: T;
+        form?: T;
+      };
+  utm?:
+    | T
+    | {
+        source?: T;
+        medium?: T;
+        campaign?: T;
+        term?: T;
+        content?: T;
+      };
+  consent?:
+    | T
+    | {
+        given?: T;
+        at?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

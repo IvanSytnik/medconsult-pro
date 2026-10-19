@@ -2,6 +2,7 @@ import type { CollectionConfig } from 'payload'
 import { contentAccess, isOwner, isStaff, ownerField, ownerOrSelf } from './access'
 import { ALL_BLOCKS } from './blocks'
 import { icon, image, text, textarea } from './fields'
+import { Leads } from './leads'
 import { revalidateHooks } from './revalidate'
 
 const CONTENT = 'Content'
@@ -213,4 +214,4 @@ export const Videos: CollectionConfig = {
   ],
 }
 
-export const COLLECTIONS = [Pages, Services, Treatments, Clinics, TeamMembers, Videos, Media, Users]
+export const COLLECTIONS = [Leads, Pages, Services, Treatments, Clinics, TeamMembers, Videos, Media, Users]
