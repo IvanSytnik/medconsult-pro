@@ -98,6 +98,7 @@ Supported languages: German (default), Russian, Ukrainian, English.
 frontend/
   src/
     components/   layout, forms, ui
+    config/       contact details read from VITE_* variables
     pages/        Home, Dental, Plastic, Hair, Aesthetic, Impressum, Privacy
     i18n/         locale files (de, ru, uk, en)
     styles/       global CSS
@@ -111,7 +112,7 @@ docs/
 
 ## Local development
 
-Requires Node.js 18 or newer. The videos in `frontend/public/videos/` are stored with Git LFS; run `git lfs pull` if you need them locally.
+Requires Node.js 18 or newer.
 
 Frontend:
 
@@ -149,6 +150,12 @@ Frontend (`frontend/.env`):
 | Variable | Description |
 | --- | --- |
 | `VITE_API_URL` | Base URL of the backend API, e.g. `https://api.example.com/api` |
+| `VITE_CONTACT_PHONE` | Main phone: footer, contact section, Impressum, privacy policy, direct-contact buttons |
+| `VITE_WHATSAPP_PHONE` | WhatsApp number of the floating button and of the form's fallback link |
+| `VITE_TEAM_<ID>_NAME`, `VITE_TEAM_<ID>_NAME_<LANG>` | Team member name (`<ID>`: `CHIEF`, `FINANCE`, `TRAVEL`; `<LANG>`: `DE`, `RU`, `UK`, `EN` for a per-language spelling). The chief coordinator's name also appears in the Impressum |
+| `VITE_TEAM_<ID>_PHONE`, `VITE_TEAM_<ID>_PHOTO` | Team member phone and photo URL |
+
+Phone numbers, names and photos of the team are not stored in the repository. Without these variables the site shows `+49 000 0000000`, the role instead of the name and an icon instead of the photo. See `frontend/.env.example` for the full list.
 
 Backend (`backend/.env`):
 
