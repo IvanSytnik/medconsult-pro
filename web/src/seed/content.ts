@@ -56,9 +56,9 @@ export const SERVICES = [
 ] as const
 
 export const TEAM = [
-  { key: 'oleg', msgKey: 'oleg', phone: '+49 000 0000000', languages: ['ru'], chief: true, photo: 'team/oleg.png' },
-  { key: 'alexander', msgKey: 'alexander', phone: '+49 000 0000000', languages: ['ru', 'de', 'uk'], chief: false, photo: 'team/alex.png' },
-  { key: 'galina', msgKey: 'galina', phone: '+49 000 0000000', languages: ['ru', 'de'], chief: false, photo: 'team/galina.png' },
+  { key: 'oleg', msgKey: 'oleg', phone: '+49 000 0000000', languages: ['ru'], chief: true },
+  { key: 'alexander', msgKey: 'alexander', phone: '+49 000 0000000', languages: ['ru', 'de', 'uk'], chief: false },
+  { key: 'galina', msgKey: 'galina', phone: '+49 000 0000000', languages: ['ru', 'de'], chief: false },
 ] as const
 
 const cloudinary = (id: string) => ({

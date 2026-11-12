@@ -220,10 +220,7 @@ for (const [key, url] of Object.entries(REMOTE_IMAGES) as [keyof typeof REMOTE_I
   media[key] = byUrl.get(url) ?? null
 }
 
-const teamPhotos: Record<string, number | null> = {}
-for (const member of TEAM) {
-  teamPhotos[member.key] = await ensureMedia(`team-${member.key}.png`, member.photo, (l) => t[l].team.members[member.msgKey].name)
-}
+// Team photos are not part of the repository; the owner uploads them in the admin.
 
 if (MEDIA_ONLY) {
   console.log(`Database already has content; media check: ${counts.repaired} re-uploaded, ${counts.skipped} fine.`)
@@ -263,7 +260,6 @@ for (const member of TEAM) {
     name: t[l].team.members[member.msgKey].name,
     role: t[l].team.members[member.msgKey].role,
     description: t[l].team.members[member.msgKey].desc,
-    photo: teamPhotos[member.key],
     phone: member.phone,
     languages: [...member.languages],
     chief: member.chief,
