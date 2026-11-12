@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import clsx from 'clsx'
+import { WHATSAPP_PHONE, whatsappHref } from '../../config/contacts'
 
 const API_URL = import.meta.env.VITE_API_URL || '/api'
-const WHATSAPP = '+490000000000'
 
 export default function ContactForm({ source = 'main' }) {
   const { t, i18n } = useTranslation()
@@ -66,7 +66,7 @@ export default function ContactForm({ source = 'main' }) {
       setMessage({
         type: 'error',
         text: t('contact.form.error'),
-        whatsappUrl: `https://wa.me/${WHATSAPP.replace(/[^0-9]/g, '')}?text=${whatsappMsg}`,
+        whatsappUrl: `${whatsappHref(WHATSAPP_PHONE)}?text=${whatsappMsg}`,
       })
     } finally {
       setIsLoading(false)

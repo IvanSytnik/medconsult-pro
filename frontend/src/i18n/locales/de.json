@@ -135,18 +135,15 @@
       "coordinator": "Koordinator"
     },
     "members": {
-      "oleg": {
-        "name": "Oleg",
+      "chief": {
         "role": "Hauptkoordinator",
         "desc": "Leitet die Koordination und begleitet jeden Fall von der Anfrage bis zur Nachsorge. Ihr erster Ansprechpartner bei allen Fragen."
       },
-      "alexander": {
-        "name": "Alexander",
+      "finance": {
         "role": "Finanzberater",
         "desc": "Berechnet die Kosten, hilft bei der Budgetplanung und bespricht mit Ihnen, wie Sie die Behandlung bezahlen können."
       },
-      "galina": {
-        "name": "Galina",
+      "travel": {
         "role": "Koordinatorin",
         "desc": "Organisiert Reise und Unterkunft. Bei Fragen zu Hotel und Transfer ist sie Ihre Ansprechpartnerin."
       }
@@ -900,7 +897,7 @@
     },
     "represented": {
       "title": "Vertreten durch",
-      "name": "Oleg (Hauptkoordinator)"
+      "role": "Hauptkoordinator"
     },
     "contact": {
       "title": "Kontakt",
@@ -942,7 +939,7 @@
       },
       "responsible": {
         "title": "2. Verantwortliche Stelle",
-        "text": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:\n\nMedConsult Turkey\nDeutschland\nE-Mail: info@medconsult-turkey.com\nTelefon: +49 000 0000000"
+        "text": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:\n\nMedConsult Turkey\nDeutschland\nE-Mail: info@medconsult-turkey.com\nTelefon: {{phone}}"
       },
       "collection": {
         "title": "3. Datenerfassung auf dieser Website",

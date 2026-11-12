@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Activity } from 'lucide-react'
+import { CONTACT_PHONE, telHref, whatsappHref } from '../../config/contacts'
 
 
 export default function Footer() {
@@ -84,8 +85,8 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-5">{t('nav.contact')}</h4>
             <div className="space-y-2">
-              <a href="tel:+490000000000" className="block hover:text-primary-400 transition-colors">
-                +49 000 0000000
+              <a href={telHref(CONTACT_PHONE)} className="block hover:text-primary-400 transition-colors">
+                {CONTACT_PHONE}
               </a>
               <a href="mailto:info@medconsult-turkey.com" className="block hover:text-primary-400 transition-colors">
                 info@medconsult-turkey.com
@@ -93,7 +94,7 @@ export default function Footer() {
             </div>
             <div className="mt-4">
               <a
-                href="https://wa.me/490000000000"
+                href={whatsappHref(CONTACT_PHONE)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#25d366] text-white rounded-lg text-sm font-medium hover:bg-[#1da851] transition-colors"

@@ -135,18 +135,15 @@
       "coordinator": "Coordinator"
     },
     "members": {
-      "oleg": {
-        "name": "Oleg",
+      "chief": {
         "role": "Chief Coordinator",
         "desc": "Runs coordination and follows each case from the first enquiry to aftercare. Your first contact for any question."
       },
-      "alexander": {
-        "name": "Alexander",
+      "finance": {
         "role": "Financial Consultant",
         "desc": "Works out the costs, helps you plan your budget and talks you through how to pay for the treatment."
       },
-      "galina": {
-        "name": "Galina",
+      "travel": {
         "role": "Coordinator",
         "desc": "Organises travel and accommodation. Ask her anything about the hotel or transfers."
       }
@@ -900,7 +897,7 @@
     },
     "represented": {
       "title": "Represented by",
-      "name": "Oleg (Chief Coordinator)"
+      "role": "Chief Coordinator"
     },
     "contact": {
       "title": "Contact",
@@ -942,7 +939,7 @@
       },
       "responsible": {
         "title": "2. Responsible Party",
-        "text": "The responsible party for data processing on this website is:\n\nMedConsult Turkey\nGermany\nEmail: info@medconsult-turkey.com\nPhone: +49 000 0000000"
+        "text": "The responsible party for data processing on this website is:\n\nMedConsult Turkey\nGermany\nEmail: info@medconsult-turkey.com\nPhone: {{phone}}"
       },
       "collection": {
         "title": "3. Data Collection on This Website",

@@ -1,7 +1,9 @@
+import { WHATSAPP_PHONE, whatsappHref } from '../../config/contacts'
+
 export default function WhatsAppFloat() {
   return (
     <a
-      href="https://wa.me/490000000000"
+      href={whatsappHref(WHATSAPP_PHONE)}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 w-14 h-14 bg-[#25d366] rounded-full flex items-center justify-center text-white shadow-lg z-50 hover:scale-110 hover:bg-[#1da851] transition-all"

@@ -1,9 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import { CONTACT_PHONE, TEAM, telHref, teamMemberName } from '../config/contacts'
 
 export default function Impressum() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const representative = teamMemberName(TEAM.find((m) => m.chief).id, i18n.language)
+  const representativeRole = t('impressum.represented.role')
 
   return (
     <div className="pt-[72px]">
@@ -34,14 +37,16 @@ export default function Impressum() {
           <h2 className="text-xl font-bold text-secondary-900 mb-4">
             {t('impressum.represented.title')}
           </h2>
-          <p className="text-secondary-600 mb-6">{t('impressum.represented.name')}</p>
+          <p className="text-secondary-600 mb-6">
+            {representative ? `${representative} (${representativeRole})` : representativeRole}
+          </p>
 
           {/* Contact */}
           <h2 className="text-xl font-bold text-secondary-900 mb-4">
             {t('impressum.contact.title')}
           </h2>
           <p className="text-secondary-600 mb-1">
-            {t('impressum.contact.phone')}: <a href="tel:+490000000000" className="text-primary-600 hover:underline">+49 000 0000000</a>
+            {t('impressum.contact.phone')}: <a href={telHref(CONTACT_PHONE)} className="text-primary-600 hover:underline">{CONTACT_PHONE}</a>
           </p>
           <p className="text-secondary-600 mb-1">
             {t('impressum.contact.email')}: <a href="mailto:info@medconsult-turkey.com" className="text-primary-600 hover:underline">info@medconsult-turkey.com</a>

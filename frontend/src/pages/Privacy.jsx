@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import { CONTACT_PHONE } from '../config/contacts'
 
 export default function Privacy() {
   const { t } = useTranslation()
@@ -43,7 +44,7 @@ export default function Privacy() {
                 {t(`privacy.sections.${key}.title`)}
               </h2>
               <p className="text-secondary-600 leading-relaxed whitespace-pre-line">
-                {t(`privacy.sections.${key}.text`)}
+                {t(`privacy.sections.${key}.text`, { phone: CONTACT_PHONE })}
               </p>
             </div>
           ))}

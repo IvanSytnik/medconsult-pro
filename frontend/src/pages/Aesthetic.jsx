@@ -5,6 +5,7 @@ import {
   MessageCircle, Calendar, Star, Clock, Zap, Wallet, ArrowRight
 } from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
+import { CONTACT_PHONE, whatsappHref } from '../config/contacts'
 import { SparkleIcon } from '../components/ui/MedicalIcon'
 
 export default function Aesthetic() {
@@ -425,7 +426,7 @@ function ContactFormSection() {
         <div className="mt-8 text-center">
           <p className="text-secondary-600 mb-4">{t('aesthetic.contact.directContact')}</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/490000000000" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+            <a href={whatsappHref(CONTACT_PHONE)} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
               <MessageCircle className="w-5 h-5" />
               {t('aesthetic.contact.whatsapp')}
             </a>

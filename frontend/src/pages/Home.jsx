@@ -2,13 +2,11 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { 
   Building2, Stethoscope, Wallet, Clock, Palmtree, Shield,
-  CheckCircle2, Phone, Mail, MapPin, MessageCircle, Syringe, Scissors, Sparkles
+  CheckCircle2, Phone, Mail, MapPin, MessageCircle, Syringe, Scissors, Sparkles, User
 } from 'lucide-react'
 import ContactForm from '../components/forms/ContactForm'
 import { ToothIcon, SyringeIcon, ScissorsIcon, SparkleIcon } from '../components/ui/MedicalIcon'
-import OlegImg from "../photo/oleg.png";
-import AlexImg from "../photo/alex.png";
-import GalinaImg from "../photo/galina.png";
+import { CONTACT_PHONE, TEAM, telHref, teamMemberName, whatsappHref } from '../config/contacts'
 
 export default function Home() {
   const { t } = useTranslation()
@@ -302,29 +300,7 @@ function ProcessSection() {
 }
 
 function TeamSection() {
-  const { t } = useTranslation()
-
-  const team = [
-    {
-      key: 'oleg',
-      phone: '+49 000 0000000',
-      langs: ['ru'],
-      chief: true,
-      image: OlegImg,
-    },
-    {
-      key: 'alexander',
-      phone: '+49 000 0000000',
-      langs: ['ru', 'de', 'uk'],
-      image: AlexImg,
-    },
-    {
-      key: 'galina',
-      phone: '+49 000 0000000',
-      langs: ['ru', 'de'],
-      image: GalinaImg,
-    },
-  ]
+  const { t, i18n } = useTranslation()
 
   return (
     <section id="team" className="py-24 bg-secondary-50">
@@ -336,10 +312,19 @@ function TeamSection() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {team.map(({ key, phone, langs, chief, image }) => (
+          {TEAM.map(({ key, id, phone, photo, langs, chief }) => {
+            const role = t(`team.members.${key}.role`)
+            const name = teamMemberName(id, i18n.language)
+            return (
             <div key={key} className="card overflow-hidden">
               <div className="relative h-72">
-                <img src={image} alt={t(`team.members.${key}.name`)} className="w-full h-full object-contain bg-secondary-100" />
+                {photo ? (
+                  <img src={photo} alt={name || role} className="w-full h-full object-contain bg-secondary-100" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-secondary-100 text-secondary-300" aria-hidden="true">
+                    <User className="w-24 h-24" />
+                  </div>
+                )}
                 {chief && (
                   <div className="absolute bottom-4 left-4 bg-primary-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
                     {t('team.roles.chief')}
@@ -347,8 +332,8 @@ function TeamSection() {
                 )}
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-1">{t(`team.members.${key}.name`)}</h3>
-                <p className="text-primary-600 font-medium mb-3">{t(`team.members.${key}.role`)}</p>
+                <h3 className="text-2xl font-bold mb-1">{name || role}</h3>
+                {name && <p className="text-primary-600 font-medium mb-3">{role}</p>}
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {langs.map((lang) => (
@@ -361,18 +346,19 @@ function TeamSection() {
                 <p className="text-secondary-600 text-sm mb-5">{t(`team.members.${key}.desc`)}</p>
                 
                 <div className="space-y-2">
-                  <a href={`tel:${phone.replace(/\s/g, '')}`} className="flex items-center gap-3 p-3 bg-secondary-50 rounded-lg text-secondary-700 hover:bg-primary-50 hover:text-primary-600 transition-all">
+                  <a href={telHref(phone)} className="flex items-center gap-3 p-3 bg-secondary-50 rounded-lg text-secondary-700 hover:bg-primary-50 hover:text-primary-600 transition-all">
                     <Phone className="w-5 h-5" />
                     <span className="font-medium">{phone}</span>
                   </a>
-                  <a href={`https://wa.me/${phone.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 bg-[#25d366] text-white rounded-lg hover:bg-[#1da851] transition-all">
+                  <a href={whatsappHref(phone)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 bg-[#25d366] text-white rounded-lg hover:bg-[#1da851] transition-all">
                     <MessageCircle className="w-5 h-5" />
                     <span className="font-medium">{t('team.whatsapp')}</span>
                   </a>
                 </div>
               </div>
             </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
@@ -421,7 +407,7 @@ function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold mb-1">{t('contact.info.phone')}</h4>
-                <a href="tel:+490000000000" className="text-primary-600 font-medium">+49 000 0000000</a>
+                <a href={telHref(CONTACT_PHONE)} className="text-primary-600 font-medium">{CONTACT_PHONE}</a>
                 <p className="text-sm text-secondary-500">{t('contact.info.phoneHours')}</p>
               </div>
             </div>
@@ -432,7 +418,7 @@ function ContactSection() {
               </div>
               <div>
                 <h4 className="font-bold mb-1">{t('contact.info.whatsapp')}</h4>
-                <a href="https://wa.me/490000000000" target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium">
+                <a href={whatsappHref(CONTACT_PHONE)} target="_blank" rel="noopener noreferrer" className="text-primary-600 font-medium">
                   {t('contact.info.whatsappText')}
                 </a>
                 <p className="text-sm text-secondary-500">{t('contact.info.whatsappFast')}</p>
