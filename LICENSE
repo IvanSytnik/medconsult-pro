@@ -1,0 +1,32 @@
+Copyright (c) 2026 Ivan Sytnik. All rights reserved.
+
+VIEW-ONLY LICENSE
+
+The source code in this repository is published so that it can be viewed
+and read. No other rights are granted.
+
+1. You may view the files in this repository on GitHub and use the features
+   GitHub provides for public repositories, to the extent required by the
+   GitHub Terms of Service.
+
+2. Without prior written permission from the copyright holder you may not
+   copy, modify, merge, publish, distribute, sublicense, sell, deploy or
+   otherwise use this source code or any part of it, in source or compiled
+   form, for any purpose.
+
+3. The content of the website (texts, translations, photos, videos, the
+   names and logo of MedConsult Turkey, names and images of people, prices
+   and clinic information) belongs to its respective owners. It is not
+   licensed under this or any other licence and may not be reused.
+
+4. Third-party packages listed in package.json and package-lock.json are
+   covered by their own licences.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+For permission requests, contact the copyright holder through GitHub:
+https://github.com/IvanSytnik
