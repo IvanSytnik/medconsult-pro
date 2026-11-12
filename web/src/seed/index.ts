@@ -189,7 +189,7 @@ async function ensureMedia(filename: string, source: string, alt: (locale: Local
 async function seedOwner() {
   const { totalDocs } = await payload.count({ collection: 'users', where: { role: { equals: 'owner' } } })
   if (totalDocs > 0) return
-  const email = process.env.OWNER_EMAIL || 'ivan.sytnik02@gmail.com'
+  const email = process.env.OWNER_EMAIL || 'admin@example.com'
   const password = randomBytes(12).toString('base64url')
   await payload.create({ collection: 'users', data: { email, password, name: 'Owner', role: 'owner' }, context: context() })
   console.log(`\nOwner account created (shown once):\n  login:    ${email}\n  password: ${password}\n`)
