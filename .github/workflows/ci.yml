@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend:
+    name: Frontend build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+  backend:
+    name: Backend start check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      # backend/ has no lockfile, so npm ci is not available.
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Start the server and check /api/health
+        env:
+          PORT: 3000
+        run: |
+          node server.js > server.log 2>&1 &
+          pid=$!
+          trap 'kill "$pid" 2>/dev/null || true' EXIT
+          for _ in $(seq 1 30); do
+            if body=$(curl -fsS http://localhost:3000/api/health); then
+              echo "$body"
+              echo "$body" | grep -q '"status":"ok"'
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Server did not answer /api/health within 30 s"
+          cat server.log
+          exit 1
